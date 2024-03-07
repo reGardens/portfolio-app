@@ -36,7 +36,6 @@ export default function Navigation() {
         }
     }, [aside]);
 
-
     return (
         <>
             <nav className="bg-transparent dark:bg-gray-900 fixed w-full z-20 top-0 start-0">
@@ -48,10 +47,10 @@ export default function Navigation() {
                     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                         <DarkMode />
                         <button type="button" className="text-white bg-traditionalColor focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center">Contact</button>
-                        <button data-collapse-toggle="navbar-sticky" onClick={handleAside} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 relative z-[100]" aria-controls="navbar-sticky" aria-expanded="false">
+                        <button onClick={handleAside} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 relative z-[100]">
                             <span className="sr-only">Open main menu</span>
                             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
                             </svg>
                         </button>
                     </div>
@@ -74,10 +73,10 @@ export default function Navigation() {
             {/* aside */}
             <div className="aside translate-x-full opacity-0 w-screen h-screen fixed top-0 left-0 bg-traditionalColor z-[99] px-10 py-20">
                 <ul className="grid justify-center items-center h-full">
-                    <button id="asideClose" data-collapse-toggle="navbar-sticky" onClick={handleAsideClose} type="button" className="mx-auto abs items-center p-2 w-10 h-10 justify-center text-sm bg-white text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 z-[999] relative" aria-controls="navbar-sticky" aria-expanded="false">
+                    <button id="asideClose" onClick={handleAsideClose} type="button" className="mx-auto abs items-center p-2 w-10 h-10 justify-center text-sm bg-white text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 z-[999] relative">
                         <span className="sr-only">Open main menu</span>
                         <svg className="w-5 h-5 mx-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
 
