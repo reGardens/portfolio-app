@@ -1,0 +1,14 @@
+@import "@/app/globals.css";
+/* @import "splide.min.css";
+@import "aos/dist/aos.css"; */
+
+@font-face {
+  font-family: Futura !important;
+  src: url("../../../public/fonts/FuturaLT.ttf");
+}
+
+html,
+body {
+  font-family: Futura, sans-serif !important;
+  scroll-behavior: smooth;
+}
