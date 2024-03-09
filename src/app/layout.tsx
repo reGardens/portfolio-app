@@ -29,9 +29,11 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${inter.className} bg-white dark:bg-black`}>
-          <Navigation />
-          {children}
+        <body className={`${inter.className} bg-white dark:bg-darkColor500 overflow-x-hidden`}>
+          <div className="max-w-screen-2xl mx-auto">
+            <Navigation />
+            {children}
+          </div>
           <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
         </body>
       </html>
