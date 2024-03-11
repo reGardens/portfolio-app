@@ -15,7 +15,7 @@ export function HomeTitle() {
     }, []);
 
     return (
-        <article className='grid gap-4 order-2 md:order-1'>
+        <div className='grid gap-4 order-2 md:order-1'>
             <p className='text-4xl font-bold dark:text-white hidden md:block text1 -translate-x-full opacity-0'>Hi, I&apos;m Reza Bagus Pratama</p>
             <p className='text-2xl font-bold dark:text-white block md:hidden text1 -translate-x-full opacity-0'>Hi, <br /> I&apos;m Reza Bagus Pratama</p>
 
@@ -25,7 +25,7 @@ export function HomeTitle() {
             </div>
 
             <div className="grid md:flex gap-3 font-bold items-center text3 -translate-x-full opacity-0">
-                <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=rezzabagus.rb@gmail.com"
+                <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=rezzabagus.rb@gmail.com" target="_blank"
                     className="bg-darkColor500 dark:bg-white hover:bg-darkColor700 dark:hover:bg-slate-200 transition-colors w-full h-fit py-1 px-3 rounded-md text-left shadow-lg" >
                     <h3 className="opacity text-white dark:text-darkColor500">
                         <strong className="tracking-[4px] opacity-85 text-[10px]">
@@ -35,11 +35,11 @@ export function HomeTitle() {
                     </h3>
                 </a>
 
-                <a href="https://drive.google.com/uc?export=download&id=1b6aiPsC2rgC1b9dSGY4WhGiZDzmlxlIK"
+                <a href="https://drive.google.com/uc?export=download&id=1b6aiPsC2rgC1b9dSGY4WhGiZDzmlxlIK" target="_blank"
                     className="bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors text-white uppercase py-2 px-3 w-full rounded-md animate-bounce text-center shadow-lg">
                     Resume
                 </a>
             </div>
-        </article>
+        </div>
     )
 }
