@@ -1,12 +1,9 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/css/main.css";
 import Navigation from "./components/navigation/page";
 import "flowbite";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
@@ -29,10 +26,10 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${inter.className} bg-white dark:bg-darkColor500 overflow-x-hidden`}>
-          <div className="max-w-screen-2xl mx-auto">
-            <Navigation />
-            {children}
+        <body className={`${inter.className} bg-white dark:bg-darkColor500`}>
+          <div className="max-w-screen-2xl mx-auto !overflow-x-hidden">
+              <Navigation />
+              {children}
           </div>
           <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
         </body>
