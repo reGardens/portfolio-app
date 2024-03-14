@@ -1,12 +1,17 @@
 "use client"
 
+import Title from "@/app/components/title/page";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Index() {
+interface Props {
+    dataIcons: any[];
+}
+
+export default function HomeClientSide(dataIcons: Props) {
     useEffect(() => {
         // header
         let title = gsap.timeline();
@@ -20,7 +25,7 @@ export default function Index() {
             scrollTrigger: {
                 trigger: '.about',
                 start: "top center",
-                end: "+=500 center",
+                end: "bottom center",
                 toggleActions: "play reverse play reverse",
             }
         });
@@ -79,16 +84,39 @@ export default function Index() {
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center p-4 lg:p-24">
-                        <p className="text-5xl font-extrabold text-darkColor500 col-span-1 mb-4 lg:mb-0">About me</p>
+                        <Title name={'About me'} darkText={'dark:!text-darkColor500'} />
 
                         <div className="col-span-2">
-                            <p>
+                            <p className="indent-9">
                                 My name is Reza Bagus Pratama. I&apos;m 26 years old and I come from Indonesia, specifically Central Java. I work as a frontend web developer in the IT industry. I have been doing freelance and remote jobs for the past 2 years, as well as working on-site (WFO) projects. <br /><br />
+                            </p>
+                            <p className="indent-9">
                                 During this time, I have worked on various projects, including developing asset management system applications and POS (Point of Sales) systems, as well as other small-scale applications. <br /><br />
+                            </p>
+                            <p className="indent-9">
                                 I am excited about expanding my skills and expertise to encompass full-stack development, and I believe my previous experiences have provided me with a solid foundation to excel in this new role.
                             </p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="px-4 lg:px-24 py-24">
+                <Title name={'Skills'} darkText={'null'} />
+
+                <div className="grid grid-cols-3 relative">
+                    <p id="vertical-front" className="font-bold uppercase">Front End Website</p>
+
+                    <ul>
+                        {dataIcons.dataIcons.data.map((res: string, index: number) => {
+                            return (
+                                <li key={index}>
+                                    <img src={res.icon} alt={res.name} srcSet="" />
+                                </li>
+                            )
+                        })}
+                    </ul>
+
                 </div>
             </section>
         </>
