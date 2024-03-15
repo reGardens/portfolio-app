@@ -3,15 +3,20 @@
 import Title from "@/app/components/title/page";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
-    dataIcons: any[];
+    dataIconFront: any;
+    dataIconBack: any;
+    dataIconOther: any;
 }
 
-export default function HomeClientSide(dataIcons: Props) {
+export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOther }: Props) {
+    // console.log(dataIconFront.data);
+
     useEffect(() => {
         // header
         let title = gsap.timeline();
@@ -26,10 +31,27 @@ export default function HomeClientSide(dataIcons: Props) {
                 trigger: '.about',
                 start: "top center",
                 end: "bottom center",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none reverse",
             }
         });
         about.to(".about div", { y: 0, opacity: 1, ease: "back.out(1.1)", duration: 1.1 });
+        // ------
+
+        // skills
+        let skills = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.skills',
+                start: "top center",
+                end: "bottom center",
+                toggleActions: "play none none reverse",
+                markers: true,
+            }
+        });
+        skills.to(".frontend", { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 })
+            .to(".backend", { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+            .to(".other", { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+            .to(".detail", { x: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1");
+
         // ------
     }, []);
 
@@ -101,22 +123,58 @@ export default function HomeClientSide(dataIcons: Props) {
                 </div>
             </section>
 
-            <section className="px-4 lg:px-24 py-24">
-                <Title name={'Skills'} darkText={'null'} />
+            <section className="px-4 lg:px-24 py-24 skills">
+                <div className="mb-10 lg:mb-20">
+                    <Title name={'Skills'} darkText={'null'} />
+                </div>
 
-                <div className="grid grid-cols-3 relative">
-                    <p id="vertical-front" className="font-bold uppercase">Front End Website</p>
+                <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
+                    <div className="col-span-2 grid grid-cols-1 lg:grid-cols-3 relative justify-center items-center gap-0.5 w-full">
+                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0">
+                            {dataIconFront.data.map((res: string, index: number) => {
+                                return (
+                                    <li className="inline-block mx-auto" key={index}>
+                                        <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>
+                                    </li>
+                                )
+                            })}
+                        </ul>
 
-                    <ul>
-                        {dataIcons.dataIcons.data.map((res: string, index: number) => {
-                            return (
-                                <li key={index}>
-                                    <img src={res.icon} alt={res.name} srcSet="" />
-                                </li>
-                            )
-                        })}
-                    </ul>
+                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] frontend translate-y-10 opacity-0 hidden lg:block">FrontEnd Website</p>
 
+                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 backend translate-y-10 opacity-0">
+                            {dataIconBack.data.map((res: string, index: number) => {
+                                return (
+                                    <li className="inline-block mx-auto" key={index}>
+                                        <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+
+                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] backend translate-y-10 opacity-0 hidden lg:block">BackEnd Website</p>
+
+                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 other translate-y-10 opacity-0">
+                            {dataIconOther.data.map((res: string, index: number) => {
+                                return (
+                                    <li className="inline-block mx-auto" key={index}>
+                                        <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+
+                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] other translate-y-10 opacity-0 hidden lg:block">Other</p>
+                    </div>
+
+                    <p className="col-span-1 mx-5 text-darkColor500 dark:text-white text-center font-bold text-2xl detail translate-y-10 opacity-0">&quot;I also have a little understanding of the backend, in addition to the frontend.&quot;</p>
+                </div>
+
+                <div className="grid grid-cols-4 relative justify-center items-center my-0.5">
+
+                </div>
+
+                <div className="grid grid-cols-4 relative justify-center items-center">
                 </div>
             </section>
         </>

@@ -12,8 +12,12 @@
         "icon": "/static/icons/css.png"
       },
       {
-        "name": "js",
-        "icon": "/static/icons/js.png"
+        "name": "javascript",
+        "icon": "/static/icons/javascript.png"
+      },
+      {
+        "name": "typescript",
+        "icon": "/static/icons/typescript.png"
       },
       {
         "name": "bootstrap",
@@ -24,8 +28,16 @@
         "icon": "/static/icons/tailwindcss.png"
       },
       {
+        "name": "mui",
+        "icon": "/static/icons/mui.png"
+      },
+      {
         "name": "sass",
         "icon": "/static/icons/sass.png"
+      },
+      {
+        "name": "jquery",
+        "icon": "/static/icons/jquery.png"
       },
       {
         "name": "reactjs",
@@ -34,6 +46,10 @@
       {
         "name": "vuejs",
         "icon": "/static/icons/vuejs.png"
+      },
+      {
+        "name": "nextjs",
+        "icon": "/static/icons/nextjs.png"
       }
     ]
   },
