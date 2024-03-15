@@ -1,6 +1,6 @@
 interface TitleProps {
     title: string;
-    darkText: string;
+    [darkText: string]: any;
 }
 
 export default function Title({ title, darkText }: TitleProps) {
