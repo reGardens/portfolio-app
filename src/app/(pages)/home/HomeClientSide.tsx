@@ -111,7 +111,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center p-4 lg:p-24">
-                        <Title name={'About me'} darkText={'dark:!text-darkColor500'} />
+                        <Title name={'About me'} darkText={'dark:text-darkColor500'} />
 
                         <div className="col-span-2">
                             <p className="indent-9">

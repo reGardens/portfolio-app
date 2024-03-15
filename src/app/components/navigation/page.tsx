@@ -1,6 +1,5 @@
 'use client'
 import gsap from "gsap";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import DarkMode from "../darkMode/page";
 
