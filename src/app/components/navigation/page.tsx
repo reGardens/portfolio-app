@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { DarkMode } from "../darkMode/page";
+import DarkMode from "../darkMode/page";
 
 export default function Navigation() {
     const [aside, setAside] = useState<boolean>(false);

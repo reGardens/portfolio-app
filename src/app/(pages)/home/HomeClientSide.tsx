@@ -13,6 +13,14 @@ interface Props {
     dataIconBack: any;
     dataIconOther: any;
 }
+interface IconData {
+    icon: string;
+    name: string;
+}
+
+// const imageLoader = ({ src, width, quality }) => {
+//     return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+// }
 
 export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOther }: Props) {
     // console.log(dataIconFront.data);
@@ -44,7 +52,6 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 start: "top center",
                 end: "bottom center",
                 toggleActions: "play none none reverse",
-                markers: true,
             }
         });
         skills.to(".frontend", { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 })
@@ -88,10 +95,10 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
 
                     <div className='relative order-1 lg:order-2'>
                         <div className="w-full lg:absolute -top-[29rem] -right-[8rem] hidden lg:block">
-                            <img src="/static/images/avatar-desktop.png" alt="User" className='mx-auto w-[42rem]' />
+                                <Image src="/static/images/avatar-desktop.png" alt="User" width="672" height="672"></Image>
                         </div>
                         <div className="w-full lg:absolute -top-[29rem] -right-[8rem] block lg:hidden">
-                            <img src="/static/images/avatar-mobile.png" alt="User" className='mx-auto w-[42rem]' />
+                                <Image src="/static/images/avatar-mobile.png" alt="User" width="672" height="672"></Image>
                         </div>
                     </div>
                 </div>
@@ -100,9 +107,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
             <section className='px-4 lg:px-24 py-24 overflow-hidden about'>
                 <div className="relative shadow-2xl rounded-xl overflow-hidden opacity-0 translate-y-full">
                     <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
-                        <img src="/static/images/bg-about-white.jpeg" alt=""
-                            className='w-full h-full object-cover'
-                        />
+                        <Image src="/static/images/bg-about-white.jpeg" alt="" layout="fill" objectFit="cover"></Image>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center p-4 lg:p-24">
@@ -131,7 +136,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
                     <div className="col-span-2 grid grid-cols-1 lg:grid-cols-3 relative justify-center items-center gap-0.5 w-full">
                         <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0">
-                            {dataIconFront.data.map((res: string, index: number) => {
+                            {dataIconFront.data.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
                                         <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>
@@ -143,7 +148,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] frontend translate-y-10 opacity-0 hidden lg:block">FrontEnd Website</p>
 
                         <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 backend translate-y-10 opacity-0">
-                            {dataIconBack.data.map((res: string, index: number) => {
+                            {dataIconBack.data.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
                                         <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>
@@ -155,7 +160,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] backend translate-y-10 opacity-0 hidden lg:block">BackEnd Website</p>
 
                         <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 other translate-y-10 opacity-0">
-                            {dataIconOther.data.map((res: string, index: number) => {
+                            {dataIconOther.data.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
                                         <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>

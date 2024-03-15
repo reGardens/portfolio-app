@@ -7,17 +7,21 @@ export const metadata: Metadata = {
     description: 'Home Page',
 }
 
+interface Item {
+    name: string,
+}
+
 export default async function Home() {
     const file = await fs.readFile(process.cwd() + '/public/data.json', 'utf8');
     const data = await JSON.parse(file);
-    const dataFrontEnd = data.find(item => item.name === 'frontend');
-    const dataBackEnd = data.find(item => item.name === 'backend');
-    const dataOtherSkills = data.find(item => item.name === 'other');
+    const dataFrontEnd = data.find((item: Item) => item.name === 'frontend');
+    const dataBackEnd = data.find((item: Item) => item.name === 'backend');
+    const dataOtherSkills = data.find((item: Item) => item.name === 'other');
 
     return (
         <>
             <main className="">
-                {dataFrontEnd && dataBackEnd && dataOtherSkills && <HomeClientSide dataIconFront={dataFrontEnd} dataIconBack={dataBackEnd} dataIconOther={dataOtherSkills} />}
+                {dataFrontEnd  && dataBackEnd && dataOtherSkills && <HomeClientSide dataIconFront={dataFrontEnd} dataIconBack={dataBackEnd} dataIconOther={dataOtherSkills} />}
             </main>
         </>
     )
