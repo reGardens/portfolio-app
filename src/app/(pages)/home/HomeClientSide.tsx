@@ -1,5 +1,6 @@
 "use client"
 
+import { MediaComponentDekstop, MediaComponentMobile, MediaComponentTablet } from "@/app/components/projects/page";
 import Title from "@/app/components/title/page";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,18 +13,27 @@ interface Props {
     dataIconFront: any;
     dataIconBack: any;
     dataIconOther: any;
+    dataProjects: any;
 }
 interface IconData {
     icon: string;
     name: string;
+}
+interface PorjectsData {
+    name: string;
+    description: string;
+    projectBackground: string;
+    desktopView: string;
+    tabletView: string;
+    mobileView: string;
 }
 
 // const imageLoader = ({ src, width, quality }) => {
 //     return `https://example.com/${src}?w=${width}&q=${quality || 75}`
 // }
 
-export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOther }: Props) {
-    // console.log(dataIconFront.data);
+export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOther, dataProjects }: Props) {
+    // console.log(dataProjects);
 
     useEffect(() => {
         // header
@@ -95,10 +105,10 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
 
                     <div className='relative order-1 lg:order-2'>
                         <div className="w-full lg:absolute -top-[29rem] -right-[8rem] hidden lg:block">
-                                <Image src="/static/images/avatar-desktop.png" alt="User" width="672" height="672"></Image>
+                            <Image src="/static/images/avatar-desktop.png" alt="User" width="672" height="672"></Image>
                         </div>
                         <div className="w-full lg:absolute -top-[29rem] -right-[8rem] block lg:hidden">
-                                <Image src="/static/images/avatar-mobile.png" alt="User" width="672" height="672"></Image>
+                            <Image src="/static/images/avatar-mobile.png" alt="User" width="672" height="672"></Image>
                         </div>
                     </div>
                 </div>
@@ -130,7 +140,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
 
             <section className="px-4 lg:px-24 py-24 skills">
                 <div className="mb-10 lg:mb-20">
-                    <Title name={'Skills'} darkText={'null'} />
+                    <Title title={'Skills'} darkText={'null'} />
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
@@ -181,6 +191,35 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
 
                 <div className="grid grid-cols-4 relative justify-center items-center">
                 </div>
+            </section>
+
+            <section className="px-4 lg:px-24 py-24">
+                <div className="mb-10 lg:mb-20">
+                    <Title title={'Latest Projects'} darkText={'null'} />
+                </div>
+
+                <ul className="text-darkColor200 dark:text-white">
+                    {dataProjects.map((res: PorjectsData, index: number) => {
+                        return (
+                            <li key={index} className="grid grid-cols-5 content-center gap-10 my-32">
+                                <div className="w-full h-full col-start-1 col-span-3 relative">
+                                    <MediaComponentDekstop name={res.name} url={res.desktopView} projectBackground={res.projectBackground} />
+
+                                    <MediaComponentTablet name={res.name} url={res.tabletView} />
+
+                                    <MediaComponentMobile name={res.name} url={res.mobileView} />
+                                    {/* <div className="md:basis-[120px] flex justify-center w-full">
+                                    </div> */}
+                                </div>
+
+                                <div className="col-span-2 col-start-4 mt-10">
+                                    <p className="uppercase font-extrabold text-xl mb-3">{res.name}</p>
+                                    <p className="font-bold text-lg">{res.description}</p>
+                                </div>
+                            </li>
+                        )
+                    })}
+                </ul>
             </section>
         </>
     )
