@@ -5,12 +5,12 @@
     "desktopView": "/static/projects/thumb/fjb-desktop.png",
     "tabletView": "/static/projects/video/fjb-2022-compressed.mp4",
     "mobileView": "/static/projects/thumb/fjb-mobile.png",
-    "projectBackground": "#00837B",
+    "logo": "/static/icons/projects/icon-fjb2022.png",
     "url": "https://www.warisankuliner.com/fjb",
     "hashtags": [
       {
-        "link": "codeigniter",
-        "name": "codeigniter"
+        "link": "Codeigniter",
+        "name": "Codeigniter"
       }
     ]
   },
@@ -21,11 +21,12 @@
     "tabletView": "/static/projects/thumb/hinoFinance-tablet.png",
     "mobileView": "/static/projects/thumb/hinoFinance-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-hino.png",
     "url": "#",
     "hashtags": [
       {
-        "link": "html",
-        "name": "html"
+        "link": "HTML",
+        "name": "HTML"
       },
       {
         "link": "CSS",
@@ -40,15 +41,16 @@
     "tabletView": "/static/projects/thumb/MGMBosco-tablet.png",
     "mobileView": "/static/projects/thumb/MGMBosco-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-mgmbosco.png",
     "url": "https://mgmbosco.com/id/sustainability",
     "hashtags": [
       {
-        "link": "vuejs",
-        "name": "vuejs"
+        "link": "VueJS",
+        "name": "VueJS"
       },
       {
-        "link": "laravel",
-        "name": "laravel"
+        "link": "Laravel",
+        "name": "Laravel"
       }
     ]
   },
@@ -59,11 +61,12 @@
     "tabletView": "/static/projects/thumb/danamonOptimal-tablet.png",
     "mobileView": "/static/projects/video/DanamonOptimal-mobile-compressed.mp4",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-danamon.png",
     "url": "https://www.danamon.co.id/id/Personal/Danamon-Optimal",
     "hashtags": [
       {
-        "link": "bootstrap",
-        "name": "bootstrap"
+        "link": "Bootstrap",
+        "name": "Bootstrap"
       }
     ]
   },
@@ -74,15 +77,16 @@
     "tabletView": "/static/projects/video/DanamonQuiz-tablet-compressed.mp4",
     "mobileView": "/static/projects/thumb/DanamonQuiz-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-danamonquiz.png",
     "url": "www.optimalku.com",
     "hashtags": [
       {
-        "link": "vuejs",
-        "name": "vuejs"
+        "link": "VueJS",
+        "name": "VueJS"
       },
       {
-        "link": "laravel",
-        "name": "laravel"
+        "link": "Laravel",
+        "name": "Laravel"
       }
     ]
   },
@@ -93,11 +97,12 @@
     "tabletView": "/static/projects/thumb/semurSahur-tablet.png",
     "mobileView": "/static/projects/thumb/semurSahur-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-bango.png",
     "url": "https://www.bango.co.id/home.html",
     "hashtags": [
       {
-        "link": "codeigniter",
-        "name": "codeigniter"
+        "link": "Codeigniter",
+        "name": "Codeigniter"
       }
     ]
   },
@@ -108,11 +113,12 @@
     "tabletView": "/static/projects/thumb/danamonIIMS-tablet.png",
     "mobileView": "/static/projects/thumb/danamonIIMS-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-danamon.png",
     "url": "https://www.danamon.co.id/id/site/Danamon-IIMS-Surabaya",
     "hashtags": [
       {
-        "link": "bootstrap",
-        "name": "bootstrap"
+        "link": "Bootstrap",
+        "name": "Bootstrap"
       }
     ]
   },
@@ -123,11 +129,12 @@
     "tabletView": "/static/projects/thumb/danamonSpekta-tablet.png",
     "mobileView": "/static/projects/thumb/danamonSpekta-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-danamon.png",
     "url": "https://www.danamon.co.id/id/Personal/danamonhadiahberuntun?utm_campaign=danamonhadiahberuntun&utm_source=Homebanner_DCW&utm_medium=&utm_term=danamonhadiahberuntun&utm_content=danamonhadiahberuntun_30092022",
     "hashtags": [
       {
-        "link": "bootstrap",
-        "name": "bootstrap"
+        "link": "Bootstrap",
+        "name": "Bootstrap"
       }
     ]
   },
@@ -138,15 +145,16 @@
     "tabletView": "/static/projects/thumb/danamonBO-tablet.png",
     "mobileView": "/static/projects/thumb/danamonBO-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-danamon.png",
     "url": "https://booking.optimalku.com",
     "hashtags": [
       {
-        "link": "vuejs",
-        "name": "vuejs"
+        "link": "VueJS",
+        "name": "VueJS"
       },
       {
-        "link": "laravel",
-        "name": "laravel"
+        "link": "Laravel",
+        "name": "Laravel"
       }
     ]
   },
@@ -157,15 +165,16 @@
     "tabletView": "/static/projects/video/danamonHUT-tablet.mp4",
     "mobileView": "/static/projects/thumb/danamonHUT-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-danamon.png",
     "url": "https://danamonhut.co.id/",
     "hashtags": [
       {
-        "link": "reactjs",
-        "name": "reactjs"
+        "link": "ReactJS",
+        "name": "ReactJS"
       },
       {
-        "link": "laravel",
-        "name": "laravel"
+        "link": "Laravel",
+        "name": "Laravel"
       }
     ]
   },
@@ -176,11 +185,12 @@
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
     "mobileView": "/static/projects/thumb/ristra-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-ristra.png",
     "url": "https://www.ristraclinic.co.id/",
     "hashtags": [
       {
-        "link": "laravel",
-        "name": "laravel"
+        "link": "Laravel",
+        "name": "Laravel"
       }
     ]
   },
@@ -191,11 +201,12 @@
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
     "mobileView": "/static/projects/thumb/ristra-mobile.png",
     "modalDesc": "Bango Culinary Project 2022",
+    "logo": "/static/icons/projects/icon-dbankpro.png",
     "url": "https://www.danamon.co.id/id/E-Banking/Personal/D-Bank-PROs/?utm_campaign=DBankPro2023&utm_source=homebanner&utm_medium=owned&utm_term=D-Bank-PRO_Siap-Digoda_homebanner-dcw&utm_content=D-Bank-PRO_Siap-Digoda_homebanner-dcw_21082023",
     "hashtags": [
       {
-        "link": "bootstrap",
-        "name": "bootstrap"
+        "link": "Bootstrap",
+        "name": "Bootstrap"
       }
     ]
   },
@@ -206,11 +217,12 @@
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
     "mobileView": "/static/projects/thumb/ristra-mobile.png",
     "modalDesc": "Bango Culinary Project 2023",
+    "logo": "/static/icons/projects/icon-fjb2023.png",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [
       {
-        "link": "codeigniter",
-        "name": "codeigniter"
+        "link": "Codeigniter",
+        "name": "Codeigniter"
       }
     ]
   },
@@ -221,15 +233,16 @@
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
     "mobileView": "/static/projects/thumb/ristra-mobile.png",
     "modalDesc": "Bango Culinary Project 2023",
+    "logo": "/static/icons/projects/icon-walls.png",
     "url": "https://timfeastpop.com/",
     "hashtags": [
       {
-        "link": "reactjs",
-        "name": "reactjs"
+        "link": "ReactJS",
+        "name": "ReactJS"
       },
       {
-        "link": "laravel",
-        "name": "laravel"
+        "link": "Laravel",
+        "name": "Laravel"
       }
     ]
   },
@@ -240,15 +253,16 @@
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
     "mobileView": "/static/projects/thumb/ristra-mobile.png",
     "modalDesc": "Bango Culinary Project 2023",
+    "logo": "/static/icons/projects/icon-jiva.png",
     "url": "https://jivaco.id/id/",
     "hashtags": [
       {
-        "link": "reactjs",
-        "name": "reactjs"
+        "link": "ReactJS",
+        "name": "ReactJS"
       },
       {
-        "link": "laravel",
-        "name": "laravel"
+        "link": "Laravel",
+        "name": "Laravel"
       }
     ]
   },
@@ -259,11 +273,12 @@
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
     "mobileView": "/static/projects/thumb/ristra-mobile.png",
     "modalDesc": "Bango Culinary Project 2023",
+    "logo": "/static/icons/projects/icon-danamon.png",
     "url": "https://www.danamon.co.id/id/danamon-hadiah-beruntun?utm_campaign=DHB2&utm_source=Google&utm_medium=paid&utm_term=DHB2_Google_DHB-2-Launch&utm_content=2826_Clicks_CPC_Google_Search_Text_Dark-Post_DHB-2-Launch_LIBS_DHB2_01-Nov_30-Apr&gad_source=1&gclid=CjwKCAjw48-vBhBbEiwAzqrZVKa_19R-mzbxwYfl2bDNJGgnpN2y_aSnx9zgR8X9lW_kX7ot3b5wMhoCcPIQAvD_BwE",
     "hashtags": [
       {
-        "link": "bootstrap",
-        "name": "bootstrap"
+        "link": "Bootstrap",
+        "name": "Bootstrap"
       }
     ]
   },
@@ -274,11 +289,12 @@
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
     "mobileView": "/static/projects/thumb/ristra-mobile.png",
     "modalDesc": "Bango Culinary Project 2023",
+    "logo": "/static/icons/projects/icon-combipharpro.png",
     "url": "https://combipharpro.com/id/pro/login",
     "hashtags": [
       {
-        "link": "laravel",
-        "name": "laravel"
+        "link": "Laravel",
+        "name": "Laravel"
       }
     ]
   }

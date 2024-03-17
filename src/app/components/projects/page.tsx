@@ -4,15 +4,14 @@ import React from "react";
 interface dataMediaProps {
     url: any;
     name: string;
-    projectBackground: string;
 }
 
-export const MediaComponentDekstop = ({ url, name, projectBackground }: dataMediaProps) => {
+export const MediaComponentDekstop = ({ url, name }: dataMediaProps) => {
     const isImage = url;
 
     if (isImage && isImage.endsWith(".png")) {
         return (
-            <div className={`w-full h-[35rem] ${projectBackground} relative rounded-xl overflow-hidden`}>
+            <div className={`w-full h-[35rem] relative rounded-xl overflow-hidden`}>
                 <Image
                     src={url}
                     alt={name}
@@ -20,7 +19,7 @@ export const MediaComponentDekstop = ({ url, name, projectBackground }: dataMedi
                     style={{
                         objectFit: 'contain',
                     }}
-                />;
+                />
             </div>
         )
     }

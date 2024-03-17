@@ -26,6 +26,12 @@ interface PorjectsData {
     desktopView: string;
     tabletView: string;
     mobileView: string;
+    hashtags: string;
+    logo: string;
+}
+interface Hashtags {
+    name: string;
+    link: string;
 }
 
 // const imageLoader = ({ src, width, quality }) => {
@@ -33,8 +39,6 @@ interface PorjectsData {
 // }
 
 export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOther, dataProjects }: Props) {
-    // console.log(dataProjects);
-
     useEffect(() => {
         // header
         let title = gsap.timeline();
@@ -198,28 +202,71 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     <Title title={'Latest Projects'} darkText={'null'} />
                 </div>
 
-                <ul className="text-darkColor200 dark:text-white">
+                {/* desktop */}
+                <ul className="hidden lg:block text-darkColor500 dark:text-white">
                     {dataProjects.map((res: PorjectsData, index: number) => {
+                        // console.log('dataporject', res);
                         return (
-                            <li key={index} className="grid grid-cols-5 content-center gap-10 my-32">
+                            <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48">
                                 <div className="w-full h-full col-start-1 col-span-3 relative">
-                                    <MediaComponentDekstop name={res.name} url={res.desktopView} projectBackground={res.projectBackground} />
-
+                                    <MediaComponentDekstop name={res.name} url={res.desktopView} />
                                     <MediaComponentTablet name={res.name} url={res.tabletView} />
-
                                     <MediaComponentMobile name={res.name} url={res.mobileView} />
-                                    {/* <div className="md:basis-[120px] flex justify-center w-full">
-                                    </div> */}
                                 </div>
 
                                 <div className="col-span-2 col-start-4 mt-10">
                                     <p className="uppercase font-extrabold text-xl mb-3">{res.name}</p>
-                                    <p className="font-bold text-lg">{res.description}</p>
+                                    <p className="font-bold text-lg text-darkColor200 mb-3">{res.description}</p>
+                                    <ul>
+                                        {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
+                                            // console.log('hashtag', ress);
+                                            return (
+                                                <li key={ress.name} className="inline-block rounded-full bg-traditionalColor500 mr-0.5">
+                                                    <p className="py-2 px-8 leading-none text-white font-bold text-xs">{ress.name}</p>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
                                 </div>
                             </li>
                         )
                     })}
                 </ul>
+                {/* ------ */}
+                {/* mobile */}
+                <div className="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                    <div className="flow-root">
+                        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+                            {dataProjects.map((res: PorjectsData, index: number) => {
+                                return (
+                                    <li key={index} className="py-3 sm:py-4 relative">
+                                        <div className="absolute top-0 left-0 w-full h-full">
+                                            <Image src={res.desktopView} alt={res.name} fill style={{ objectFit: 'cover', opacity: '0.2' }} />
+                                        </div>
+
+                                        <a href="#" className="flex items-center relative">
+                                            <div className="flex-shrink-0">
+                                                <img className="w-10 h-10 rounded-full object-cover bg-white" src={res.logo} alt="Neil image" />
+                                            </div>
+                                            <div className="flex-1 min-w-0 ms-4">
+                                                <p className="text-sm font-medium text-darkColor500 truncate">
+                                                    {res.name}
+                                                </p>
+                                                <p className="text-sm text-darkColor200 truncate">
+                                                    {res.description}
+                                                </p>
+                                            </div>
+                                            <div className="inline-flex items-center text-base font-semibold text-darkColor500 -translate-x-1 opacity-75">
+                                                <Image src="/static/icons/next.png" alt="icon-next" width={25} height={25} />
+                                            </div>
+                                        </a>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                {/* ------ */}
             </section>
         </>
     )
