@@ -74,6 +74,30 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
             .to(".detail", { x: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1");
 
         // ------
+
+        // projects
+        dataProjects.forEach((res: PorjectsData, index: number) => {
+            const box = document.querySelector(`.projects:nth-child(${index + 1})`);
+            // console.log('box);
+
+            if (box) {
+                const project = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: box,
+                        start: "top center",
+                        end: "bottom center",
+                        toggleActions: "play none none reverse",
+                        markers: true,
+                    }
+                });
+
+                project.to(box.querySelector(".desktop"), { y: 0, duration: 1.5, ease: "back.out(1.1)", opacity: 1 })
+                    .to(box.querySelector(".tablet"), { y: 0, duration: 1.5, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+                    .to(box.querySelector(".mobile"), { y: 0, duration: 1.5, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+                    .to(box.querySelector(".description"), { x: 0, duration: 1.5, ease: "back.out(1.1)", opacity: 1 }, "-=1");
+            }
+        })
+        // ------
     }, []);
 
     return (
@@ -203,18 +227,18 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 </div>
 
                 {/* desktop */}
-                <ul className="hidden lg:block text-darkColor500 dark:text-white">
+                <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
                     {dataProjects.map((res: PorjectsData, index: number) => {
                         // console.log('dataporject', res);
                         return (
-                            <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48">
+                            <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
                                 <div className="w-full h-full col-start-1 col-span-3 relative">
-                                    <MediaComponentDekstop name={res.name} url={res.desktopView} />
-                                    <MediaComponentTablet name={res.name} url={res.tabletView} />
-                                    <MediaComponentMobile name={res.name} url={res.mobileView} />
+                                    <MediaComponentDekstop name={res.name} url={res.desktopView} desktop={"desktop"} tablet={"null"} mobile={"null"} />
+                                    <MediaComponentTablet name={res.name} url={res.tabletView} desktop={"null"} tablet={"tablet"} mobile={"null"} />
+                                    <MediaComponentMobile name={res.name} url={res.mobileView} desktop={"null"} tablet={"null"} mobile={"mobile"} />
                                 </div>
 
-                                <div className="col-span-2 col-start-4 mt-10">
+                                <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10">
                                     <p className="uppercase font-extrabold text-xl mb-3">{res.name}</p>
                                     <p className="font-bold text-lg text-darkColor200 mb-3">{res.description}</p>
                                     <ul>
@@ -234,7 +258,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 </ul>
                 {/* ------ */}
                 {/* mobile */}
-                <div className="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                <div className="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 overflow-hidden p-m-s">
                     <div className="flow-root">
                         <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
                             {dataProjects.map((res: PorjectsData, index: number) => {
