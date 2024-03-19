@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "@/app/css/main.css";
 import Navigation from "./components/navigation/page";
 import "flowbite";
+import Footer from "./components/footer/page";
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           <div className="max-w-screen-2xl mx-auto !overflow-x-hidden">
               <Navigation />
               {children}
+              <Footer />
           </div>
           <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
         </body>

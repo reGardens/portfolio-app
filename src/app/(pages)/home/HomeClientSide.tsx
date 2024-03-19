@@ -5,6 +5,7 @@ import Title from "@/app/components/title/page";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,7 +57,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 toggleActions: "play none none reverse",
             }
         });
-        about.to(".about div", { y: 0, opacity: 1, ease: "back.out(1.1)", duration: 1.1 });
+        about.to(".about div", { y: 0, opacity: 1, ease: "back.out(1.1)", duration: 2 });
         // ------
 
         // skills
@@ -87,7 +88,6 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             start: "top center",
                             end: "bottom center",
                             toggleActions: "play none none reverse",
-                            markers: true,
                         }
                     });
                     project.to(box.querySelector(".desktop"), { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 })
@@ -158,7 +158,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
             </article>
 
             <section className='px-4 lg:px-24 py-24 overflow-hidden about'>
-                <div className="relative shadow-2xl rounded-xl overflow-hidden opacity-0 translate-y-full">
+                <div className="relative shadow-2xl rounded-xl overflow-hidden opacity-0 translate-y-20">
                     <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                         <Image src="/static/images/bg-about-white.jpeg" alt="" layout="fill" objectFit="cover"></Image>
                     </div>
@@ -236,12 +236,11 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 </div>
             </section>
 
-            <section className="px-4 lg:px-24 lg:py-24">
+            <section className="px-4 lg:px-24 py-24">
                 <div className="mb-10 lg:mb-20">
                     <Title title={'Latest Projects'} darkText={'null'} />
                 </div>
 
-                {/* desktop */}
                 {window.innerWidth > 1024 ? (
                     // desktop view
                     <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
@@ -275,7 +274,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     </ul>
                 ) : (
                     // mobile view
-                    <div className="block lg:hidden w-full max-w-md bg-white rounded-lg sm:p-8 dark:bg-gray-800 overflow-hidden p-m-s mb-[50rem]">
+                    <div className="block lg:hidden w-full max-w-md bg-white rounded-lg sm:p-8 dark:bg-darkColor500 overflow-hidden p-m-s mb-10">
                         <div className="flow-root">
                             <ul role="list" className="relative projects">
                                 {dataProjects.map((res: PorjectsData, index: number) => {
@@ -285,22 +284,19 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                                 <Image src={res.desktopView} alt={res.name} fill style={{ objectFit: 'cover', opacity: '0.2' }} />
                                             </div>
 
-                                            <div href="#" className="flex items-center relative cards opacity-0 -translate-y-10">
-                                                <div className="flex-shrink-0 ml-[20px]">
-                                                    {/* if using Image by next tricky adjust */}
+                                            <div className="flex items-center relative cards opacity-0 -translate-y-10">
+                                                <div className="flex-shrink-0 ml-[15px]">
+                                                    {/* if using Image by next tricky to adjust */}
                                                     <img className="w-10 h-10 rounded-full object-cover bg-white" src={res.logo} alt="Neil image" />
                                                 </div>
-                                                <div className="flex-1 min-w-0 ms-4">
-                                                    <p className="text-sm font-medium text-darkColor500 truncate">
+                                                <div className="flex-1 min-w-0 ms-4 mr-[10px]">
+                                                    <p className="text-xs font-light text-darkColor500 dark:text-white truncate">
                                                         {res.name}
                                                     </p>
-                                                    <p className="text-sm text-darkColor200 truncate">
+                                                    <p className="text-sm text-darkColor200 dark:text-slate-200 truncate">
                                                         {res.description}
                                                     </p>
                                                 </div>
-                                                {/* <div className="inline-flex items-center text-base font-semibold text-darkColor500 -translate-x-1 opacity-75">
-                                                    <Image src="/static/icons/next.png" alt="icon-next" width={25} height={25} />
-                                                </div> */}
                                             </div>
                                         </li>
                                     )
@@ -309,6 +305,10 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         </div>
                     </div>
                 )}
+
+                <div className="flex justify-center">
+                    <Link href={{ pathname: '/' }} className="py-2 px-8 text-xs lg:text-base bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors rounded-lg text-white dark:text-darkColor500">Show More</Link>
+                </div>
             </section>
         </>
     )
