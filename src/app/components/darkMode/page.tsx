@@ -2,11 +2,6 @@
 
 import { useEffect } from "react";
 
-interface DarkModeProps {
-    themeToggleDarkIcon: null,
-    themeToggleLightIcon: null
-}
-
 export default function DarkMode() {
     useEffect(() => {
         const themeToggleDarkIcon: HTMLElement | null = document.getElementById('theme-toggle-dark-icon');
