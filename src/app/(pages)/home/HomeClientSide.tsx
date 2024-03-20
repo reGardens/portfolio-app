@@ -1,8 +1,8 @@
 "use client"
 
-import MediaComponentDekstop from "@/app/components/(projects)/mediaComponentDesktop/page";
-import MediaComponentTablet from "@/app/components/(projects)/mediaComponentMobile/page";
-import MediaComponentMobile from "@/app/components/(projects)/mediaComponentTablet/page";
+// import MediaComponentDekstop from "@/app/components/(projects)/mediaComponentDesktop/page";
+// import MediaComponentTablet from "@/app/components/(projects)/mediaComponentMobile/page";
+// import MediaComponentMobile from "@/app/components/(projects)/mediaComponentTablet/page";
 import Title from "@/app/components/title/page";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -252,11 +252,21 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                 <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
                                     <div className="w-full h-full col-start-1 col-span-3 relative">
                                         {/* <MediaComponentDekstop name={res.name} url={res.desktopView} desktop={"desktop"} /> */}
-                                        <MediaComponentTablet name={res.name} url={res.tabletView} tablet={"tablet"} />
+                                        {/* <MediaComponentTablet name={res.name} url={res.tabletView} tablet={"tablet"} /> */}
                                         {/* <MediaComponentMobile name={res.name} url={res.mobileView} mobile={"mobile"} /> */}
                                         {/* <MediaComponent url={res.desktopView}  variant="desktop" isVideo={true} />
                                         <MediaComponent url={res.tabletView}  variant="tablet" isVideo={true} />
                                         <MediaComponent url={res.mobileView}  variant="mobile" isVideo={true} /> */}
+                                        <div className={`w-full h-[35rem] relative rounded-xl overflow-hidden desktop opacity-0 -translate-y-10`}>
+                                            <Image
+                                                src={res.desktopView}
+                                                alt={res.name}
+                                                fill
+                                                style={{
+                                                    objectFit: 'contain',
+                                                }}
+                                            />
+                                        </div>
                                     </div>
 
                                     <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10">
