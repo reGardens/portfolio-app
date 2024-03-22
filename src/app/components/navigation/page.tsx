@@ -1,7 +1,7 @@
 'use client'
+import DarkMode from "@/pages";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
-import DarkMode from "../darkMode/page";
 
 export default function Navigation() {
     const [aside, setAside] = useState<boolean>(false);
