@@ -1,5 +1,5 @@
 'use client'
-import DarkMode from "@/pages";
+import DarkMode from "@/app/components/toggledarkMode/pages";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 
