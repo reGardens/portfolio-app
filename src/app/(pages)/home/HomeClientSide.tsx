@@ -1,8 +1,8 @@
 "use client"
 
-// import MediaComponentDekstop from "@/app/components/(projects)/mediaComponentDesktop/page";
-// import MediaComponentTablet from "@/app/components/(projects)/mediaComponentMobile/page";
-// import MediaComponentMobile from "@/app/components/(projects)/mediaComponentTablet/page";
+import MediaComponentDesktop from "@/app/components/(projects)/mediaComponentDesktop/page";
+import MediaComponentTablet from "@/app/components/(projects)/mediaComponentMobile/page";
+import MediaComponentMobile from "@/app/components/(projects)/mediaComponentTablet/page";
 import Title from "@/app/components/title/page";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -247,26 +247,13 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     // desktop view
                     <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
                         {dataProjects.map((res: PorjectsData, index: number) => {
-                            console.log('dataporject', res);
+                            // console.log(typeof(res.desktopView));
                             return (
                                 <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
                                     <div className="w-full h-full col-start-1 col-span-3 relative">
-                                        {/* <MediaComponentDekstop name={res.name} url={res.desktopView} desktop={"desktop"} /> */}
-                                        {/* <MediaComponentTablet name={res.name} url={res.tabletView} tablet={"tablet"} /> */}
-                                        {/* <MediaComponentMobile name={res.name} url={res.mobileView} mobile={"mobile"} /> */}
-                                        {/* <MediaComponent url={res.desktopView}  variant="desktop" isVideo={true} />
-                                        <MediaComponent url={res.tabletView}  variant="tablet" isVideo={true} />
-                                        <MediaComponent url={res.mobileView}  variant="mobile" isVideo={true} /> */}
-                                        <div className={`w-full h-[35rem] relative rounded-xl overflow-hidden desktop opacity-0 -translate-y-10`}>
-                                            <Image
-                                                src={res.desktopView}
-                                                alt={res.name}
-                                                fill
-                                                style={{
-                                                    objectFit: 'contain',
-                                                }}
-                                            />
-                                        </div>
+                                        <MediaComponentDesktop url={res.desktopView} name={res.name} desktop={"desktop"} />
+                                        <MediaComponentTablet name={res.name} url={res.tabletView} tablet={"tablet"} />
+                                        <MediaComponentMobile name={res.name} url={res.mobileView} mobile={"mobile"} />
                                     </div>
 
                                     <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10">
@@ -274,7 +261,6 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                         <p className="font-bold text-lg text-darkColor200 mb-3">{res.description}</p>
                                         <ul>
                                             {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
-                                                // console.log('hashtag', ress);
                                                 return (
                                                     <li key={ress.name} className="inline-block rounded-full bg-traditionalColor500 mr-0.5">
                                                         <p className="py-2 px-8 leading-none text-white font-bold text-xs">{ress.name}</p>
@@ -300,9 +286,9 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                             </div>
 
                                             <div className="flex items-center relative cards opacity-0 -translate-y-10">
-                                                <div className="flex-shrink-0 ml-[15px]">
-                                                    {/* if using Image by next tricky to adjust */}
-                                                    <img className="w-10 h-10 rounded-full object-cover bg-white" src={res.logo} alt="Neil image" />
+                                                <div className="flex-shrink-0 ml-[15px] rounded-full overflow-hidden">
+                                                    {/* <img className="w-10 h-10 rounded-full object-cover bg-white" src={res.logo} alt="Neil image" /> */}
+                                                    <Image width={40} height={40} style={{objectFit: "cover", background: "white"}} src={res.logo} alt="Neil image" />
                                                 </div>
                                                 <div className="flex-1 min-w-0 ms-4 mr-[10px]">
                                                     <p className="text-xs font-light text-darkColor500 dark:text-white truncate">

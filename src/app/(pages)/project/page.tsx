@@ -1,6 +1,6 @@
 "use client"
 
-import GetProducts from "@/pages";
+// import GetProducts from "@/pages";
 // import { useEffect, useState } from "react";
 
 export default function Project() {
