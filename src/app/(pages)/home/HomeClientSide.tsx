@@ -78,7 +78,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
         // ------
 
         // projects
-        if (window.innerWidth > 1024) {
+        if (typeof window !== "undefined" && window.innerWidth > 1024) {
             // desktop view
             dataProjects.forEach((res: PorjectsData, index: number) => {
                 // console.log('box);
@@ -243,7 +243,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     <Title title={'Latest Projects'} darkText={'null'} />
                 </div>
 
-                {window.innerWidth > 1024 ? (
+                {typeof window !== "undefined" && window.innerWidth > 1024 ? (
                     // desktop view
                     <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
                         {dataProjects.map((res: PorjectsData, index: number) => {
