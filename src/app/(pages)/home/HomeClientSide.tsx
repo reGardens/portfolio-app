@@ -288,7 +288,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                             <div className="flex items-center relative cards opacity-0 -translate-y-10">
                                                 <div className="flex-shrink-0 ml-[15px] rounded-full overflow-hidden">
                                                     {/* <img className="w-10 h-10 rounded-full object-cover bg-white" src={res.logo} alt="Neil image" /> */}
-                                                    <Image width={40} height={40} style={{objectFit: "cover", background: "white"}} src={res.logo} alt="Neil image" />
+                                                    <Image width={40} height={40} style={{ objectFit: "cover", background: "white" }} src={res.logo} alt="Neil image" />
                                                 </div>
                                                 <div className="flex-1 min-w-0 ms-4 mr-[10px]">
                                                     <p className="text-xs font-light text-darkColor500 dark:text-white truncate">
