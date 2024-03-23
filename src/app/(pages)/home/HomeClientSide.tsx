@@ -45,9 +45,9 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
     useEffect(() => {
         // header
         let title = gsap.timeline();
-        title.to(".text3", { x: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 })
-            .to(".text2", { x: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1")
-            .to(".text1", { x: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1");
+        title.to(".text3", { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
+            .to(".text2", { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+            .to(".text1", { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1");
         // ------
 
         // about
@@ -59,7 +59,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 toggleActions: "play none none reverse",
             }
         });
-        about.to(".about div", { y: 0, opacity: 1, ease: "back.out(1.1)", duration: 2 });
+        about.to(".about div", { y: 0, opacity: 1, ease: "back.out(1.1)", duration: 1.8 });
         // ------
 
         // skills
@@ -71,10 +71,10 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 toggleActions: "play none none reverse",
             }
         });
-        skills.to(".frontend", { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 })
-            .to(".backend", { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1")
-            .to(".other", { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1")
-            .to(".detail", { x: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1");
+        skills.to(".frontend", { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
+            .to(".backend", { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+            .to(".other", { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+            .to(".detail", { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1");
         // ------
 
         // projects
@@ -92,10 +92,10 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             toggleActions: "play none none reverse",
                         }
                     });
-                    project.to(box.querySelector(".desktop"), { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 })
-                        .to(box.querySelector(".tablet"), { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1")
-                        .to(box.querySelector(".mobile"), { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1")
-                        .to(box.querySelector(".description"), { x: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 }, "-=1");
+                    project.to(box.querySelector(".desktop"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
+                        .to(box.querySelector(".tablet"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+                        .to(box.querySelector(".mobile"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+                        .to(box.querySelector(".description"), { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1");
                 }
             })
         } else {
@@ -122,15 +122,15 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
             <article className='grid items-center h-full lg:h-[40rem] mt-20 lg:mt-0 relative px-4 lg:px-24 pt-4 lg:pt-24'>
                 <div className="grid lg:grid-cols-2 items-center">
                     <div className='grid gap-4 order-2 lg:order-1 h-full'>
-                        <p className='text-4xl font-bold dark:text-white hidden lg:block text1 -translate-x-full opacity-0'>Hi, I&apos;m Reza Bagus Pratama</p>
-                        <p className='text-2xl font-bold dark:text-white block lg:hidden text1 -translate-x-full opacity-0'>Hi, <br /> I&apos;m Reza Bagus Pratama</p>
+                        <p className='text-4xl font-bold dark:text-white hidden lg:block text1 -translate-x-10 opacity-0'>Hi, I&apos;m Reza Bagus Pratama</p>
+                        <p className='text-2xl font-bold dark:text-white block lg:hidden text1 -translate-x-10 opacity-0'>Hi, <br /> I&apos;m Reza Bagus Pratama</p>
 
-                        <div className="mb-2 text2 -translate-x-full opacity-0">
+                        <div className="mb-2 text2 -translate-x-10 opacity-0">
                             <p className='text-4xl lg:text-6xl font-extrabold mb-0 lg:mb-4 dark:text-white'>Front-End Web Developer</p>
                             <p className="dark:text-white text-sm opacity-70">As a web developer, I am also a competitive programmer and tech enthusiast.</p>
                         </div>
 
-                        <div className="grid lg:flex gap-3 font-bold items-center text3 -translate-x-full opacity-0">
+                        <div className="grid lg:flex gap-3 font-bold items-center text3 -translate-x-10 opacity-0">
                             <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=rezzabagus.rb@gmail.com" target="_blank"
                                 className="bg-darkColor500 dark:bg-white hover:bg-darkColor700 dark:hover:bg-slate-200 transition-colors w-full h-fit py-1 px-3 rounded-md text-left shadow-lg" >
                                 <h3 className="opacity text-white dark:text-darkColor500">
@@ -160,7 +160,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
             </article>
 
             <section className='px-4 lg:px-24 py-24 overflow-hidden about'>
-                <div className="relative shadow-2xl rounded-xl overflow-hidden opacity-0 translate-y-20">
+                <div className="relative shadow-2xl rounded-xl overflow-hidden opacity-0 translate-y-10">
                     <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                         <Image src="/static/images/bg-about-white.jpeg" alt="" layout="fill" objectFit="cover"></Image>
                     </div>
