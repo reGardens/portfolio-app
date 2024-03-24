@@ -14,7 +14,7 @@ export default function Navigation() {
         setAside(true)
         gsap.to(".aside", {
             y: 30 + '%',
-            opacity: 1,
+            // opacity: 1,
             duration: 1,
             ease: "back.out(1.1)"
         });
@@ -23,7 +23,7 @@ export default function Navigation() {
         setAside(false)
         gsap.to(".aside", {
             y: 100 + '%',
-            opacity: 0,
+            // opacity: 0,
             duration: 1,
             ease: "back.in(1.1)"
         });
@@ -67,10 +67,16 @@ export default function Navigation() {
                 // Periksa posisi Y setelah drag selesai
                 if (this.y > window.innerHeight / 3) {
                     // Jika posisi Y melebihi setengah tinggi layar, tutup elemen
-                    gsap.to(this.target, 0.3, { y: window.innerHeight, ease: "back.in(1.1)", opacity: 0 });
+                    gsap.to(this.target, 0.7, {
+                        y: window.innerHeight,
+                        ease: "back.in(1.1)",
+                        // opacity: 0
+                    });
                 } else {
                     // Jika tidak, kembalikan elemen ke posisi awal
-                    gsap.to(this.target, 0.3, { y: 0 });
+                    gsap.to(this.target, 0.7, {
+                        y: 0
+                    });
                 }
             }
         });
@@ -111,10 +117,10 @@ export default function Navigation() {
             </nav>
 
             {/* aside */}
-            <aside id="drag" className="bg-traditionalColor500 aside translate-y-full rounded-2xl opacity-0 w-full h-full fixed top-0 left-0 bg-blac z-[99] px-10 py-20">
+            <aside id="drag" className="bg-traditionalColor500 aside translate-y-full rounded-2xl w-full h-full fixed top-0 left-0 bg-blac z-[99] px-10 py-20">
                 <ul className="flex flex-col justify-start items-center h-full">
                     <div className="flex justify-center absolute top-3 left-0 w-full">
-                        <button id="asideClose" onClick={handleAsideClose} type="button" className="text-sm bg-white dark:bg-darkColor500 text-gray-500 dark:text-gray-400 z-[999] border-b-[6px] border-darkColor500 w-44 rounded-full">
+                        <button id="asideClose" onClick={handleAsideClose} type="button" className="text-sm bg-white dark:bg-darkColor500 text-gray-500 dark:text-gray-400 z-[999] border-b-[6px] border-white dark:border-darkColor500 w-44 rounded-full">
                             <span className="sr-only">Open main menu</span>
                         </button>
                     </div>
