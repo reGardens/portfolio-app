@@ -168,7 +168,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center p-4 lg:p-24">
                         <Title title={'About me'} darkText={'dark:!text-darkColor500'} />
 
-                        <div className="col-span-2">
+                        <div className="col-span-2 text-justify lg:text-left mt-2 lg:mt-0">
                             <p className="indent-9">
                                 My name is Reza Bagus Pratama. I&apos;m 26 years old and I come from Indonesia, specifically Central Java. I work as a frontend web developer in the IT industry. I have been doing freelance and remote jobs for the past 2 years, as well as working on-site (WFO) projects. <br /><br />
                             </p>
@@ -190,7 +190,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
                     <div className="col-span-2 grid grid-cols-1 lg:grid-cols-3 relative justify-center items-center gap-0.5 w-full">
-                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0">
+                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0 rounded-t-xl">
                             {dataIconFront.data.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
@@ -214,7 +214,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
 
                         <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] backend translate-y-10 opacity-0 hidden lg:block">BackEnd Website</p>
 
-                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 other translate-y-10 opacity-0">
+                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 other translate-y-10 opacity-0 rounded-b-xl">
                             {dataIconOther.data.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
@@ -228,13 +228,6 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     </div>
 
                     <p className="col-span-1 mx-5 text-darkColor500 dark:text-white text-center font-bold text-2xl detail translate-y-10 opacity-0">&quot;I also have a little understanding of the backend, in addition to the frontend.&quot;</p>
-                </div>
-
-                <div className="grid grid-cols-4 relative justify-center items-center my-0.5">
-
-                </div>
-
-                <div className="grid grid-cols-4 relative justify-center items-center">
                 </div>
             </section>
 
