@@ -65,7 +65,7 @@ export default function Navigation() {
             inertia: true,
             onDragEnd: function () {
                 // Periksa posisi Y setelah drag selesai
-                if (this.y > window.innerHeight / 2) {
+                if (this.y > window.innerHeight / 3) {
                     // Jika posisi Y melebihi setengah tinggi layar, tutup elemen
                     gsap.to(this.target, 0.3, { y: window.innerHeight, ease: "back.in(1.1)", opacity: 0 });
                 } else {
