@@ -74,7 +74,7 @@ export default function Navigation() {
                     });
                 } else {
                     // Jika tidak, kembalikan elemen ke posisi awal
-                    gsap.to(this.target, 0.7, {
+                    gsap.to(this.target, 0.3, {
                         y: 0
                     });
                 }
