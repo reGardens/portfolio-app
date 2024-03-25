@@ -141,7 +141,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                 </h3>
                             </a>
 
-                            <a href="https://drive.google.com/uc?export=download&id=1b6aiPsC2rgC1b9dSGY4WhGiZDzmlxlIK" target="_blank"
+                            <a href="/static/ResumeCV.pdf" target="_blank"
                                 className="bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors text-white uppercase py-2 px-3 w-full rounded-md animate-bounce text-center shadow-lg">
                                 Resume
                             </a>
@@ -189,8 +189,12 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
-                    <div className="col-span-2 grid grid-cols-1 lg:grid-cols-3 relative justify-center items-center gap-0.5 w-full">
-                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0 rounded-t-xl">
+                    <div className="col-span-2 grid grid-cols-1 lg:grid-cols-3 relative justify-center items-center py-0 lg:py-9 gap-0.5 w-full shadow-2xl rounded-xl overflow-hidden">
+                        <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
+                            <Image src="/static/images/bg-about-black.jpeg" alt="" layout="fill" objectFit="cover"></Image>
+                        </div>
+                        
+                        <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0 rounded-t-xl">
                             {dataIconFront.data.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
@@ -200,9 +204,9 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             })}
                         </ul>
 
-                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] frontend translate-y-10 opacity-0 hidden lg:block">FrontEnd Website</p>
+                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-white ml-[35px] frontend translate-y-10 opacity-0 hidden lg:block">FrontEnd Website</p>
 
-                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 backend translate-y-10 opacity-0">
+                        <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 backend translate-y-10 opacity-0">
                             {dataIconBack.data.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
@@ -212,9 +216,9 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             })}
                         </ul>
 
-                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] backend translate-y-10 opacity-0 hidden lg:block">BackEnd Website</p>
+                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-white ml-[35px] backend translate-y-10 opacity-0 hidden lg:block">BackEnd Website</p>
 
-                        <ul className="bg-darkColor500 dark:bg-white col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 other translate-y-10 opacity-0 rounded-b-xl">
+                        <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 other translate-y-10 opacity-0 rounded-b-xl">
                             {dataIconOther.data.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
@@ -224,7 +228,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             })}
                         </ul>
 
-                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-darkColor500 dark:text-white ml-[35px] other translate-y-10 opacity-0 hidden lg:block">Other</p>
+                        <p id="vertical-front" className="font-bold uppercase col-span-1 text-white ml-[35px] other translate-y-10 opacity-0 hidden lg:block">Other</p>
                     </div>
 
                     <p className="col-span-1 mx-5 text-darkColor500 dark:text-white text-center font-bold text-2xl detail translate-y-10 opacity-0">&quot;I also have a little understanding of the backend, in addition to the frontend.&quot;</p>
