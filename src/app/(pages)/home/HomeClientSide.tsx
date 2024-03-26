@@ -110,8 +110,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
             });
             dataProjects.forEach((res: PorjectsData, index: number) => {
                 // console.log(res);
-                project.to('.wrapperCard', { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 })
-                    .to('.cards', { y: 0, duration: 2, ease: "back.out(1.1)", opacity: 1 })
+                project.to('.cards', { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
             })
         }
         // ------
@@ -134,8 +133,8 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=rezzabagus.rb@gmail.com" target="_blank"
                                 className="bg-darkColor500 dark:bg-white hover:bg-darkColor700 dark:hover:bg-slate-200 transition-colors w-full h-fit py-1 px-3 rounded-md text-left shadow-lg" >
                                 <h3 className="opacity text-white dark:text-darkColor500">
-                                    <strong className="tracking-[4px] opacity-85 text-[10px]">
-                                        CLICK TO SEND EMAIL
+                                    <strong className="tracking-[4px] opacity-85 text-[10px] uppercase">
+                                        Say what you wanna know &#x1F60A;
                                     </strong>{" "}
                                     <br /> rezzabagus.rb@gmail.com
                                 </h3>
@@ -193,7 +192,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                             <Image src="/static/images/bg-about-black.jpeg" alt="" layout="fill" objectFit="cover"></Image>
                         </div>
-                        
+
                         <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0 rounded-t-xl">
                             {dataIconFront.data.map((res: IconData, index: number) => {
                                 return (
@@ -278,20 +277,16 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                 {dataProjects.map((res: PorjectsData, index: number) => {
                                     return (
                                         <li key={index} className="py-3 sm:py-4 relative">
-                                            <div className="absolute top-0 left-0 w-full h-full wrapperCard opacity-0 -translate-y-10 shadow">
-                                                <Image src={res.desktopView} alt={res.name} fill style={{ objectFit: 'cover', opacity: '0.2' }} />
-                                            </div>
-
                                             <div className="flex items-center relative cards opacity-0 -translate-y-10">
-                                                <div className="flex-shrink-0 ml-[15px] rounded-full overflow-hidden">
+                                                <div className="flex-shrink-0 rounded-full !overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
                                                     {/* <img className="w-10 h-10 rounded-full object-cover bg-white" src={res.logo} alt="Neil image" /> */}
-                                                    <Image width={40} height={40} style={{ objectFit: "cover", background: "white" }} src={res.logo} alt="Neil image" />
+                                                    <Image width={56} height={55} style={{ objectFit: "cover", alignSelf: "center" }} src={res.logo} alt="Neil image" />
                                                 </div>
                                                 <div className="flex-1 min-w-0 ms-4 mr-[10px]">
-                                                    <p className="text-xs font-light text-darkColor500 dark:text-white truncate">
+                                                    <p className="text-xs text-darkColor500 dark:text-white truncate font-semibold opacity-40">
                                                         {res.name}
                                                     </p>
-                                                    <p className="text-sm text-darkColor200 dark:text-slate-200 truncate">
+                                                    <p className="text-sm text-darkColor200 dark:text-slate-200 truncate font-semibold">
                                                         {res.description}
                                                     </p>
                                                 </div>
