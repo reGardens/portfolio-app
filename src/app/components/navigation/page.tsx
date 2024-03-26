@@ -13,19 +13,19 @@ export default function Navigation() {
     const handleAside = () => {
         setAside(true)
         gsap.to(".aside", {
-            y: 30 + '%',
+            y: 50 + '%',
             duration: 1,
             ease: "back.out(1.1)"
         });
     }
-    const handleAsideClose = () => {
-        setAside(false)
-        gsap.to(".aside", {
-            y: 100 + '%',
-            duration: 1,
-            ease: "back.in(1.1)"
-        });
-    }
+    // const handleAsideClose = () => {
+    //     setAside(false)
+    //     gsap.to(".aside", {
+    //         y: 100 + '%',
+    //         duration: 1,
+    //         ease: "back.in(1.1)"
+    //     });
+    // }
 
     useEffect(() => {
         const asideEl = document.getElementById('aside');
@@ -38,6 +38,7 @@ export default function Navigation() {
             }
         }
 
+        // sticky navbar
         window.addEventListener('scroll', () => {
             const stickyNav = document.getElementById('nav');
             if (window.scrollY > 0) {
@@ -56,24 +57,34 @@ export default function Navigation() {
             }
         })
 
-        // dragable
+        // dragable aside
         Draggable.create("#drag", {
             type: "y",
-            bounds: document.getElementById("body"),
+            bounds: document.body,
             inertia: true,
+            edgeResistance: 1,
             onDragEnd: function () {
-                // Periksa posisi Y setelah drag selesai
-                if (this.y > window.innerHeight / 3) {
-                    // Jika posisi Y melebihi setengah tinggi layar, tutup elemen
+                // Periksa posisi Y setelah drag 1/4 dari layar, tutup setengah
+                if (this.y > window.innerHeight / 4) {
+                    // Jika posisi Y melebihi 1/4 tinggi layar, tutup elemen setengah
                     gsap.to(this.target, 0.7, {
-                        y: window.innerHeight,
+                        y: window.innerHeight / 2,
                         ease: "back.in(1.1)",
-                        // opacity: 0
                     });
+
                 } else {
                     // Jika tidak, kembalikan elemen ke posisi awal
                     gsap.to(this.target, 0.3, {
                         y: 0
+                    });
+                }
+
+                // Periksa posisi Y setelah drag setengah dari layar, tutup full
+                if (this.y > window.innerHeight / 2) {
+                    // Jika element sudah setengah dari innerHeight, tutup semua
+                    gsap.to(this.target, 0.7, {
+                        y: window.innerHeight,
+                        ease: "back.in(1.1)",
                     });
                 }
             }
@@ -120,7 +131,7 @@ export default function Navigation() {
             <aside id="drag" className="bg-traditionalColor500 aside translate-y-full rounded-2xl w-full h-full fixed top-0 left-0 bg-blac z-[99] px-10 py-20">
                 <ul className="flex flex-col justify-start items-center h-full">
                     <div className="flex justify-center absolute top-3 left-0 w-full">
-                        <button id="asideClose" onClick={handleAsideClose} type="button" className="text-sm bg-white dark:bg-darkColor500 text-gray-500 dark:text-gray-400 z-[999] border-b-[6px] border-white dark:border-darkColor500 w-44 rounded-full">
+                        <button type="button" className="text-sm bg-white dark:bg-darkColor500 text-gray-500 dark:text-gray-400 z-[999] border-b-[6px] border-white dark:border-darkColor500 w-44 rounded-full">
                             <span className="sr-only">Open main menu</span>
                         </button>
                     </div>
