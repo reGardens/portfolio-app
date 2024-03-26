@@ -1,8 +1,8 @@
 "use client"
 
 import MediaComponentDesktop from "@/app/components/(projects)/mediaComponentDesktop/page";
-import MediaComponentTablet from "@/app/components/(projects)/mediaComponentMobile/page";
-import MediaComponentMobile from "@/app/components/(projects)/mediaComponentTablet/page";
+import MediaComponentTablet from "@/app/components/(projects)/mediaComponentTablet/page";
+import MediaComponentMobile from "@/app/components/(projects)/mediaComponentMobile/page";
 import Title from "@/app/components/title/page";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -252,18 +252,18 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                         <MediaComponentMobile name={res.name} url={res.mobileView} mobile={"mobile"} />
                                     </div>
 
-                                    <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10">
-                                        <p className="uppercase font-extrabold text-xl mb-3">{res.name}</p>
-                                        <p className="font-bold text-lg text-darkColor200 mb-3">{res.description}</p>
-                                        <ul>
+                                    <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10 -z-10">
+                                        <p className="uppercase font-extrabold text-xl tracking-wider">{res.name}</p>
+                                        <ul className="mb-3">
                                             {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
                                                 return (
-                                                    <li key={ress.name} className="inline-block rounded-full bg-traditionalColor500 mr-0.5">
-                                                        <p className="py-2 px-8 leading-none text-white font-bold text-xs">{ress.name}</p>
+                                                    <li key={ress.name} className="inline-block mr-1.5 italic">
+                                                        <p className="leading-none text-darkColor500 text-xs font-extrabold opacity-50 tracking-wider">{ress.name}</p>
                                                     </li>
                                                 )
                                             })}
                                         </ul>
+                                        <p className="font-bold text-lg text-darkColor200 tracking-wider">{res.description}</p>
                                     </div>
                                 </li>
                             )

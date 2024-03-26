@@ -20,7 +20,7 @@ export default async function Home() {
 
     const projects = await fs.readFile(process.cwd() + '/public/static/dataProjects.json', 'utf8');
     const dataProjects = await JSON.parse(projects);
-    const latestProject = dataProjects.slice(-3);
+    // const latestProject = dataProjects.slice(-3);
 
     return (
         <>
@@ -31,7 +31,7 @@ export default async function Home() {
                     dataIconFront={dataFrontEnd}
                     dataIconBack={dataBackEnd}
                     dataIconOther={dataOtherSkills}
-                    dataProjects={latestProject}
+                    dataProjects={dataProjects}
                     />
                 }
             </main>
