@@ -83,7 +83,7 @@ export default function Navigation() {
                 if (this.y > window.innerHeight / 2) {
                     // Jika element sudah setengah dari innerHeight, tutup semua
                     gsap.to(this.target, 0.7, {
-                        y: window.innerHeight,
+                        y: window.innerHeight + (window.innerHeight * 0.2),
                         ease: "back.in(1.1)",
                     });
                 }
@@ -128,7 +128,7 @@ export default function Navigation() {
             </nav>
 
             {/* aside */}
-            <aside id="drag" className="bg-traditionalColor500 aside translate-y-full rounded-2xl w-full h-full fixed top-0 left-0 bg-blac z-[99] px-10 py-20">
+            <aside id="drag" className="bg-traditionalColor500 aside translate-y-[150vh] rounded-2xl w-full h-full fixed top-0 left-0 z-[99] px-10 py-20">
                 <ul className="flex flex-col justify-start items-center h-full">
                     <div className="flex justify-center absolute top-3 left-0 w-full">
                         <button type="button" className="text-sm bg-white dark:bg-darkColor500 text-gray-500 dark:text-gray-400 z-[999] border-b-[6px] border-white dark:border-darkColor500 w-44 rounded-full">
