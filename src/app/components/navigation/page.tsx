@@ -14,7 +14,6 @@ export default function Navigation() {
         setAside(true)
         gsap.to(".aside", {
             y: 30 + '%',
-            // opacity: 1,
             duration: 1,
             ease: "back.out(1.1)"
         });
@@ -23,7 +22,6 @@ export default function Navigation() {
         setAside(false)
         gsap.to(".aside", {
             y: 100 + '%',
-            // opacity: 0,
             duration: 1,
             ease: "back.in(1.1)"
         });
@@ -87,7 +85,6 @@ export default function Navigation() {
             <nav id="nav" className={`fixed w-full z-20 top-0 start-0 transition-colors bg-transparent`}>
                 <div className="flex flex-wrap items-center justify-between mx-auto px-4 lg:px-24 py-4">
                     <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" /> */}
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-traditionalColor500">Portfolio</span>
                     </a>
                     <div className="flex md:order-2 space-x-1 md:space-x-3 rtl:space-x-reverse">
@@ -103,14 +100,17 @@ export default function Navigation() {
                     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                             <li>
-                                <a href="#" className="block py-2 px-3 rounded  text-traditionalColor500 md:p-0 dark:text-traditionalColor500" aria-current="page">Home</a>
-                            </li>
-                            {/* <li>
-                                <a href="#" className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                                <Link href="/#header" scroll className="block py-2 px-3 rounded  text-traditionalColor500 md:p-0 dark:text-traditionalColor500" aria-current="page">Home</Link>
                             </li>
                             <li>
-                                <a href="#" className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                            </li> */}
+                                <Link href="/#about" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</Link>
+                            </li>
+                            <li>
+                                <Link href="/#skill" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skill</Link>
+                            </li>
+                            <li>
+                                <Link href="/#project" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Project</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -126,14 +126,17 @@ export default function Navigation() {
                     </div>
 
                     <li>
-                        <a href="#" className="block py-2 px-3 text-3xl font-bold rounded text-white dark:text-darkColor500 md:p-0 text-center" aria-current="page">Home</a>
-                    </li>
-                    {/* <li>
-                        <a href="#" className="block py-2 px-3 text-3xl font-bold rounded text-white dark:text-textDark hover:bg-gray-100 md:hover:bg-transparent md:hover:text-traditionalColor500 md:p-0 text-center">About</a>
+                        <Link href="/#header" scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all" aria-current="page">Home</Link>
                     </li>
                     <li>
-                        <a href="#" className="block py-2 px-3 text-3xl font-bold rounded text-white dark:text-textDark hover:bg-gray-100 md:hover:bg-transparent md:hover:text-traditionalColor500 md:p-0 text-center">Services</a>
-                    </li> */}
+                        <Link href="/#about" scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all">About</Link>
+                    </li>
+                    <li>
+                        <Link href="/#skill" scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all">Skill</Link>
+                    </li>
+                    <li>
+                        <Link href="/#project" scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all">Project</Link>
+                    </li>
                 </ul>
             </aside>
         </>

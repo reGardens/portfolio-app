@@ -118,7 +118,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
 
     return (
         <>
-            <article className='grid items-center h-full lg:h-[40rem] mt-20 lg:mt-0 relative px-4 lg:px-24 pt-4 lg:pt-24'>
+            <article id="header" className='grid items-center h-full lg:h-[40rem] mt-20 lg:mt-0 relative px-4 lg:px-24 pt-4 lg:pt-24'>
                 <div className="grid lg:grid-cols-2 items-center">
                     <div className='grid gap-4 order-2 lg:order-1 h-full'>
                         <p className='text-4xl font-bold dark:text-white hidden lg:block text1 -translate-x-10 opacity-0'>Hi, I&apos;m Reza Bagus Pratama</p>
@@ -158,7 +158,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 </div>
             </article>
 
-            <section className='px-4 lg:px-24 py-24 overflow-hidden about'>
+            <section id="about" className='px-4 lg:px-24 pt-32 pb-10 lg:py-32 overflow-hidden about'>
                 <div className="relative shadow-2xl rounded-xl overflow-hidden opacity-0 translate-y-10">
                     <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                         <Image src="/static/images/bg-about-white.jpeg" alt="" layout="fill" objectFit="cover"></Image>
@@ -182,7 +182,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 </div>
             </section>
 
-            <section className="px-4 lg:px-24 py-24 skills">
+            <section id="skill" className="px-4 lg:px-24 pt-32 pb-10 lg:py-32 skills">
                 <div className="mb-10 lg:mb-20">
                     <Title title={'Skills'} darkText={'null'} />
                 </div>
@@ -234,7 +234,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 </div>
             </section>
 
-            <section className="px-4 lg:px-24 py-24">
+            <section id="project" className="px-4 lg:px-24 pt-32 pb-10">
                 <div className="mb-10 lg:mb-20">
                     <Title title={'Latest Projects'} darkText={'null'} />
                 </div>
@@ -252,13 +252,13 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                         <MediaComponentMobile name={res.name} url={res.mobileView} mobile={"mobile"} />
                                     </div>
 
-                                    <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10 -z-10">
+                                    <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10 -z-10 ml-3">
                                         <p className="uppercase font-extrabold text-xl tracking-wider">{res.name}</p>
                                         <ul className="mb-3">
                                             {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
                                                 return (
                                                     <li key={ress.name} className="inline-block mr-1.5 italic">
-                                                        <p className="leading-none text-darkColor500 text-xs font-extrabold opacity-50 tracking-wider">{ress.name}</p>
+                                                        <p className="leading-none text-darkColor500 dark:text-white text-xs font-extrabold opacity-50 tracking-wider">{ress.name}</p>
                                                     </li>
                                                 )
                                             })}
