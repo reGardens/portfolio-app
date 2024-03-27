@@ -130,7 +130,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         </div>
 
                         <div className="grid lg:flex gap-3 font-bold items-center text3 -translate-x-10 opacity-0">
-                            <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=rezzabagus.rb@gmail.com" target="_blank"
+                            <Link href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=rezzabagus.rb@gmail.com" target="_blank"
                                 className="bg-darkColor500 dark:bg-white hover:bg-darkColor700 dark:hover:bg-slate-200 transition-colors w-full h-fit py-1 px-3 rounded-md text-left shadow-lg" >
                                 <h3 className="opacity text-white dark:text-darkColor500">
                                     <strong className="tracking-[4px] opacity-85 text-[10px] uppercase">
@@ -138,12 +138,12 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                                     </strong>{" "}
                                     <br /> rezzabagus.rb@gmail.com
                                 </h3>
-                            </a>
+                            </Link>
 
-                            <a href="/static/ResumeCV.pdf" target="_blank"
+                            <Link href="/static/ResumeCV.pdf" target="_blank"
                                 className="bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors text-white uppercase py-2 px-3 w-full rounded-md animate-bounce text-center shadow-lg">
                                 Resume
-                            </a>
+                            </Link>
                         </div>
                     </div>
 

@@ -9,6 +9,11 @@ gsap.registerPlugin(Draggable)
 
 export default function Navigation() {
     const [aside, setAside] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
 
     const handleAside = () => {
         setAside(true)
@@ -18,14 +23,6 @@ export default function Navigation() {
             ease: "back.out(1.1)"
         });
     }
-    // const handleAsideClose = () => {
-    //     setAside(false)
-    //     gsap.to(".aside", {
-    //         y: 100 + '%',
-    //         duration: 1,
-    //         ease: "back.in(1.1)"
-    //     });
-    // }
 
     useEffect(() => {
         const asideEl = document.getElementById('aside');
@@ -114,7 +111,31 @@ export default function Navigation() {
                                 <Link href="/#header" scroll className="block py-2 px-3 rounded  text-traditionalColor500 md:p-0 dark:text-traditionalColor500" aria-current="page">Home</Link>
                             </li>
                             <li>
-                                <Link href="/#about" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</Link>
+
+                                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className="inline-flex py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" type="button" onClick={toggleDropdown}>
+                                    About
+                                    <svg className="w-2.5 h-2.5 m-auto ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+
+                                {/* Dropdown menu */}
+                                {isOpen && (
+                                    <div id="dropdownHover" className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 absolute top-full mt-1">
+                                        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                                            <li>
+                                                <Link href="/#about" scroll className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                    About
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/about-detail" scroll className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                    About Detail
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                )}
                             </li>
                             <li>
                                 <Link href="/#skill" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skill</Link>
