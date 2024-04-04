@@ -31,8 +31,8 @@ export default function Page({ dataProjects }: any) {
             {typeof window !== "undefined" && window.innerWidth > 1024 ? (
                 // desktop view
                 <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
-                    {dataProjects?.map((res: PorjectsData, index: number) => {
-                        console.log(typeof(res));
+                    {dataProjects.map((res: PorjectsData, index: number) => {
+                        console.log(typeof (res));
                         return (
                             <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
                                 <div className="w-full h-full col-start-1 col-span-3 relative">
@@ -63,7 +63,7 @@ export default function Page({ dataProjects }: any) {
                 <div className="block lg:hidden w-full max-w-md bg-white rounded-lg sm:p-8 dark:bg-darkColor500 overflow-hidden p-m-s mb-10">
                     <div className="flow-root">
                         <ul role="list" className="relative projects">
-                            {dataProjects?.map((res: PorjectsData, index: number) => {
+                            {dataProjects.map((res: PorjectsData, index: number) => {
                                 return (
                                     <li key={index} className="py-3 sm:py-4 relative">
                                         <div className="flex items-center relative cards opacity-0 -translate-y-10">
