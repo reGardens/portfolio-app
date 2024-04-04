@@ -123,7 +123,7 @@ export default function Page({ dataProjects }: any) {
 }
 
 export async function getStaticProps() {
-    const getProjects = await fs.readFile(process.cwd() + '/static/dataProjects.json', 'utf8');
+    const getProjects = await fs.readFile(process.cwd() + '/public/static/dataProjects.json', 'utf8');
     const dataProjects = await JSON.parse(getProjects);
     // const getProjects = await fetch('https://jsonplaceholder.typicode.com/users')
     // const dataProjects = await getProjects.json()
