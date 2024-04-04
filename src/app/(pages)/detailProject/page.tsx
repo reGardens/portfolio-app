@@ -3,13 +3,13 @@
 // import GetProducts from "@/pages";
 // import { useEffect, useState } from "react";
 
-export default function Project() {
+export default function DetailProject() {
     // const [projects, setProjects] = useState([]);
 
     return (
-        <main className="mt-20">
+        <div className="mt-20 h-screen">
             <p>detail project</p>
             {/* <GetProducts projects={projects} /> */}
-        </main>
+        </div>
     )
 }

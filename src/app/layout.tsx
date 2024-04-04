@@ -30,6 +30,7 @@ export default function RootLayout({
         <body className={`${inter.className} bg-white dark:bg-darkColor500`}>
           <div className="max-w-screen-2xl mx-auto !overflow-x-hidden">
             <Navigation />
+            
             {/* notif maintenance */}
             <div className="fixed w-full z-10 left-0 top-16 flex items-center justify-center p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300" role="alert">
               <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -40,9 +41,12 @@ export default function RootLayout({
                 <span className="font-medium text-center">Warning alert!</span> This website is currently under maintenance. We apologize for the inconvenience.
               </div>
             </div>
+            {/* ------ */}
+            
             {children}
             <Footer />
           </div>
+
           <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
         </body>
       </html>

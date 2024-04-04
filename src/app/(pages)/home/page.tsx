@@ -31,7 +31,7 @@ export default async function Home() {
                     dataIconFront={dataFrontEnd}
                     dataIconBack={dataBackEnd}
                     dataIconOther={dataOtherSkills}
-                    dataProjects={dataProjects}
+                    dataProjects={latestProject}
                     />
                 }
             </main>

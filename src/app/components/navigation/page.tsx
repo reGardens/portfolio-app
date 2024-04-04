@@ -111,7 +111,6 @@ export default function Navigation() {
                                 <Link href="/#header" scroll className="block py-2 px-3 rounded  text-traditionalColor500 md:p-0 dark:text-traditionalColor500" aria-current="page">Home</Link>
                             </li>
                             <li>
-
                                 <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className="inline-flex py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" type="button" onClick={toggleDropdown}>
                                     About
                                     <svg className="w-2.5 h-2.5 m-auto ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
