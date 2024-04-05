@@ -1,3 +1,9 @@
+export default function Projects() {
+    return (
+        <p>Projects</p>
+    )
+}
+
 // // test 4
 // // posts will be populated at build time by getStaticProps()
 // export default function Projects(props) {
