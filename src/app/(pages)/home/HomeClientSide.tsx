@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from 'react';
-import Page from "@/pages";
+// import Projects from "@/pages/projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -240,7 +240,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     <Title title={'Latest Projects'} darkText={'null'} />
                 </div>
 
-                {/* {typeof window !== "undefined" && window.innerWidth > 1024 ? (
+                {typeof window !== "undefined" && window.innerWidth > 1024 ? (
                     <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
                         {dataProjects.map((res: PorjectsData, index: number) => {
                             return (
@@ -294,12 +294,12 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             </ul>
                         </div>
                     </div>
-                )} */}
+                )}
 
-                <Page />
+                {/* <Projects /> */}
 
                 <div className="flex justify-center">
-                    <Link href={{ pathname: '/' }} className="py-2 px-8 text-xs lg:text-base bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors rounded-lg text-white dark:text-darkColor500">Show More</Link>
+                    <Link href={{ pathname: '/project' }} className="py-2 px-8 text-xs lg:text-base bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors rounded-lg text-white dark:text-darkColor500">Show More</Link>
                 </div>
             </section>
         </>
