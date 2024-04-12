@@ -20,7 +20,7 @@ export default function Navigation() {
         gsap.to(".aside", {
             y: 50 + '%',
             duration: 1,
-            ease: "back.out(1.1)"
+            // ease: "back.out(1.1)"
         });
     }
 
@@ -66,7 +66,7 @@ export default function Navigation() {
                     // Jika posisi Y melebihi 1/4 tinggi layar, tutup elemen setengah
                     gsap.to(this.target, 0.7, {
                         y: window.innerHeight / 2,
-                        ease: "back.in(1.1)",
+                        // ease: "back.in(1.1)",
                     });
 
                 } else {
@@ -81,7 +81,7 @@ export default function Navigation() {
                     // Jika element sudah setengah dari innerHeight, tutup semua
                     gsap.to(this.target, 0.7, {
                         y: window.innerHeight + (window.innerHeight * 0.2),
-                        ease: "back.in(1.1)",
+                        // ease: "back.in(1.1)",
                     });
                 }
             }
