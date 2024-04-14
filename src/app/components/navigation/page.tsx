@@ -4,6 +4,9 @@ import gsap from "gsap";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Draggable from "gsap/Draggable";
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 gsap.registerPlugin(Draggable)
 
@@ -20,7 +23,6 @@ export default function Navigation() {
         gsap.to(".aside", {
             y: 50 + '%',
             duration: 1,
-            // ease: "back.out(1.1)"
         });
     }
 
@@ -66,7 +68,6 @@ export default function Navigation() {
                     // Jika posisi Y melebihi 1/4 tinggi layar, tutup elemen setengah
                     gsap.to(this.target, 0.7, {
                         y: window.innerHeight / 2,
-                        // ease: "back.in(1.1)",
                     });
 
                 } else {
@@ -81,7 +82,6 @@ export default function Navigation() {
                     // Jika element sudah setengah dari innerHeight, tutup semua
                     gsap.to(this.target, 0.7, {
                         y: window.innerHeight + (window.innerHeight * 0.2),
-                        // ease: "back.in(1.1)",
                     });
                 }
             }
@@ -111,30 +111,31 @@ export default function Navigation() {
                                 <Link href="/#header" scroll className="block py-2 px-3 rounded  text-traditionalColor500 md:p-0 dark:text-traditionalColor500" aria-current="page">Home</Link>
                             </li>
                             <li>
-                                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className="inline-flex py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" type="button" onClick={toggleDropdown}>
+                                {/* <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className="inline-flex py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" type="button" onClick={toggleDropdown}>
                                     About
                                     <svg className="w-2.5 h-2.5 m-auto ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                                     </svg>
-                                </button>
+                                </button> */}
 
                                 {/* Dropdown menu */}
-                                {isOpen && (
+                                {/* {isOpen && (
                                     <div id="dropdownHover" className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 absolute top-full mt-1">
                                         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
                                             <li>
                                                 <Link href="/#about" scroll className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                                     About
                                                 </Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/about-detail" scroll className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                    About Detail
+                                                </li>
+                                                <li>
+                                                <Link href="/project" scroll className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                About Detail
                                                 </Link>
-                                            </li>
+                                                </li>
                                         </ul>
                                     </div>
-                                )}
+                                )} */}
+                                <Link href="/#about" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</Link>
                             </li>
                             <li>
                                 <Link href="/#skill" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skill</Link>
@@ -160,6 +161,43 @@ export default function Navigation() {
                         <Link href="/#header" scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all" aria-current="page">Home</Link>
                     </li>
                     <li>
+                        {/* <Accordion
+                            sx={{
+                                backgroundColor: "unset",
+                                boxShadow: "unset"
+                            }}
+                        >
+                            <AccordionSummary
+                                expandIcon={<ArrowDropDownIcon />}
+                                aria-controls="panel2-content"
+                                id="panel2-header"
+                            >
+                                <Typography>
+                                    <div className="block text-3xl font-bold text-white dark:text-darkColor500 md:p-0 text-center">About</div>
+                                </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails
+                                sx={{
+                                    borderBottom: '1px solid silver'
+                                }}
+                            >
+                                <Typography>
+                                    <Link href="/#about" scroll className="block">About</Link>
+                                </Typography>
+                            </AccordionDetails>
+                            <AccordionDetails
+                                sx={{
+                                    borderBottom: '1px solid silver'
+                                }}
+                            >
+                                <Typography>
+                                    <Link href="/about-detail" scroll className="block">
+                                        About Detail
+                                    </Link>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion> */}
+
                         <Link href="/#about" scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all">About</Link>
                     </li>
                     <li>
