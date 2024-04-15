@@ -1,6 +1,7 @@
 [
   {
     "name": "Festival Jajanan Bango 2022",
+    "slug": "festival-jajanan-bango-2022",
     "description": "Maintaining the culinary festival website involves utilizing CodeIgniter. The site showcases a variety of Indonesian culinary delights, enabling visitors to explore the offerings available at the festival this year.",
     "desktopView": "/static/projects/thumb/fjb-desktop.png",
     "tabletView": "/static/projects/video/fjb-2022-compressed.mp4",
@@ -16,6 +17,7 @@
   },
   {
     "name": "Hino Finance",
+    "slug": "hino-finance",
     "description": "Hino's financial website serves as a platform for company profiling, e-commerce functionalities, and notably, financial product offerings marketed by the company.",
     "desktopView": "/static/projects/thumb/hinoFinance-dekstop.png",
     "tabletView": "/static/projects/thumb/hinoFinance-tablet.png",
@@ -36,6 +38,7 @@
   },
   {
     "name": "MGM Bosco Logistics",
+    "slug": "mgm-bosco-logistics",
     "description": "Develop a responsive company profile interface using the Vue.js framework. On the MGM Bosco Sustainability page, incorporate bright blue colors in specific sections to give it a fresher appearance.",
     "desktopView": "/static/projects/thumb/MGMBosco-dekstop.png",
     "tabletView": "/static/projects/thumb/MGMBosco-tablet.png",
@@ -56,6 +59,7 @@
   },
   {
     "name": "Danamon Optimal",
+    "slug": "danamon-optimal",
     "description": "The DanamonOptimalku website serves as a company profile and is developed solely as a static Single Page Application (SPA).",
     "desktopView": "/static/projects/thumb/danamonOptimal-dekstop.png",
     "tabletView": "/static/projects/thumb/danamonOptimal-tablet.png",
@@ -72,6 +76,7 @@
   },
   {
     "name": "Danamon Microsite Quiz",
+    "slug": "danamon-microsite-quiz",
     "description": "Danamon has developed a multiple-choice quiz website for users. Upon completing the quiz, users will be prompted to enter various personal details. The final result, displayed on a mobile device, will reveal a character corresponding to the user's choices throughout the quiz. Each character will vary based on the user's responses.",
     "desktopView": "/static/projects/thumb/DanamonQuiz-dekstop.png",
     "tabletView": "/static/projects/video/DanamonQuiz-tablet-compressed.mp4",
@@ -92,6 +97,7 @@
   },
   {
     "name": "30 Resep Semur Semangatkan Sahur",
+    "slug": "30-resep-semur-semangatkan-sahur",
     "description": "It's a recommendation website featuring special dishes for the month of Ramadan. Users can explore full reviews embedded from Instagram stories for each dish.",
     "desktopView": "/static/projects/thumb/semurSahur-dekstop.png",
     "tabletView": "/static/projects/thumb/semurSahur-tablet.png",
@@ -108,6 +114,7 @@
   },
   {
     "name": "Indonesia International Motor Show",
+    "slug": "indonesia-international-motor-show",
     "description": "Danamon has entrusted me with the task of creating a microsite for the Indonesia International Motor Show.",
     "desktopView": "/static/projects/thumb/danamonIIMS-desktop.png",
     "tabletView": "/static/projects/thumb/danamonIIMS-tablet.png",
@@ -124,6 +131,7 @@
   },
   {
     "name": "Danamon Spekta",
+    "slug": "danamon-spekta",
     "description": "The mockup I created for Danamon Spekta closely resembles other projects, emphasizing simplicity and highlighting the offered products. Additionally, Danamon Spekta is designed as a Single Page Application.",
     "desktopView": "/static/projects/thumb/danamonSpekta-desktop.png",
     "tabletView": "/static/projects/thumb/danamonSpekta-tablet.png",
@@ -140,6 +148,7 @@
   },
   {
     "name": "Danamon Booking Optimalku",
+    "slug": "danamon-booking-optimalku",
     "description": "It's a company website consultation aimed at streamlining the process for users to request a queue number, ask questions, or seek consultation without the need to physically visit. The user's inquiries or consultations will be sent via email to the registered email address.",
     "desktopView": "/static/projects/thumb/danamonBO-dekstop.png",
     "tabletView": "/static/projects/thumb/danamonBO-tablet.png",
@@ -160,6 +169,7 @@
   },
   {
     "name": "Danamon's Anniversary",
+    "slug": "danamon's-anniversary",
     "description": "For its 67th birthday, Danamon invites customers to celebrate together through a special Danamon birthday website on July 16, 2023. Alongside the celebration, Danamon offers various special deals, including video examples showcasing the JavaScript concept on tablet displays.",
     "desktopView": "/static/projects/thumb/danamonHUT-dekstop.png",
     "tabletView": "/static/projects/video/danamonHUT-tablet.mp4",
@@ -180,6 +190,7 @@
   },
   {
     "name": "Ristra Revamp",
+    "slug": "ristra-revamp",
     "description": "In this project, my task is to perform a \"Technology Migration\" by revamping the website from an old machine to a new one. I will focus on installing and ensuring that the appearance closely resembles the previous version.",
     "desktopView": "/static/projects/thumb/ristra-dekstop.png",
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
@@ -196,6 +207,7 @@
   },
   {
     "name": "D-Bank PRO",
+    "slug": "d-bank-pro",
     "description": "We're adapting our strategy to meet the specific preferences of our valued client, Danamon. They want the website to offer visitors a fresh user experience different from what they've seen before. Our goal is to create a memorable and engaging interaction that leaves a lasting impression on users as they explore the platform.",
     "desktopView": null,
     "tabletView": null,
@@ -212,6 +224,7 @@
   },
   {
     "name": "Festival Jajanan Bango 2023",
+    "slug": "festival-jajanan-bango-2023",
     "description": "The Bango snack festival returns, presenting an array of Indonesian culinary delights for visitors to enjoy and explore during this year's event.",
     "desktopView": null,
     "tabletView": null,
@@ -228,6 +241,7 @@
   },
   {
     "name": "Walls Feast Pop",
+    "slug": "walls-feast-pop",
     "description": "Design a captivating mobile interface to enhance user experience and streamline registration or support for one of two characters. Keep the project agile and prioritize simplicity for efficient development and deployment.",
     "desktopView": null,
     "tabletView": null,
@@ -248,6 +262,7 @@
   },
   {
     "name": "Jiva GreenHope",
+    "slug": "jiva-greenHope",
     "description": "As a Full Stack Developer at JIVACO, our company specializes in producing top-notch products for everyday use, including premium rice, cooking oil, and sugar. We've designed a user-friendly UI with a clean and simple interface, offering an interactive experience for users. Our primary color theme is green, symbolizing nature and our commitment to eco-friendly products, aligning with JIVACO's brand identity.",
     "desktopView": null,
     "tabletView": null,
@@ -268,6 +283,7 @@
   },
   {
     "name": "Danamon Hadiah Beruntun",
+    "slug": "danamon-hadiah-beruntun",
     "description": "Employing a minimalist design with Danamon's signature orange color, we'll enhance the interface with an additional gif.",
     "desktopView": null,
     "tabletView": null,
@@ -284,6 +300,7 @@
   },
   {
     "name": "Combiphar Pro",
+    "slug": "combiphar-pro",
     "description": "Update \"maintain changes\" to \"features\".",
     "desktopView": null,
     "tabletView": null,

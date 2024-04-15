@@ -24,6 +24,7 @@ interface IconData {
 }
 interface PorjectsData {
     name: string;
+    slug: string;
     description: string;
     projectBackground: string;
     desktopView: string;
@@ -37,7 +38,7 @@ interface Hashtags {
     link: string;
 }
 
-export default function DetailProjects({ dataIconFront, dataIconBack, dataIconOther, dataProjects }: Props) {
+export default function DetailProjects({ dataProjects }: Props) {
     useEffect(() => {
         if (typeof window !== "undefined" && window.innerWidth > 1024) {
             // desktop view
@@ -118,19 +119,27 @@ export default function DetailProjects({ dataIconFront, dataIconBack, dataIconOt
                                 {dataProjects.map((res: PorjectsData, index: number) => {
                                     return (
                                         <li key={index} className="py-3 sm:py-4 relative">
-                                            <div className="flex items-center relative cards opacity-0 -translate-y-10">
-                                                <div className="flex-shrink-0 rounded-full !overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
-                                                    <Image width={56} height={55} style={{ objectFit: "cover", alignSelf: "center" }} src={res.logo} alt="Neil image" />
+                                            <Link href={{
+                                                // `project/${res.slug}?data=${JSON.stringify(res)}`
+                                                pathname: `project/${res.slug}`,
+                                                // query: { name: 'Reza' },
+                                                query: { data: JSON.stringify(res) },
+                                                // state: { data: res }
+                                            }}>
+                                                <div className="flex items-center relative cards opacity-0 -translate-y-10">
+                                                    <div className="flex-shrink-0 rounded-full !overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
+                                                        <Image width={56} height={55} style={{ objectFit: "cover", alignSelf: "center" }} src={res.logo} alt="Neil image" />
+                                                    </div>
+                                                    <div className="flex-1 min-w-0 ms-4 mr-[10px]">
+                                                        <p className="text-xs text-darkColor500 dark:text-white truncate font-semibold opacity-40">
+                                                            {res.name}
+                                                        </p>
+                                                        <p className="text-sm text-darkColor200 dark:text-slate-200 truncate font-semibold">
+                                                            {res.description}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div className="flex-1 min-w-0 ms-4 mr-[10px]">
-                                                    <p className="text-xs text-darkColor500 dark:text-white truncate font-semibold opacity-40">
-                                                        {res.name}
-                                                    </p>
-                                                    <p className="text-sm text-darkColor200 dark:text-slate-200 truncate font-semibold">
-                                                        {res.description}
-                                                    </p>
-                                                </div>
-                                            </div>
+                                            </Link>
                                         </li>
                                     )
                                 })}
