@@ -93,9 +93,9 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             toggleActions: "play none none reverse",
                         }
                     });
-                    project.to(box.querySelector(".desktop"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
-                        .to(box.querySelector(".tablet"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
-                        .to(box.querySelector(".mobile"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+                    project.to(box.querySelector(".media"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
+                        // .to(box.querySelector(".tablet"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
+                        // .to(box.querySelector(".mobile"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
                         .to(box.querySelector(".description"), { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1");
                 }
             })
@@ -245,10 +245,10 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         {dataProjects.map((res: PorjectsData, index: number) => {
                             return (
                                 <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
-                                    <div className="w-full h-full col-start-1 col-span-3 relative">
-                                        <MediaComponentDesktop url={res.desktopView} name={res.name} desktop={"desktop"} />
-                                        <MediaComponentTablet name={res.name} url={res.tabletView} tablet={"tablet"} />
-                                        <MediaComponentMobile name={res.name} url={res.mobileView} mobile={"mobile"} />
+                                    <div className="w-full h-full col-start-1 col-span-3 relative media opacity-0 -translate-y-10">
+                                        <MediaComponentDesktop url={res.desktopView} name={res.name} />
+                                        <MediaComponentTablet name={res.name} url={res.tabletView} />
+                                        <MediaComponentMobile name={res.name} url={res.mobileView} />
                                     </div>
 
                                     <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10 -z-10 ml-3">
