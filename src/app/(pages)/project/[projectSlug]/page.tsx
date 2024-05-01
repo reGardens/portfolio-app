@@ -4,8 +4,6 @@ import { Button } from '@mui/material';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Link from 'next/link';
-import { redirect } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
 interface Hashtags {

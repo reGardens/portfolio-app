@@ -71,8 +71,18 @@ export default function DetailProjects({ dataProjects }: Props) {
                 }
             });
             dataProjects.forEach((res: PorjectsData, index: number) => {
-                // console.log(res);
                 project.to('.cards', { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
+            })
+
+            let hoverElements = document.querySelectorAll(".animation-hover");
+            hoverElements.forEach(el => {
+                // console.log(el)
+                const animationHover = gsap.to(el, {
+                    paused: true, // Mengatur animasi menjadi di-pause secara default
+                    translateX: -65,
+                })
+                el.addEventListener("mouseenter", (e) => animationHover.play());
+                el.addEventListener("mouseleave", (e) => animationHover.reverse());
             })
         }
     }, [dataProjects]);
@@ -118,13 +128,11 @@ export default function DetailProjects({ dataProjects }: Props) {
                             <ul role="list" className="relative projects">
                                 {dataProjects.map((res: PorjectsData, index: number) => {
                                     return (
-                                        <li key={index} className="py-3 sm:py-4 relative">
+                                        <li key={index} className="py-3 sm:py-4 relative animation-hover">
+                                            {/* <div className="bg-white absolute top-0 left-0 w-full h-full -z-10 after">&nbsp;</div> */}
                                             <Link href={{
-                                                // `project/${res.slug}?data=${JSON.stringify(res)}`
-                                                pathname: `project/${res.slug}`,
-                                                // query: { name: 'Reza' },
+                                                pathname: `/project/${res.slug}`,
                                                 query: { data: JSON.stringify(res) },
-                                                // state: { data: res }
                                             }}>
                                                 <div className="flex items-center relative cards opacity-0 -translate-y-10">
                                                     <div className="flex-shrink-0 rounded-full !overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">

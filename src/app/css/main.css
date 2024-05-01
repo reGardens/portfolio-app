@@ -60,3 +60,18 @@ body {
   }
 }
 /* e gradient generic */
+
+/* slide side */
+.after::after {
+  content: "\226B";
+  height: 100%;
+  width: 50px;
+  background: white;
+  margin: auto;
+  color: white;
+  /* display: inline; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
