@@ -28,12 +28,8 @@
     "url": "#",
     "hashtags": [
       {
-        "link": "HTML",
-        "name": "HTML"
-      },
-      {
-        "link": "CSS",
-        "name": "CSS"
+        "link": "ReactJS",
+        "name": "ReactJS"
       }
     ]
   },
@@ -51,10 +47,6 @@
       {
         "link": "VueJS",
         "name": "VueJS"
-      },
-      {
-        "link": "Laravel",
-        "name": "Laravel"
       }
     ]
   },
@@ -89,10 +81,6 @@
       {
         "link": "VueJS",
         "name": "VueJS"
-      },
-      {
-        "link": "Laravel",
-        "name": "Laravel"
       }
     ]
   },
@@ -125,8 +113,8 @@
     "url": "https://www.danamon.co.id/id/site/Danamon-IIMS-Surabaya",
     "hashtags": [
       {
-        "link": "Bootstrap",
-        "name": "Bootstrap"
+        "link": "Vanilla Javascript",
+        "name": "Vanilla Javascript"
       }
     ]
   },
@@ -142,8 +130,8 @@
     "url": null,
     "hashtags": [
       {
-        "link": "Bootstrap",
-        "name": "Bootstrap"
+        "link": "Vanilla Javascript",
+        "name": "Vanilla Javascript"
       }
     ]
   },
@@ -161,10 +149,6 @@
       {
         "link": "VueJS",
         "name": "VueJS"
-      },
-      {
-        "link": "Laravel",
-        "name": "Laravel"
       }
     ]
   },
@@ -182,10 +166,6 @@
       {
         "link": "ReactJS",
         "name": "ReactJS"
-      },
-      {
-        "link": "Laravel",
-        "name": "Laravel"
       }
     ]
   },
@@ -201,8 +181,8 @@
     "url": "https://www.ristraclinic.co.id/",
     "hashtags": [
       {
-        "link": "Laravel",
-        "name": "Laravel"
+        "link": "Laravel (Blade)",
+        "name": "Laravel (Blade)"
       }
     ]
   },
@@ -254,10 +234,6 @@
       {
         "link": "ReactJS",
         "name": "ReactJS"
-      },
-      {
-        "link": "Laravel",
-        "name": "Laravel"
       }
     ]
   },
@@ -275,10 +251,6 @@
       {
         "link": "ReactJS",
         "name": "ReactJS"
-      },
-      {
-        "link": "Laravel",
-        "name": "Laravel"
       }
     ]
   },
@@ -288,7 +260,7 @@
     "description": "Employing a minimalist design with Danamon's signature orange color, we'll enhance the interface with an additional gif.",
     "image": "/static/projects/thumb/danamon-spekta.png",
     "desktopView": "/static/projects/thumb/danamonHadiahBeruntun-desktop.png",
-    "tabletView": "/static/projects/thumb/danamonHadiahBeruntun-tablte.png",
+    "tabletView": "/static/projects/thumb/danamonHadiahBeruntun-tablet.png",
     "mobileView": "/static/projects/thumb/danamonHadiahBeruntun-mobile.png",
     "logo": "/static/icons/projects/icon-danamon.png",
     "url": "https://www.danamon.co.id/id/danamon-hadiah-beruntun?utm_campaign=DHB2&utm_source=Google&utm_medium=paid&utm_term=DHB2_Google_DHB-2-Launch&utm_content=2826_Clicks_CPC_Google_Search_Text_Dark-Post_DHB-2-Launch_LIBS_DHB2_01-Nov_30-Apr&gad_source=1&gclid=CjwKCAjw48-vBhBbEiwAzqrZVKa_19R-mzbxwYfl2bDNJGgnpN2y_aSnx9zgR8X9lW_kX7ot3b5wMhoCcPIQAvD_BwE",
@@ -311,8 +283,8 @@
     "url": "https://combipharpro.com/id/pro/login",
     "hashtags": [
       {
-        "link": "Laravel",
-        "name": "Laravel"
+        "link": "Laravel (Blade)",
+        "name": "Laravel (Blade)"
       }
     ]
   }

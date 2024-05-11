@@ -63,13 +63,18 @@ body {
 
 /* slide side */
 .after::after {
-  content: "\226B";
+  /* background: url('/static/icons/next.png') no-repeat 0 0 !important; */
+  /* background-size: cover; */
+  /* background-size: 3rem !important; */
+
+  content: "";
+  display: inline-block;
+
   height: 100%;
-  width: 50px;
-  background: white;
+  width: 100%;
+  background: #dd6022;
   margin: auto;
-  color: white;
-  /* display: inline; */
+  /* color: white; */
   position: absolute;
   top: 0;
   right: 0;

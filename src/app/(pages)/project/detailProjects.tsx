@@ -89,7 +89,7 @@ export default function DetailProjects({ dataProjects }: Props) {
 
     return (
         <>
-            <section id="project" className="px-4 lg:px-24 pt-32 pb-10">
+            <section id="project" className="pl-4 lg:pl-24 pt-32 pb-10">
                 <div className="mb-10 lg:mb-20">
                     <Title title={'Projects'} darkText={'null'} />
                 </div>
@@ -129,7 +129,6 @@ export default function DetailProjects({ dataProjects }: Props) {
                                 {dataProjects.map((res: PorjectsData, index: number) => {
                                     return (
                                         <li key={index} className="py-3 sm:py-4 relative animation-hover">
-                                            {/* <div className="bg-white absolute top-0 left-0 w-full h-full -z-10 after">&nbsp;</div> */}
                                             <Link href={{
                                                 pathname: `/project/${res.slug}`,
                                                 query: { data: JSON.stringify(res) },
@@ -146,6 +145,10 @@ export default function DetailProjects({ dataProjects }: Props) {
                                                             {res.description}
                                                         </p>
                                                     </div>
+                                                </div>
+                                                {/* navigation detail icons */}
+                                                <div className="bg-traditionalColor500 absolute top-0 left-0 w-full h-full -z-10 translate-x-full grid items-center pl-[5%] pointer">
+                                                    <Image width={30} height={30} style={{ objectFit: "cover", alignSelf: "center" }} src="/static/icons/next-black.png" alt="Neil image" />
                                                 </div>
                                             </Link>
                                         </li>
