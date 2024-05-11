@@ -59,7 +59,7 @@ export default function Navigation() {
         // dragable aside
         Draggable.create("#drag", {
             type: "y",
-            bounds: document.body,
+            bounds: document.documentElement,
             inertia: true,
             edgeResistance: 1,
             onDragEnd: function () {
@@ -69,7 +69,6 @@ export default function Navigation() {
                     gsap.to(this.target, 0.7, {
                         y: window.innerHeight / 2,
                     });
-
                 } else {
                     // Jika tidak, kembalikan elemen ke posisi awal
                     gsap.to(this.target, 0.3, {
