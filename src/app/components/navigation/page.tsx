@@ -1,4 +1,5 @@
 'use client'
+
 import DarkMode from "@/app/components/toggledarkMode/pages";
 import gsap from "gsap";
 import Link from "next/link";
@@ -7,6 +8,10 @@ import Draggable from "gsap/Draggable";
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
+// Icons
+import HomeIcon from '@mui/icons-material/Home';
+import ViewListIcon from '@mui/icons-material/ViewList';
 
 gsap.registerPlugin(Draggable)
 
@@ -123,7 +128,7 @@ export default function Navigation() {
                 </div>
             </nav>
 
-            {/* aside */}
+            {/* Bottom Drawer */}
             <aside id="drag" className="bg-traditionalColor500 aside translate-y-[150vh] rounded-2xl w-full h-full fixed top-0 left-0 z-[99] px-10 py-20">
                 <ul className="flex flex-col justify-start items-center h-full">
                     <div className="flex justify-center absolute top-3 left-0 w-full">
@@ -133,10 +138,16 @@ export default function Navigation() {
                     </div>
 
                     <li>
-                        <Link href={{ pathname: '/home' }} scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all" aria-current="page">Home</Link>
+                        <Link href={{ pathname: '/home' }} scroll className="py-2 px-3 text-xl font-extrabold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all flex items-center gap-1" aria-current="page">
+                            <HomeIcon />
+                            Home
+                        </Link>
                     </li>
                     <li>
-                        <Link href={{ pathname: '/project' }} scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all" aria-current="page">Project</Link>
+                        <Link href={{ pathname: '/project' }} scroll className="py-2 px-3 text-xl font-extrabold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all flex items-center gap-1" aria-current="page">
+                            <ViewListIcon />
+                            Project
+                        </Link>
                     </li>
                     {/* <li>
                         <Link href="/#about" scroll className="block py-2 px-3 text-3xl font-bold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 text-white dark:text-darkColor500 md:p-0 text-center transition-all">About</Link>

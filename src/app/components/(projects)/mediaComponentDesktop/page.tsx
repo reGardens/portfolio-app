@@ -21,8 +21,6 @@ export default function MediaComponentDesktop({ url, name }: any) {
         )
     } else {
         if (isImage && isImage.endsWith(".png")) {
-            console.log(typeof (url));
-
             return (
                 <div className={`w-full h-[35rem] relative rounded-xl overflow-hidden`}>
                     <Image

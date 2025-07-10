@@ -12,17 +12,17 @@ interface Hashtags {
 }
 
 export default function ProjectDetail() {
+    const router = useRouter();
     const searchParams = useSearchParams();
     const dataString = searchParams?.get('data');
     const data = dataString ? JSON.parse(dataString) : null;
 
-    const router = useRouter();
     const handleBack = () => {
         router.push('/project');
     }
 
     return (
-        <section className="px-4 lg:px-24 mt-40 mb-10 text-black dark:text-white">
+        <section className="px-4 lg:px-24 mt-40 mb-10 text-black dark:text-white w-full">
             {data.image == null ?
                 (
                     <div className={`w-full`}>
@@ -52,7 +52,7 @@ export default function ProjectDetail() {
                 )
             }
             <ul className="mb-3">
-                {Array.isArray(data.hashtags) && data.hashtags.map((ress: Hashtags) => {
+                {Array.isArray(data?.hashtags) && data?.hashtags.map((ress: Hashtags) => {
                     return (
                         <li key={ress.name} className="inline-block mr-1.5 italic">
                             <p className="leading-none text-darkColor500 dark:text-white text-xs font-extrabold opacity-50 tracking-wider">{ress.name}</p>

@@ -49,7 +49,6 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
         title.to(".text3", { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
             .to(".text2", { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
             .to(".text1", { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1");
-        // ------
 
         // about
         let about = gsap.timeline({
@@ -57,11 +56,10 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 trigger: '.about',
                 start: "top center",
                 end: "bottom center",
-                toggleActions: "play none none reverse",
+                toggleActions: "play none none none",
             }
         });
         about.to(".about div", { y: 0, opacity: 1, ease: "back.out(1.1)", duration: 1.8 });
-        // ------
 
         // skills
         let skills = gsap.timeline({
@@ -69,14 +67,13 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 trigger: '.skills',
                 start: "top center",
                 end: "bottom center",
-                toggleActions: "play none none reverse",
+                toggleActions: "play none none none",
             }
         });
         skills.to(".frontend", { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
             .to(".backend", { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
             .to(".other", { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
             .to(".detail", { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1");
-        // ------
 
         // projects
         if (typeof window !== "undefined" && window.innerWidth > 1024) {
@@ -90,7 +87,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                             trigger: box,
                             start: "top center",
                             end: "bottom center",
-                            toggleActions: "play none none reverse",
+                            toggleActions: "play none none none",
                         }
                     });
                     project.to(box.querySelector(".media"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
@@ -106,15 +103,13 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     trigger: '.projects',
                     start: "-=100 center",
                     end: "bottom center",
-                    toggleActions: "play none none reverse",
+                    toggleActions: "play none none none",
                 }
             });
             dataProjects.forEach((res: PorjectsData, index: number) => {
-                // console.log(res);
                 project.to('.cards', { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
             })
         }
-        // ------
     }, [dataProjects]);
 
     return (
@@ -159,7 +154,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 </div>
             </article>
 
-            <section id="about" className='px-4 lg:px-24 pt-32 pb-10 lg:py-32 overflow-hidden about'>
+            <section id="about" className='px-4 lg:px-24 pt-32 bg-red pb-10 lg:py-32 overflow-hidden about'>
                 <div className="relative shadow-2xl rounded-xl overflow-hidden opacity-0 translate-y-10">
                     <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                         <Image src="/static/images/bg-about-white.jpeg" alt="" layout="fill" objectFit="cover"></Image>
@@ -195,7 +190,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         </div>
 
                         <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0 rounded-t-xl">
-                            {dataIconFront.data.map((res: IconData, index: number) => {
+                            {dataIconFront?.data?.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
                                         <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>
@@ -207,7 +202,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         <p id="vertical-front" className="font-bold uppercase col-span-1 text-white ml-[35px] frontend translate-y-10 opacity-0 hidden lg:block">FrontEnd Website</p>
 
                         <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 backend translate-y-10 opacity-0">
-                            {dataIconBack.data.map((res: IconData, index: number) => {
+                            {dataIconBack?.data?.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
                                         <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>
@@ -219,7 +214,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                         <p id="vertical-front" className="font-bold uppercase col-span-1 text-white ml-[35px] backend translate-y-10 opacity-0 hidden lg:block">BackEnd Website</p>
 
                         <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 other translate-y-10 opacity-0 rounded-b-xl">
-                            {dataIconOther.data.map((res: IconData, index: number) => {
+                            {dataIconOther?.data?.map((res: IconData, index: number) => {
                                 return (
                                     <li className="inline-block mx-auto" key={index}>
                                         <Image src={res.icon} alt={res.name} width={50} height={50} loading="lazy"></Image>
@@ -240,66 +235,55 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                     <Title title={'Latest Projects'} darkText={'null'} />
                 </div>
 
-                {typeof window !== "undefined" && window.innerWidth > 1024 ? (
-                    <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
-                        {dataProjects.map((res: PorjectsData, index: number) => {
-                            return (
-                                <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
-                                    <div className="w-full h-full col-start-1 col-span-3 relative media opacity-0 -translate-y-10">
-                                        <MediaComponentDesktop url={res.desktopView} name={res.name} />
-                                        <MediaComponentTablet name={res.name} url={res.tabletView} />
-                                        <MediaComponentMobile name={res.name} url={res.mobileView} />
-                                    </div>
+                {/* Desktop Layout */}
+                <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
+                    {dataProjects?.map((res: PorjectsData, index: number) => (
+                        <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects" data-index={index}>
+                            <div className="w-full h-full col-start-1 col-span-3 relative media opacity-0 -translate-y-10">
+                                <MediaComponentDesktop url={res.desktopView} name={res.name} />
+                                <MediaComponentTablet name={res.name} url={res.tabletView} />
+                                <MediaComponentMobile name={res.name} url={res.mobileView} />
+                            </div>
+                            <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10 -z-10 ml-3">
+                                <p className="uppercase font-extrabold text-xl tracking-wider">{res.name}</p>
+                                <ul className="mb-3">
+                                    {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => (
+                                        <li key={ress.name} className="inline-block mr-1.5 italic">
+                                            <p className="leading-none text-darkColor500 dark:text-white text-xs font-extrabold opacity-50 tracking-wider">{ress.name}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <p className="font-bold text-lg text-darkColor200 tracking-wider">{res.description}</p>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
 
-                                    <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10 -z-10 ml-3">
-                                        <p className="uppercase font-extrabold text-xl tracking-wider">{res.name}</p>
-                                        <ul className="mb-3">
-                                            {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
-                                                return (
-                                                    <li key={ress.name} className="inline-block mr-1.5 italic">
-                                                        <p className="leading-none text-darkColor500 dark:text-white text-xs font-extrabold opacity-50 tracking-wider">{ress.name}</p>
-                                                    </li>
-                                                )
-                                            })}
-                                        </ul>
-                                        <p className="font-bold text-lg text-darkColor200 tracking-wider">{res.description}</p>
+                {/* Mobile Layout */}
+                <div className="block lg:hidden w-full max-w-md bg-white rounded-lg sm:p-8 dark:bg-darkColor500 overflow-hidden p-m-s mb-10">
+                    <div className="flow-root">
+                        <ul role="list" className="relative projects">
+                            {dataProjects?.map((res: PorjectsData, index: number) => (
+                                <li key={index} className="py-3 sm:py-4 relative">
+                                    <div className="flex items-center relative cards opacity-0 -translate-y-10">
+                                        <div className="flex-shrink-0 rounded-full !overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
+                                            <Image width={56} height={55} style={{ objectFit: "cover", alignSelf: "center" }} src={res.logo} alt={res.name} />
+                                        </div>
+                                        <div className="flex-1 min-w-0 ms-4 mr-[10px]">
+                                            <p className="text-xs text-darkColor500 dark:text-white truncate font-semibold opacity-40">{res.name}</p>
+                                            <p className="text-sm text-darkColor200 dark:text-slate-200 truncate font-semibold">{res.description}</p>
+                                        </div>
                                     </div>
                                 </li>
-                            )
-                        })}
-                    </ul>
-                ) : (
-                    <div className="block lg:hidden w-full max-w-md bg-white rounded-lg sm:p-8 dark:bg-darkColor500 overflow-hidden p-m-s mb-10">
-                        <div className="flow-root">
-                            <ul role="list" className="relative projects">
-                                {dataProjects.map((res: PorjectsData, index: number) => {
-                                    return (
-                                        <li key={index} className="py-3 sm:py-4 relative">
-                                            <div className="flex items-center relative cards opacity-0 -translate-y-10">
-                                                <div className="flex-shrink-0 rounded-full !overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
-                                                    <Image width={56} height={55} style={{ objectFit: "cover", alignSelf: "center" }} src={res.logo} alt="Neil image" />
-                                                </div>
-                                                <div className="flex-1 min-w-0 ms-4 mr-[10px]">
-                                                    <p className="text-xs text-darkColor500 dark:text-white truncate font-semibold opacity-40">
-                                                        {res.name}
-                                                    </p>
-                                                    <p className="text-sm text-darkColor200 dark:text-slate-200 truncate font-semibold">
-                                                        {res.description}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
+                            ))}
+                        </ul>
                     </div>
-                )}
-
-                {/* <Projects /> */}
+                </div>
 
                 <div className="flex justify-center">
-                    <Link href={{ pathname: '/project' }} className="py-2 px-8 text-xs lg:text-base bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors rounded-lg text-white dark:text-darkColor500">Show More</Link>
+                    <Link href="/project" className="py-2 px-8 text-xs lg:text-base bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors rounded-lg text-white dark:text-darkColor500">
+                        Show More
+                    </Link>
                 </div>
             </section>
         </>

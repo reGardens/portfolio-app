@@ -10,20 +10,24 @@ export default function ToggleDarkMode() {
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage))) {
             document.documentElement.classList.add('dark');
             if (themeToggleLightIcon !== null) {
-                themeToggleLightIcon.classList.remove('hidden'); // Tampilkan ikon light
+                themeToggleLightIcon.classList.remove('hidden'); // Show icon light
             }
             if (themeToggleDarkIcon !== null) {
-                themeToggleDarkIcon.classList.add('hidden'); // Sembunyikan ikon dark
+                themeToggleDarkIcon.classList.add('hidden'); // Show icon dark
             }
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
             // console.log('masuk dark');
         } else {
             document.documentElement.classList.remove('dark');
             if (themeToggleDarkIcon !== null) {
-                themeToggleDarkIcon.classList.remove('hidden'); // Tampilkan ikon dark
+                themeToggleDarkIcon.classList.remove('hidden'); // Show icon dark
             }
             if (themeToggleLightIcon !== null) {
-                themeToggleLightIcon.classList.add('hidden'); // Sembunyikan ikon light
+                themeToggleLightIcon.classList.add('hidden'); // Show icon light
             }
+            document.documentElement.classList.add('light');
+            localStorage.setItem('color-theme', 'light');
             // console.log('masuk light');
         }
     }, []);
