@@ -56,10 +56,8 @@ export default function DetailProjects({ dataProjects }: Props) {
                             toggleActions: "play none none none",
                         }
                     });
-                    project.to(box.querySelector(".media"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
-                        // .to(box.querySelector(".tablet"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
-                        // .to(box.querySelector(".mobile"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1")
-                        .to(box.querySelector(".description"), { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1");
+                    project.to(box.querySelector(".media"), { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
+                        .to(box.querySelector(".description"), { x: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 }, "-=0.2");
                 }
             })
         } else {
@@ -73,7 +71,7 @@ export default function DetailProjects({ dataProjects }: Props) {
                 }
             });
             dataProjects.forEach((res: PorjectsData, index: number) => {
-                project.to('.cards', { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
+                project.to('.cards', { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
             })
 
             // let hoverElements = document.querySelectorAll(".animation-hover");
@@ -117,13 +115,13 @@ export default function DetailProjects({ dataProjects }: Props) {
                     {dataProjects.map((res: PorjectsData, index: number) => {
                         return (
                             <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
-                                <div className="w-full h-full col-start-1 col-span-3 relative media opacity-0 -translate-y-10">
+                                <div className="w-full h-full col-start-1 col-span-3 relative media opacity-0 -translate-y-10 scale-95 transition-all duration-300 ease-out">
                                     <MediaComponentDesktop url={res.desktopView} name={res.name} />
                                     <MediaComponentTablet name={res.name} url={res.tabletView} />
                                     <MediaComponentMobile name={res.name} url={res.mobileView} />
                                 </div>
 
-                                <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10 -z-10 ml-3">
+                                <div className="col-span-2 col-start-4 mt-10 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out -z-10 ml-3">
                                     <p className="uppercase font-extrabold text-xl tracking-wider">{res.name}</p>
                                     <ul className="mb-3">
                                         {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {

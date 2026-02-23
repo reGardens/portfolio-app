@@ -20,6 +20,7 @@ export default function Navigation() {
     const pathname = usePathname();
     const [aside, setAside] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isDark, setIsDark] = useState<boolean>(false);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -44,11 +45,53 @@ export default function Navigation() {
             }
         }
 
-        // sticky navbar
-        window.addEventListener('scroll', () => {
+        // Function to update navbar background
+        const updateNavbarBackground = (isDarkMode: boolean) => {
             const stickyNav = document.getElementById('nav');
+            if (stickyNav && window.scrollY > 0) {
+                if (isDarkMode) {
+                    stickyNav.classList.add("!bg-darkColor500");
+                    stickyNav.classList.remove("!bg-white");
+                } else {
+                    stickyNav.classList.add("!bg-white");
+                    stickyNav.classList.remove("!bg-darkColor500");
+                }
+            }
+        };
+
+        // Check initial theme
+        const checkTheme = () => {
+            const isDarkMode = localStorage.getItem('color-theme') === 'dark' ||
+                (!('color-theme' in localStorage) && document.documentElement.classList.contains('dark'));
+            setIsDark(isDarkMode);
+            updateNavbarBackground(isDarkMode);
+        };
+
+        checkTheme();
+
+        // Listen for theme changes
+        const themeObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    const isDarkMode = document.documentElement.classList.contains('dark');
+                    setIsDark(isDarkMode);
+                    updateNavbarBackground(isDarkMode);
+                }
+            });
+        });
+
+        themeObserver.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+
+        // sticky navbar
+        const handleScroll = () => {
+            const stickyNav = document.getElementById('nav');
+            const isDarkMode = localStorage.getItem('color-theme') === 'dark';
+
             if (window.scrollY > 0) {
-                if (stickyNav && localStorage.getItem('color-theme') === 'dark') {
+                if (stickyNav && isDarkMode) {
                     stickyNav.classList.add("!bg-darkColor500");
                     stickyNav.classList.remove("!bg-white");
                 } else if (stickyNav) {
@@ -61,7 +104,9 @@ export default function Navigation() {
                     stickyNav.classList.remove("!bg-darkColor500");
                 }
             }
-        })
+        };
+
+        window.addEventListener('scroll', handleScroll);
 
         // dragable aside
         Draggable.create("#drag", {
@@ -92,11 +137,27 @@ export default function Navigation() {
                 }
             }
         });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            themeObserver.disconnect();
+        };
     }, [aside]);
 
     return (
         <>
-            <nav id="nav" className={`fixed w-full z-20 top-0 start-0 transition-colors bg-transparent`}>
+            {/* Maintenance Alert */}
+            <div className="fixed w-full z-30 top-0 left-0 flex items-center justify-center p-4 text-sm text-yellow-800 rounded-b-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300" role="alert">
+                <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span className="sr-only">Info</span>
+                <div>
+                    <span className="font-medium text-center">Warning alert!</span> This website is currently under maintenance. We apologize for the inconvenience.
+                </div>
+            </div>
+
+            <nav id="nav" className={`fixed w-full z-20 top-[3.2rem] start-0 transition-colors bg-transparent`}>
                 <div className="flex flex-wrap items-center justify-between mx-auto px-4 lg:px-24 py-4">
                     <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-traditionalColor500">Portfolio</span>
@@ -115,20 +176,14 @@ export default function Navigation() {
                         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                             <li>
                                 <Link href="/home" className={`block py-2 px-3 rounded md:p-0 transition-colors ${pathname === '/home'
-                                        ? 'text-traditionalColor500 dark:text-traditionalColor500 font-bold'
-                                        : 'text-slate-800 hover:text-traditionalColor500 dark:text-white dark:hover:text-traditionalColor500'
+                                    ? 'text-traditionalColor500 dark:text-traditionalColor500 font-bold'
+                                    : 'text-slate-800 hover:text-traditionalColor500 dark:text-white dark:hover:text-traditionalColor500'
                                     }`} aria-current="page">Home</Link>
                             </li>
                             <li>
-                                <Link href="/#about" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition-colors">About</Link>
-                            </li>
-                            <li>
-                                <Link href="/#skill" scroll className="block py-2 px-3 text-slate-800 rounded hover:text-traditionalColor500 md:p-0 dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition-colors">Skill</Link>
-                            </li>
-                            <li>
                                 <Link href="/project" className={`block py-2 px-3 rounded md:p-0 transition-colors ${pathname === '/project'
-                                        ? 'text-traditionalColor500 dark:text-traditionalColor500 font-bold'
-                                        : 'text-slate-800 hover:text-traditionalColor500 dark:text-white dark:hover:text-traditionalColor500'
+                                    ? 'text-traditionalColor500 dark:text-traditionalColor500 font-bold'
+                                    : 'text-slate-800 hover:text-traditionalColor500 dark:text-white dark:hover:text-traditionalColor500'
                                     }`}>Project</Link>
                             </li>
                         </ul>
@@ -147,8 +202,8 @@ export default function Navigation() {
 
                     <li>
                         <Link href="/home" className={`py-2 px-3 text-xl font-extrabold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 md:p-0 text-center transition-all flex items-center gap-1 ${pathname === '/home'
-                                ? 'text-white dark:text-white shadow-xl border-white dark:border-white'
-                                : 'text-white dark:text-darkColor500'
+                            ? 'text-white dark:text-white shadow-xl border-white dark:border-white'
+                            : 'text-white dark:text-darkColor500'
                             }`} aria-current="page">
                             <HomeIcon />
                             Home
@@ -156,8 +211,8 @@ export default function Navigation() {
                     </li>
                     <li>
                         <Link href="/project" className={`py-2 px-3 text-xl font-extrabold rounded-xl hover:shadow-xl border-b-[0.5px] border-b-transparent hover:border-white hover:dark:border-darkColor500 md:p-0 text-center transition-all flex items-center gap-1 ${pathname === '/project'
-                                ? 'text-white dark:text-white shadow-xl border-white dark:border-white'
-                                : 'text-white dark:text-darkColor500'
+                            ? 'text-white dark:text-white shadow-xl border-white dark:border-white'
+                            : 'text-white dark:text-darkColor500'
                             }`} aria-current="page">
                             <ViewListIcon />
                             Project

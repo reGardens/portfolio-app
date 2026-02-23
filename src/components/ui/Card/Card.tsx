@@ -35,8 +35,8 @@ export function Card({
     rounded = true,
     padding = "md"
 }: CardProps) {
-    const shadowClass = shadow ? "shadow-2xl" : "";
-    const roundedClass = rounded ? "rounded-xl" : "";
+    const shadowClass = shadow ? "shadow-[0_20px_40px_rgba(0,0,0,0.12)]" : "";
+    const roundedClass = rounded ? "rounded-2xl" : "";
 
     const paddingStyles = {
         none: "",
@@ -45,7 +45,7 @@ export function Card({
         lg: "p-6 lg:p-12",
     };
 
-    const combinedClassName = `${shadowClass} ${roundedClass} ${paddingStyles[padding]} ${className}`.trim();
+    const combinedClassName = `bg-white dark:bg-darkColor500 ${shadowClass} ${roundedClass} ${paddingStyles[padding]} ${className}`.trim();
 
     return <div className={combinedClassName}>{children}</div>;
 }
@@ -87,12 +87,12 @@ export function ProjectCardDesktop({
 }: ProjectCardDesktopProps) {
     return (
         <>
-            <div className="w-full h-full col-start-1 col-span-3 relative media opacity-0 -translate-y-10">
+            <div className="w-full h-full col-start-1 col-span-3 relative media opacity-0 -translate-y-10 scale-95 transition-all duration-300 ease-out">
                 <MediaDesktop url={desktopView} name={name} />
                 <MediaTablet name={name} url={tabletView} />
                 <MediaMobile name={name} url={mobileView} />
             </div>
-            <div className="col-span-2 col-start-4 mt-10 description opacity-0 -translate-x-10 -z-10 ml-3">
+            <div className="col-span-2 col-start-4 mt-10 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out -z-10 ml-3">
                 <p className="uppercase font-extrabold text-xl tracking-wider">{name}</p>
                 <ul className="mb-3">
                     {Array.isArray(hashtags) && hashtags.map((tag) => (

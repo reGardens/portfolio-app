@@ -18,12 +18,12 @@ export default function AboutSection() {
                 toggleActions: "play none none none",
             }
         });
-        about.to(".about div", { y: 0, opacity: 1, ease: "back.out(1.1)", duration: 1.8 });
+        about.to(".about div", { y: 0, scale: 1, opacity: 1, ease: "power2.out", duration: 0.3 });
     }, []);
 
     return (
         <Section id="about" padding="lg" className="overflow-hidden about px-4 sm:px-6">
-            <Card className="relative overflow-hidden opacity-0 translate-y-10">
+            <Card className="relative overflow-hidden opacity-0 -translate-y-10 scale-95 transition-all duration-300 ease-out">
                 <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                     <OptimizedImage src="/static/images/bg-about-white.jpeg" alt="" layout="fill" objectFit="cover" />
                 </div>

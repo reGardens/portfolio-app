@@ -26,11 +26,11 @@ export default function Button({
     disabled = false,
     animate = false,
 }: ButtonProps) {
-    const baseStyles = "transition-colors font-bold rounded-md inline-flex items-center justify-center";
+    const baseStyles = "transition-all font-bold rounded-2xl inline-flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]";
 
     const variantStyles = {
-        primary: "bg-traditionalColor500 hover:bg-traditionalColor600 text-white shadow-lg",
-        secondary: "bg-darkColor500 dark:bg-white hover:bg-darkColor700 dark:hover:bg-slate-200 text-white dark:text-darkColor500 shadow-lg",
+        primary: "bg-traditionalColor500 hover:bg-traditionalColor600 text-white",
+        secondary: "bg-darkColor500 dark:bg-white hover:bg-darkColor700 dark:hover:bg-slate-200 text-white dark:text-darkColor500",
         ghost: "bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-darkColor500 dark:text-white",
         link: "bg-transparent hover:underline text-traditionalColor500",
     };

@@ -46,8 +46,8 @@ export default function ProjectsSection({ dataProjects }: Props) {
                             toggleActions: "play none none none",
                         }
                     });
-                    project.to(box.querySelector(".media"), { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
-                        .to(box.querySelector(".description"), { x: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 }, "-=1");
+                    project.to(box.querySelector(".media"), { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
+                        .to(box.querySelector(".description"), { x: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 }, "-=0.2");
                 }
             })
         } else {
@@ -61,7 +61,7 @@ export default function ProjectsSection({ dataProjects }: Props) {
                 }
             });
             dataProjects.forEach((res: PorjectsData, index: number) => {
-                project.to('.cards', { y: 0, duration: 1.8, ease: "back.out(1.1)", opacity: 1 })
+                project.to('.cards', { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
             })
         }
     }, [dataProjects]);
