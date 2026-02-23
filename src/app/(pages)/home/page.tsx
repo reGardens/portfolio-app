@@ -12,13 +12,16 @@ interface Item {
 }
 
 export default async function Home() {
-    const icons = await fs.readFile(process.cwd() + '/public/static/dataSkills.json', 'utf8');
+    const skillsPath = process.env.DATA_SKILLS_PATH || '/public/static/dataSkills.json';
+    const projectsPath = process.env.DATA_PROJECTS_PATH || '/public/static/dataProjects.json';
+
+    const icons = await fs.readFile(process.cwd() + skillsPath, 'utf8');
     const dataIcons = await JSON.parse(icons);
     const dataFrontEnd = dataIcons.find((item: Item) => item.name === 'frontend');
     const dataBackEnd = dataIcons.find((item: Item) => item.name === 'backend');
     const dataOtherSkills = dataIcons.find((item: Item) => item.name === 'other');
 
-    const projects = await fs.readFile(process.cwd() + '/public/static/dataProjects.json', 'utf8');
+    const projects = await fs.readFile(process.cwd() + projectsPath, 'utf8');
     const dataProjects = await JSON.parse(projects);
     const latestProject = dataProjects.slice(-3);
 
@@ -28,10 +31,10 @@ export default async function Home() {
                 {
                     dataFrontEnd && dataBackEnd && dataOtherSkills &&
                     <HomeClientSide
-                    dataIconFront={dataFrontEnd}
-                    dataIconBack={dataBackEnd}
-                    dataIconOther={dataOtherSkills}
-                    dataProjects={latestProject}
+                        dataIconFront={dataFrontEnd}
+                        dataIconBack={dataBackEnd}
+                        dataIconOther={dataOtherSkills}
+                        dataProjects={latestProject}
                     />
                 }
             </main>
