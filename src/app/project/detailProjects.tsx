@@ -3,7 +3,7 @@
 import MediaComponentDesktop from "@/components/(projects)/mediaComponentDesktop/page";
 import MediaComponentTablet from "@/components/(projects)/mediaComponentTablet/page";
 import MediaComponentMobile from "@/components/(projects)/mediaComponentMobile/page";
-import Title from "@/components/title/page";
+import { Typography } from "@/components/ui";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -109,7 +109,7 @@ export default function DetailProjects({ dataProjects }: Props) {
         <>
             <section id="project" className="pl-4 lg:pl-24 pt-32 pb-10">
                 <div className="mb-10 lg:mb-20">
-                    <Title title={'Projects'} darkText={'null'} />
+                    <Typography size="4xl" weight="bold" className="text-darkColor500 dark:text-white">Projects</Typography>
                 </div>
 
                 {/* Desktop Layout */}

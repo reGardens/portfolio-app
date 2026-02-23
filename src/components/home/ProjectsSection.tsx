@@ -67,13 +67,13 @@ export default function ProjectsSection({ dataProjects }: Props) {
     }, [dataProjects]);
 
     return (
-        <Section id="project" className="pt-32 pb-10" padding="none">
-            <div className="px-4 lg:px-24 mb-10 lg:mb-20">
-                <Typography size="5xl" weight="extrabold" className="mb-4 lg:mb-0">Latest Projects</Typography>
+        <Section id="project" className="pt-24 sm:pt-32 pb-10" padding="none">
+            <div className="px-4 sm:px-6 lg:px-24 mb-8 sm:mb-10 lg:mb-20">
+                <Typography size="4xl" weight="extrabold" className="mb-4 lg:mb-0 sm:text-5xl">Latest Projects</Typography>
             </div>
 
             {/* Desktop Layout */}
-            <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative px-4 lg:px-24">
+            <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative px-4 sm:px-6 lg:px-24">
                 {dataProjects?.map((res: PorjectsData, index: number) => (
                     <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects" data-index={index}>
                         <ProjectCardDesktop
@@ -92,7 +92,7 @@ export default function ProjectsSection({ dataProjects }: Props) {
             </ul>
 
             {/* Mobile Layout */}
-            <Card className="block lg:hidden w-full max-w-md bg-white dark:bg-darkColor500 overflow-hidden p-m-s mb-10 mx-4">
+            <Card className="block lg:hidden w-auto mx-4 sm:mx-6 bg-white dark:bg-darkColor500 overflow-hidden p-m-s mb-10">
                 <div className="flow-root">
                     <ul role="list" className="relative projects">
                         {dataProjects?.map((res: PorjectsData, index: number) => (

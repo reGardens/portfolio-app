@@ -22,16 +22,16 @@ export default function AboutSection() {
     }, []);
 
     return (
-        <Section id="about" padding="lg" className="overflow-hidden about">
+        <Section id="about" padding="lg" className="overflow-hidden about px-4 sm:px-6">
             <Card className="relative overflow-hidden opacity-0 translate-y-10">
                 <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                     <OptimizedImage src="/static/images/bg-about-white.jpeg" alt="" layout="fill" objectFit="cover" />
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
-                    <Typography size="5xl" weight="extrabold" className="mb-4 lg:mb-0 col-span-1 !text-darkColor500">About me</Typography>
+                <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-start lg:items-center gap-4 lg:gap-0">
+                    <Typography size="4xl" weight="extrabold" className="mb-2 sm:mb-4 lg:mb-0 col-span-1 !text-darkColor500 sm:text-5xl">About me</Typography>
 
-                    <div className="col-span-2 text-justify lg:text-left mt-2 lg:mt-0">
+                    <div className="col-span-2 text-justify mt-0">
                         <Typography className="indent-9">
                             My name is Reza Bagus Pratama. I&apos;m 26 years old and I come from Indonesia, specifically Central Java. I work as a frontend web developer in the IT industry. I have been doing freelance and remote jobs for the past 2 years, as well as working on-site (WFO) projects. <br /><br />
                         </Typography>

@@ -36,61 +36,61 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
     }, []);
 
     return (
-        <Section id="skill" padding="lg" className="skills">
-            <div className="mb-10 lg:mb-20">
-                <Typography size="5xl" weight="extrabold" className="mb-4 lg:mb-0">Skills</Typography>
+        <Section id="skill" padding="lg" className="skills px-4 sm:px-6">
+            <div className="mb-8 sm:mb-10 lg:mb-20">
+                <Typography size="4xl" weight="extrabold" className="mb-4 lg:mb-0 sm:text-5xl">Skills</Typography>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center">
-                <Card className="col-span-2 grid grid-cols-1 lg:grid-cols-3 relative justify-center items-center py-0 lg:py-9 gap-0.5 w-full overflow-hidden" padding="none">
+            <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center gap-8 lg:gap-0">
+                <Card className="col-span-1 lg:col-span-2 grid grid-cols-1 lg:grid-cols-3 relative justify-center items-center py-4 lg:py-9 gap-4 lg:gap-0.5 w-full overflow-hidden" padding="none">
                     <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                         <OptimizedImage src="/static/images/bg-about-black.jpeg" alt="" layout="fill" objectFit="cover" />
                     </div>
 
-                    <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 frontend translate-y-10 opacity-0 rounded-t-xl">
+                    <ul className="col-span-1 lg:col-span-2 grid grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3 sm:gap-5 p-3 sm:p-5 frontend translate-y-10 opacity-0 rounded-t-xl">
                         {dataIconFront?.data?.map((res: IconData, index: number) => {
                             return (
                                 <li className="inline-block mx-auto" key={index}>
-                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} />
+                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} className="w-10 h-10 sm:w-12 sm:h-12" />
                                 </li>
                             )
                         })}
                     </ul>
 
-                    <Typography size="base" weight="bold" className="uppercase col-span-1 text-white ml-[35px] frontend translate-y-10 opacity-0 hidden lg:block" darkMode={false}>
+                    <Typography size="sm" weight="bold" className="uppercase col-span-1 text-white text-center lg:text-left lg:ml-[35px] px-3 lg:px-0 py-2 lg:py-0 frontend translate-y-10 opacity-0 sm:text-base" darkMode={false}>
                         FrontEnd Website
                     </Typography>
 
-                    <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 backend translate-y-10 opacity-0">
+                    <ul className="col-span-1 lg:col-span-2 grid grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3 sm:gap-5 p-3 sm:p-5 backend translate-y-10 opacity-0">
                         {dataIconBack?.data?.map((res: IconData, index: number) => {
                             return (
                                 <li className="inline-block mx-auto" key={index}>
-                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} />
+                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} className="w-10 h-10 sm:w-12 sm:h-12" />
                                 </li>
                             )
                         })}
                     </ul>
 
-                    <Typography size="base" weight="bold" className="uppercase col-span-1 text-white ml-[35px] backend translate-y-10 opacity-0 hidden lg:block" darkMode={false}>
+                    <Typography size="sm" weight="bold" className="uppercase col-span-1 text-white text-center lg:text-left lg:ml-[35px] px-3 lg:px-0 py-2 lg:py-0 backend translate-y-10 opacity-0 sm:text-base" darkMode={false}>
                         BackEnd Website
                     </Typography>
 
-                    <ul className="col-span-2 grid grid-cols-4 justify-center items-center gap-5 p-5 other translate-y-10 opacity-0 rounded-b-xl">
+                    <ul className="col-span-1 lg:col-span-2 grid grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3 sm:gap-5 p-3 sm:p-5 other translate-y-10 opacity-0 rounded-b-xl">
                         {dataIconOther?.data?.map((res: IconData, index: number) => {
                             return (
                                 <li className="inline-block mx-auto" key={index}>
-                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} />
+                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} className="w-10 h-10 sm:w-12 sm:h-12" />
                                 </li>
                             )
                         })}
                     </ul>
 
-                    <Typography size="base" weight="bold" className="uppercase col-span-1 text-white ml-[35px] other translate-y-10 opacity-0 hidden lg:block" darkMode={false}>
+                    <Typography size="sm" weight="bold" className="uppercase col-span-1 text-white text-center lg:text-left lg:ml-[35px] px-3 lg:px-0 py-2 lg:py-0 other translate-y-10 opacity-0 sm:text-base" darkMode={false}>
                         Other
                     </Typography>
                 </Card>
 
-                <Typography size="2xl" weight="bold" className="col-span-1 mx-5 text-center detail translate-y-10 opacity-0">
+                <Typography size="xl" weight="bold" className="col-span-1 mx-5 text-center detail translate-y-10 opacity-0 sm:text-2xl mt-6 lg:mt-0">
                     &quot;I also have a little understanding of the backend, in addition to the frontend.&quot;
                 </Typography>
             </div>

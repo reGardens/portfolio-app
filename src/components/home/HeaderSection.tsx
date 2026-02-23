@@ -14,26 +14,26 @@ export default function HeaderSection() {
     }, []);
 
     return (
-        <article id="header" className='grid items-center h-full lg:h-[40rem] mt-20 lg:mt-0 relative px-4 lg:px-24 pt-4 lg:pt-24'>
-            <div className="grid lg:grid-cols-2 items-center">
-                <div className='grid gap-4 order-2 lg:order-1 h-full'>
+        <article id="header" className='grid items-center min-h-screen lg:h-[40rem] mt-16 lg:mt-0 relative px-4 sm:px-6 lg:px-24 pt-4 lg:pt-24'>
+            <div className="grid lg:grid-cols-2 items-center gap-8 lg:gap-0">
+                <div className='grid gap-4 sm:gap-6 order-2 lg:order-1 h-full'>
                     <Typography size="4xl" weight="bold" className="hidden lg:block text1 -translate-x-10 opacity-0">
                         Hi, I&apos;m Reza Bagus Pratama
                     </Typography>
-                    <Typography size="2xl" weight="bold" className="block lg:hidden text1 -translate-x-10 opacity-0">
-                        Hi, <br /> I&apos;m Reza Bagus Pratama
+                    <Typography size="3xl" weight="bold" className="block lg:hidden text1 -translate-x-10 opacity-0">
+                        Hi, I&apos;m Reza Bagus Pratama
                     </Typography>
 
-                    <div className="mb-2 text2 -translate-x-10 opacity-0">
-                        <Typography size="6xl" weight="extrabold" className="mb-0 lg:mb-4">
+                    <div className="mb-4 sm:mb-6 text2 -translate-x-10 opacity-0">
+                        <Typography size="4xl" weight="extrabold" className="mb-2 sm:mb-3 lg:mb-4 lg:text-6xl">
                             Front-End Web Developer
                         </Typography>
-                        <Typography size="sm" className="opacity-70">
+                        <Typography size="sm" className="opacity-70 sm:text-base">
                             As a web developer, I am also a competitive programmer and tech enthusiast.
                         </Typography>
                     </div>
 
-                    <div className="grid lg:flex gap-3 font-bold items-center text3 -translate-x-10 opacity-0">
+                    <div className="grid sm:grid-cols-2 lg:flex gap-3 sm:gap-4 font-bold items-center text3 -translate-x-10 opacity-0">
                         <Button
                             variant="secondary"
                             href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=rezzabagus.rb@gmail.com"
@@ -62,11 +62,11 @@ export default function HeaderSection() {
                     </div>
                 </div>
 
-                <div className='relative order-1 lg:order-2'>
+                <div className='relative order-1 lg:order-2 flex justify-center lg:block'>
                     <div className="w-full lg:absolute -top-[24rem] -right-[8rem] hidden lg:block">
                         <OptimizedImage src="/static/images/user-image.png" alt="User" width={672} height={672} priority />
                     </div>
-                    <div className="w-full lg:absolute -top-[29rem] -right-[8rem] block lg:hidden">
+                    <div className="w-3/4 max-w-sm sm:w-1/2 sm:max-w-md block lg:hidden">
                         <OptimizedImage src="/static/images/user-image.png" alt="User" width={672} height={672} priority />
                     </div>
                 </div>
