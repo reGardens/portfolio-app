@@ -58,7 +58,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                     </ul>
 
                     <Typography size="sm" weight="bold" className="uppercase col-span-1 text-white text-center lg:text-left lg:ml-[35px] px-3 lg:px-0 py-2 lg:py-0 frontend -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out sm:text-base" darkMode={false}>
-                        FrontEnd Website
+                        FrontEnd
                     </Typography>
 
                     <ul className="col-span-1 lg:col-span-2 grid grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3 sm:gap-5 p-3 sm:p-5 backend -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out">
@@ -72,7 +72,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                     </ul>
 
                     <Typography size="sm" weight="bold" className="uppercase col-span-1 text-white text-center lg:text-left lg:ml-[35px] px-3 lg:px-0 py-2 lg:py-0 backend -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out sm:text-base" darkMode={false}>
-                        BackEnd Website
+                        BackEnd
                     </Typography>
 
                     <ul className="col-span-1 lg:col-span-2 grid grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3 sm:gap-5 p-3 sm:p-5 other -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out rounded-b-xl">
