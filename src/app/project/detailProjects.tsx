@@ -1,9 +1,9 @@
 "use client"
 
-import MediaComponentDesktop from "@/app/components/(projects)/mediaComponentDesktop/page";
-import MediaComponentTablet from "@/app/components/(projects)/mediaComponentTablet/page";
-import MediaComponentMobile from "@/app/components/(projects)/mediaComponentMobile/page";
-import Title from "@/app/components/title/page";
+import MediaComponentDesktop from "@/components/(projects)/mediaComponentDesktop/page";
+import MediaComponentTablet from "@/components/(projects)/mediaComponentTablet/page";
+import MediaComponentMobile from "@/components/(projects)/mediaComponentMobile/page";
+import Title from "@/components/title/page";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
