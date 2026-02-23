@@ -63,11 +63,11 @@ export default function HeaderSection() {
                 </div>
 
                 <div className='relative order-1 lg:order-2'>
-                    <div className="w-full lg:absolute -top-[29rem] -right-[8rem] hidden lg:block">
-                        <OptimizedImage src="/static/images/avatar-desktop.png" alt="User" width={672} height={672} priority />
+                    <div className="w-full lg:absolute -top-[24rem] -right-[8rem] hidden lg:block">
+                        <OptimizedImage src="/static/images/user-image.png" alt="User" width={672} height={672} priority />
                     </div>
                     <div className="w-full lg:absolute -top-[29rem] -right-[8rem] block lg:hidden">
-                        <OptimizedImage src="/static/images/avatar-mobile.png" alt="User" width={672} height={672} priority />
+                        <OptimizedImage src="/static/images/user-image.png" alt="User" width={672} height={672} priority />
                     </div>
                 </div>
             </div>

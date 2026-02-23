@@ -5,8 +5,8 @@ import "@/styles/main.css";
 import "flowbite";
 
 // Components
-import Footer from "@/components/footer/page";
-import Navigation from "@/components/navigation/page";
+import Footer from "@/components/layout/footer/page";
+import Navigation from "@/components/layout/navigation/page";
 
 {/* <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> */ }
 

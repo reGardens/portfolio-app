@@ -1,6 +1,6 @@
 'use client'
 
-import DarkMode from "@/components/toggledarkMode/pages";
+import DarkMode from "@/components/widget/toggledarkMode/pages";
 import gsap from "gsap";
 import Link from "next/link";
 import { useEffect, useState } from "react";
