@@ -4,6 +4,8 @@ interface TypographyProps {
     children: ReactNode;
     size?: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
     weight?: "normal" | "medium" | "semibold" | "bold" | "extrabold";
+    variant?: "body-s" | "body-m" | "body-l" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    fontWeight?: "normal" | "medium" | "semibold" | "bold" | "extrabold";
     className?: string;
     darkMode?: boolean;
 }
@@ -12,10 +14,25 @@ export function Typography({
     children,
     size = "base",
     weight = "normal",
+    variant,
+    fontWeight,
     className = "",
     darkMode = true
 }: TypographyProps) {
     const darkModeClass = darkMode ? "dark:text-white" : "";
+
+    // Map variant to size
+    const variantSizeMap = {
+        "body-s": "text-xs",
+        "body-m": "text-sm",
+        "body-l": "text-lg",
+        "h1": "text-5xl",
+        "h2": "text-4xl",
+        "h3": "text-2xl",
+        "h4": "text-xl",
+        "h5": "text-lg",
+        "h6": "text-base",
+    };
 
     const sizeStyles = {
         xs: "text-xs",
@@ -38,7 +55,12 @@ export function Typography({
         extrabold: "font-extrabold",
     };
 
-    const combinedClassName = `${sizeStyles[size]} ${weightStyles[weight]} ${darkModeClass} ${className}`.trim();
+    // Use variant if provided, otherwise use size
+    const finalSize = variant ? variantSizeMap[variant] : sizeStyles[size];
+    // Use fontWeight if provided, otherwise use weight
+    const finalWeight = fontWeight ? weightStyles[fontWeight] : weightStyles[weight];
+
+    const combinedClassName = `${finalSize} ${finalWeight} ${darkModeClass} ${className}`.trim();
 
     return <p className={combinedClassName}>{children}</p>;
 }

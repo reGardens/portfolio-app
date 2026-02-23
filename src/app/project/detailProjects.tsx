@@ -106,10 +106,6 @@ export default function DetailProjects({ dataProjects }: Props) {
     return (
         <>
             <section id="project" className="pl-4 lg:pl-24 pt-32 pb-10">
-                <div className="mb-10 lg:mb-20">
-                    <Typography size="4xl" weight="bold" className="text-darkColor500 dark:text-white">Projects</Typography>
-                </div>
-
                 {/* Desktop Layout */}
                 <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
                     {dataProjects.map((res: PorjectsData, index: number) => {
@@ -132,7 +128,7 @@ export default function DetailProjects({ dataProjects }: Props) {
                                             )
                                         })}
                                     </ul>
-                                    <Typography variant="body-l" fontWeight="bold" className="text-darkColor200 tracking-wider">{res.description}</Typography>
+                                    <Typography variant="body-m" fontWeight="bold" className="text-darkColor200 tracking-wider text-justify">{res.description}</Typography>
                                 </div>
                             </li>
                         )

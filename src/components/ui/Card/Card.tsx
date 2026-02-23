@@ -104,7 +104,7 @@ export function ProjectCardDesktop({
                         </li>
                     ))}
                 </ul>
-                <Typography variant="body-l" fontWeight="bold" className="text-darkColor200 tracking-wider">{description}</Typography>
+                <Typography variant="body-m" fontWeight="bold" className="text-darkColor200 tracking-wider text-justify">{description}</Typography>
             </div>
         </>
     );
