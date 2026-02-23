@@ -122,17 +122,17 @@ export default function DetailProjects({ dataProjects }: Props) {
                                 </div>
 
                                 <div className="col-span-2 col-start-4 mt-10 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out -z-10 ml-3">
-                                    <p className="uppercase font-extrabold text-xl tracking-wider">{res.name}</p>
+                                    <Typography variant="body-l" fontWeight="extrabold" className="uppercase tracking-wider">{res.name}</Typography>
                                     <ul className="mb-3">
                                         {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
                                             return (
                                                 <li key={ress.name} className="inline-block mr-1.5 italic">
-                                                    <p className="leading-none text-darkColor500 dark:text-white text-xs font-extrabold opacity-50 tracking-wider">{ress.name}</p>
+                                                    <Typography variant="body-s" fontWeight="extrabold" className="leading-none text-darkColor500 dark:text-white opacity-50 tracking-wider">{ress.name}</Typography>
                                                 </li>
                                             )
                                         })}
                                     </ul>
-                                    <p className="font-bold text-lg text-darkColor200 tracking-wider">{res.description}</p>
+                                    <Typography variant="body-l" fontWeight="bold" className="text-darkColor200 tracking-wider">{res.description}</Typography>
                                 </div>
                             </li>
                         )
@@ -147,16 +147,16 @@ export default function DetailProjects({ dataProjects }: Props) {
                                 return (
                                     <li key={index} className="py-3 sm:py-4 relative border-b-2 border-white border-opacity-5 animation-hover" onClick={() => handleDetail(index, res.slug, res)}>
                                         <div className="flex items-center relative cards opacity-0 -translate-y-10">
-                                            <div className="flex-shrink-0 rounded-full !overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
+                                            <div className="flex-shrink-0 rounded-full overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
                                                 <Image width={56} height={55} style={{ objectFit: "cover", alignSelf: "center" }} src={res.logo} alt="Neil image" />
                                             </div>
                                             <div className="flex-1 min-w-0 ms-4 mr-[10px]">
-                                                <p className="text-xs text-darkColor500 dark:text-white truncate font-semibold opacity-40">
+                                                <Typography variant="body-s" className="text-darkColor500 dark:text-white truncate font-semibold opacity-40">
                                                     {res.name}
-                                                </p>
-                                                <p className="text-sm text-darkColor200 dark:text-slate-200 truncate font-semibold">
+                                                </Typography>
+                                                <Typography variant="body-s" className="text-darkColor200 dark:text-slate-200 truncate font-semibold">
                                                     {res.description}
-                                                </p>
+                                                </Typography>
                                             </div>
                                         </div>
                                         {/* navigation detail icons */}

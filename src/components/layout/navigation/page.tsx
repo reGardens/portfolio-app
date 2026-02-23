@@ -151,20 +151,20 @@ export default function Navigation() {
                 <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                 </svg>
-                <span className="sr-only">Info</span>
+                <Typography variant="body-s" className="sr-only">Info</Typography>
                 <div>
-                    <span className="font-medium text-center">Warning alert!</span> This website is currently under maintenance. We apologize for the inconvenience.
+                    <Typography variant="body-s" fontWeight="medium" className="text-center inline">Warning alert!</Typography> <Typography variant="body-s" className="inline">This website is currently under maintenance. We apologize for the inconvenience.</Typography>
                 </div>
             </div>
 
             <nav id="nav" className={`fixed w-full z-20 top-[3.2rem] start-0 transition-colors bg-transparent`}>
                 <div className="flex flex-wrap items-center justify-between mx-auto px-4 lg:px-24 py-4">
                     <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-traditionalColor500">Portfolio</span>
+                        <Typography variant="h3" fontWeight="semibold" className="self-center text-traditionalColor500">Portfolio</Typography>
                     </a>
                     <div className="flex md:order-2 space-x-1 md:space-x-3 rtl:space-x-reverse">
                         <DarkMode />
-                        <Link href={"whatsapp://send?text=Hello&phone=+6285179910305"} type="button" className="text-white bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors font-medium rounded-lg text-sm px-3 py-2 text-center">Contact</Link>
+                        <Link href={"whatsapp://send?text=Hello&phone=+6285179910305"} className="text-white bg-traditionalColor500 hover:bg-traditionalColor600 transition-colors font-medium rounded-2xl text-sm px-3 py-2 text-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]">Contact</Link>
                         <button onClick={handleAside} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 relative z-[100]">
                             <span className="sr-only">Open main menu</span>
                             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">

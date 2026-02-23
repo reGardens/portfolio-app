@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ReactNode } from "react";
+import { Typography } from "../Typography/Typography";
 
 interface CardProps {
     children: ReactNode;
@@ -36,7 +37,7 @@ export function Card({
     padding = "md"
 }: CardProps) {
     const shadowClass = shadow ? "shadow-[0_20px_40px_rgba(0,0,0,0.12)]" : "";
-    const roundedClass = rounded ? "rounded-2xl" : "";
+    const roundedClass = rounded ? "rounded-2xl overflow-hidden" : "";
 
     const paddingStyles = {
         none: "",
@@ -53,7 +54,7 @@ export function Card({
 export function ProjectCard({ name, description, logo, className = "" }: ProjectCardProps) {
     return (
         <div className={`flex items-center relative ${className}`}>
-            <div className="flex-shrink-0 rounded-full !overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
+            <div className="flex-shrink-0 rounded-full overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
                 <Image
                     width={56}
                     height={55}
@@ -63,12 +64,12 @@ export function ProjectCard({ name, description, logo, className = "" }: Project
                 />
             </div>
             <div className="flex-1 min-w-0 ms-4 mr-[10px]">
-                <p className="text-xs text-darkColor500 dark:text-white truncate font-semibold opacity-40">
+                <Typography variant="body-s" className="text-darkColor500 dark:text-white truncate font-semibold opacity-40">
                     {name}
-                </p>
-                <p className="text-sm text-darkColor200 dark:text-slate-200 truncate font-semibold">
+                </Typography>
+                <Typography variant="body-s" className="text-darkColor200 dark:text-slate-200 truncate font-semibold">
                     {description}
-                </p>
+                </Typography>
             </div>
         </div>
     );
@@ -93,17 +94,17 @@ export function ProjectCardDesktop({
                 <MediaMobile name={name} url={mobileView} />
             </div>
             <div className="col-span-2 col-start-4 mt-10 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out -z-10 ml-3">
-                <p className="uppercase font-extrabold text-xl tracking-wider">{name}</p>
+                <Typography variant="body-l" fontWeight="extrabold" className="uppercase tracking-wider">{name}</Typography>
                 <ul className="mb-3">
                     {Array.isArray(hashtags) && hashtags.map((tag) => (
                         <li key={tag.name} className="inline-block mr-1.5 italic">
-                            <p className="leading-none text-darkColor500 dark:text-white text-xs font-extrabold opacity-50 tracking-wider">
+                            <Typography variant="body-s" fontWeight="extrabold" className="leading-none text-darkColor500 dark:text-white opacity-50 tracking-wider">
                                 {tag.name}
-                            </p>
+                            </Typography>
                         </li>
                     ))}
                 </ul>
-                <p className="font-bold text-lg text-darkColor200 tracking-wider">{description}</p>
+                <Typography variant="body-l" fontWeight="bold" className="text-darkColor200 tracking-wider">{description}</Typography>
             </div>
         </>
     );

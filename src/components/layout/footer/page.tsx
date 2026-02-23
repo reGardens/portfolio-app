@@ -1,4 +1,6 @@
 import Link from "next/link";
+import packageJson from "../../../../package.json";
+import { Typography } from "@/components/ui";
 
 export default function Footer() {
     return (
@@ -8,23 +10,24 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <Link href="/" className="flex items-center">
                             {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" /> */}
-                            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Portfolio</span>
+                            <Typography variant="h3" fontWeight="semibold" className="self-center dark:text-white">Portfolio</Typography>
                         </Link>
+                        <Typography variant="body-s" fontWeight="bold" className="text-white dark:text-darkColor500 opacity-70 mt-2">Version {packageJson.version}</Typography>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                            <Typography variant="body-s" fontWeight="semibold" className="mb-6 text-gray-900 uppercase dark:text-white">Resources</Typography>
                             <ul className="text-white dark:text-darkColor500 font-medium">
                                 <li className="mb-4">
-                                    <p>Next JS</p>
+                                    <Typography variant="body-m" className="text-white dark:text-darkColor500">Next JS</Typography>
                                 </li>
                                 <li>
-                                    <p>Typescript</p>
+                                    <Typography variant="body-m" className="text-white dark:text-darkColor500">Typescript</Typography>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow me</h2>
+                            <Typography variant="body-s" fontWeight="semibold" className="mb-6 text-gray-900 uppercase dark:text-white">Follow me</Typography>
                             <ul className="text-white dark:text-darkColor500 font-medium">
                                 <li className="mb-4">
                                     <a href="https://github.com/reGardens" className="hover:underline ">Github</a>
@@ -38,8 +41,8 @@ export default function Footer() {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <span className="text-sm text-darkColor500 sm:text-center dark:text-white">© 2024^ All Rights Reserved.
-                    </span>
+                    <Typography variant="body-s" className="text-darkColor500 sm:text-center dark:text-white">© 2024^ All Rights Reserved.
+                    </Typography>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <a href="https://web.facebook.com/rezza.tmz/" className="text-white hover:text-gray-500 dark:text-darkColor500 dark:hover:text-darkColor700 transition-colors">
                             <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">

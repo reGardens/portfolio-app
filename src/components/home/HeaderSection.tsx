@@ -41,12 +41,12 @@ export default function HeaderSection() {
                             fullWidth
                             className="h-fit py-1 px-3 text-left"
                         >
-                            <h3 className="opacity text-white dark:text-darkColor500">
-                                <strong className="tracking-[4px] opacity-85 text-[10px] uppercase">
+                            <Typography variant="body-m" className="text-white dark:text-darkColor500">
+                                <strong className="tracking-[4px] text-[10px] uppercase text-white dark:text-darkColor500">
                                     Say what you wanna know &#x1F60A;
                                 </strong>{" "}
-                                <br /> rezzabagus.rb@gmail.com
-                            </h3>
+                                <br /> <span className="text-white dark:text-darkColor500">rezzabagus.rb@gmail.com</span>
+                            </Typography>
                         </Button>
 
                         <Button
