@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/navigation';
+import { Typography } from '@/components/ui';
 
 interface Hashtags {
     name: string;
@@ -55,14 +56,14 @@ export default function ProjectDetail() {
                 {Array.isArray(data?.hashtags) && data?.hashtags.map((ress: Hashtags) => {
                     return (
                         <li key={ress.name} className="inline-block mr-1.5 italic">
-                            <p className="leading-none text-darkColor500 dark:text-white text-xs font-extrabold opacity-50 tracking-wider">{ress.name}</p>
+                            <Typography variant="body-s" fontWeight="extrabold" className="leading-none text-darkColor500 dark:text-white opacity-50 tracking-wider">{ress.name}</Typography>
                         </li>
                     )
                 })}
             </ul>
 
-            <p className="font-extrabold opacity-75 uppercase mt-6">{data && data.name}</p>
-            <p className="mt-1 tracking-wide text-[15px] text-justify">{data && data.description}</p>
+            <Typography variant="body-m" fontWeight="extrabold" className="opacity-75 uppercase mt-6">{data && data.name}</Typography>
+            <Typography variant="body-m" className="mt-1 tracking-wide text-justify">{data && data.description}</Typography>
             <Button sx={{ marginTop: '15px' }} variant="contained" startIcon={<ArrowBackIcon />} onClick={handleBack}>
                 Back
             </Button>

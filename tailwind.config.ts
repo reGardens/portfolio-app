@@ -29,6 +29,48 @@ const config: Config = {
         darkColor700: '#090E18',
         darkColor800: '#060910',
         darkColor900: '#030508',
+      },
+      keyframes: {
+        'gentle-float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        'flag-wave': {
+          '0%, 100%': { transform: 'rotate(0deg) skewX(0deg)' },
+          '25%': { transform: 'rotate(1deg) skewX(2deg)' },
+          '50%': { transform: 'rotate(0deg) skewX(0deg)' },
+          '75%': { transform: 'rotate(-1deg) skewX(-2deg)' },
+        },
+        'flag-roll': {
+          '0%, 100%': { transform: 'perspective(400px) rotateY(0deg)' },
+          '25%': { transform: 'perspective(400px) rotateY(-8deg)' },
+          '50%': { transform: 'perspective(400px) rotateY(0deg)' },
+          '75%': { transform: 'perspective(400px) rotateY(8deg)' },
+        },
+        'flag-realistic': {
+          '0%': { transform: 'perspective(600px) rotateY(0deg) scaleX(1)' },
+          '25%': { transform: 'perspective(600px) rotateY(5deg) scaleX(0.98)' },
+          '50%': { transform: 'perspective(600px) rotateY(0deg) scaleX(1)' },
+          '75%': { transform: 'perspective(600px) rotateY(-5deg) scaleX(0.98)' },
+          '100%': { transform: 'perspective(600px) rotateY(0deg) scaleX(1)' },
+        },
+        'flag-drop': {
+          '0%': { transform: 'translateY(-20px) rotate(0deg)' },
+          '15%': { transform: 'translateY(0px) rotate(-4deg)' },
+          '30%': { transform: 'translateY(0px) rotate(4deg)' },
+          '45%': { transform: 'translateY(0px) rotate(-3deg)' },
+          '60%': { transform: 'translateY(0px) rotate(3deg)' },
+          '75%': { transform: 'translateY(0px) rotate(-2deg)' },
+          '90%': { transform: 'translateY(0px) rotate(2deg)' },
+          '100%': { transform: 'translateY(-20px) rotate(0deg)' },
+        }
+      },
+      animation: {
+        'gentle-float': 'gentle-float 3s ease-in-out infinite',
+        'flag-wave': 'flag-wave 2s ease-in-out infinite',
+        'flag-roll': 'flag-roll 2.5s ease-in-out infinite',
+        'flag-realistic': 'flag-realistic 2s ease-in-out infinite',
+        'flag-drop': 'flag-drop 1.5s ease-in-out infinite',
       }
     },
   },
