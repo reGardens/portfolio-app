@@ -17,7 +17,7 @@ interface PorjectsData {
     desktopView: string;
     tabletView: string;
     mobileView: string;
-    hashtags: Array<{ name: string; link: string }> | string;
+    hashtags: string | Array<{ name: string; link: string }>;
     logo: string;
 }
 
@@ -79,7 +79,11 @@ export default function ProjectsSection({ dataProjects }: Props) {
                         <ProjectCardDesktop
                             name={res.name}
                             description={res.description}
+<<<<<<< HEAD
                             hashtags={typeof res.hashtags === 'string' ? [] : res.hashtags}
+=======
+                            hashtags={Array.isArray(res.hashtags) ? res.hashtags : undefined}
+>>>>>>> 2a82f1960301319218fdec360b111d55dd17eba2
                             desktopView={res.desktopView}
                             tabletView={res.tabletView}
                             mobileView={res.mobileView}
