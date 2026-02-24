@@ -4,12 +4,12 @@
     <loc>https://your-domain.com/home</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-02-24T02:30:24.413Z</lastmod>
+    <lastmod>2026-02-24T02:33:13.090Z</lastmod>
   </url>
   <url>
     <loc>https://your-domain.com/project</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-02-24T02:30:24.414Z</lastmod>
+    <lastmod>2026-02-24T02:33:13.091Z</lastmod>
   </url>
 </urlset>
