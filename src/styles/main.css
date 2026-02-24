@@ -1,4 +1,4 @@
-@import "../app/globals.css";
+/* Removed: @import "../app/globals.css"; - now imported directly in layout.tsx */
 /* @import "splide.min.css";
 @import "aos/dist/aos.css"; */
 
