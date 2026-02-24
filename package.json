@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:prod": "NODE_ENV=production next dev",
+    "dev:prod": "cross-env NODE_ENV=production next dev",
     "build": "next build",
-    "build:dev": "NODE_ENV=development next build",
-    "build:prod": "NODE_ENV=production next build",
+    "build:dev": "rimraf .next && cross-env NODE_ENV=development next build && node generate-sitemap.js development",
+    "build:prod": "rimraf .next && cross-env NODE_ENV=production next build && node generate-sitemap.js production",
+    "build:all": "rimraf .next && cross-env NODE_ENV=development next build && node generate-sitemap.js development && cross-env NODE_ENV=production next build && node generate-sitemap.js production",
     "start": "next start",
-    "start:dev": "NODE_ENV=development next start",
-    "start:prod": "NODE_ENV=production next start",
+    "start:dev": "cross-env NODE_ENV=development next start",
+    "start:prod": "cross-env NODE_ENV=production next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -28,11 +29,13 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "cross-env": "^10.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.2",
     "flowbite": "^2.3.0",
     "gsap": "^3.12.5",
     "postcss": "^8",
+    "rimraf": "^6.1.3",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   },
