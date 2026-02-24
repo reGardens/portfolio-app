@@ -17,6 +17,11 @@ const nextConfig = {
         return config;
     },
 
+    // Disable static optimization for dynamic routes
+    experimental: {
+        optimizePackageImports: ['@mui/material', '@mui/icons-material'],
+    },
+
     // reactStrictMode: true,
     // compiler: {
     //     removeConsole: true,

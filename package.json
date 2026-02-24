@@ -8,7 +8,7 @@
     "build": "next build",
     "build:dev": "rimraf .next && cross-env NODE_ENV=development next build && node generate-sitemap.js development",
     "build:prod": "rimraf .next && cross-env NODE_ENV=production next build && node generate-sitemap.js production",
-    "build:all": "rimraf .next && cross-env NODE_ENV=development next build && node generate-sitemap.js development && cross-env NODE_ENV=production next build && node generate-sitemap.js production",
+    "build:all": "npm run build:dev && npm run build:prod",
     "start": "next start",
     "start:dev": "cross-env NODE_ENV=development next start",
     "start:prod": "cross-env NODE_ENV=production next start",
