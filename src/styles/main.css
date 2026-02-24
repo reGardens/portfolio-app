@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: Futura !important;
-  src: url("../../public/fonts/FuturaLT.ttf");
+  src: url("/fonts/FuturaLT.ttf");
 }
 
 /* scrollbar */
