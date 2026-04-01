@@ -7,13 +7,9 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Draggable from "gsap/Draggable";
 import { Accordion, AccordionDetails, AccordionSummary, Typography as MuiTypography } from "@mui/material";
-<<<<<<< HEAD
-=======
 import { Typography } from "@/components/ui";
->>>>>>> 2a82f1960301319218fdec360b111d55dd17eba2
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Typography } from "@/components/ui";
 
 // Icons
 import HomeIcon from '@mui/icons-material/Home';
