@@ -66,6 +66,7 @@ const id = {
         message: "Halaman Tidak Ditemukan",
         description: "Halaman yang Anda cari tidak tersedia.",
         backHome: "Kembali ke Beranda",
+        back: "Kembali",
     },
 
     // Media

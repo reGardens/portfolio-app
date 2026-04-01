@@ -38,7 +38,7 @@ interface Hashtags {
     link: string;
 }
 
-export default function DetailProjects({ dataProjects }: Props) {
+export default function ListProjects({ dataProjects }: Props) {
     const router = useRouter();
 
     useEffect(() => {
@@ -88,24 +88,33 @@ export default function DetailProjects({ dataProjects }: Props) {
     }, [dataProjects]);
 
     const handleDetail = (index: number, slug: string, data: PorjectsData) => {
-        const card = document.querySelectorAll(".animation-hover")[index];
+        const card = document.querySelectorAll(".animation-hover")[index] as HTMLElement;
         if (!card) return;
 
+        // iOS-style: scale down + highlight
         gsap.to(card, {
-            translateX: -65,
-            duration: 1,
-            ease: "power2.out"
+            scale: 0.95,
+            opacity: 0.7,
+            duration: 0.15,
+            ease: "power2.out",
+            onComplete: () => {
+                gsap.to(card, {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.2,
+                    ease: "power2.out",
+                });
+            }
         });
 
-        // Arahkan setelah delay 2 detik
         setTimeout(() => {
             router.push(`/project/${slug}?data=${encodeURIComponent(JSON.stringify(data))}`);
-        }, 800);
+        }, 350);
     };
 
     return (
         <>
-            <section id="project" className="pl-4 lg:pl-24 pt-32 pb-10">
+            <section id="project" className="pl-4 lg:pl-24 pt-44 md:pt-32 pb-10">
                 {/* Desktop Layout */}
                 <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
                     {dataProjects.map((res: PorjectsData, index: number) => {
@@ -136,34 +145,35 @@ export default function DetailProjects({ dataProjects }: Props) {
                 </ul>
 
                 {/* Mobile Layout */}
-                <div className="block lg:hidden w-full max-w-md bg-white sm:p-8 dark:bg-darkColor500 overflow-hidden p-m-s mb-10">
-                    <div className="flow-root">
-                        <ul role="list" className="relative projects bg-red">
-                            {dataProjects.map((res: PorjectsData, index: number) => {
-                                return (
-                                    <li key={index} className="py-3 sm:py-4 relative border-b-2 border-white border-opacity-5 animation-hover" onClick={() => handleDetail(index, res.slug, res)}>
-                                        <div className="flex items-center relative cards opacity-0 -translate-y-10">
-                                            <div className="flex-shrink-0 rounded-full overflow-hidden h-[55px] w-[56px] grid relative border border-traditionalColor500">
-                                                <Image width={56} height={55} style={{ objectFit: "cover", alignSelf: "center" }} src={res.logo} alt="Neil image" />
-                                            </div>
-                                            <div className="flex-1 min-w-0 ms-4 mr-[10px]">
-                                                <Typography variant="body-s" className="text-darkColor500 dark:text-white truncate font-semibold opacity-40">
-                                                    {res.name}
-                                                </Typography>
-                                                <Typography variant="body-s" className="text-darkColor200 dark:text-slate-200 truncate font-semibold">
-                                                    {res.description}
-                                                </Typography>
-                                            </div>
+                <div className="block lg:hidden w-full pr-4 mb-10">
+                    <ul role="list" className="relative projects flex flex-col gap-3">
+                        {dataProjects.map((res: PorjectsData, index: number) => {
+                            return (
+                                <li
+                                    key={index}
+                                    className="rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xl shadow-sm border border-white/20 dark:border-white/10 px-4 py-3.5 active:bg-black/5 dark:active:bg-white/5 transition-colors animation-hover cursor-pointer"
+                                    onClick={() => handleDetail(index, res.slug, res)}
+                                >
+                                    <div className="flex items-center cards opacity-0 -translate-y-10">
+                                        <div className="flex-shrink-0 rounded-xl overflow-hidden h-11 w-11 bg-gray-100 dark:bg-white/10 grid place-items-center">
+                                            <Image width={44} height={44} style={{ objectFit: "cover" }} src={res.logo} alt={res.name} />
                                         </div>
-                                        {/* navigation detail icons */}
-                                        <div className="bg-traditionalColor500 absolute top-0 left-0 w-full h-full -z-10 translate-x-full grid items-center pl-[5%] pointer">
-                                            <Image width={30} height={30} style={{ objectFit: "cover", alignSelf: "center" }} src="/static/icons/next-black.png" alt="Neil image" />
+                                        <div className="flex-1 min-w-0 ml-3">
+                                            <Typography variant="body-s" className="text-darkColor500 dark:text-white truncate font-semibold">
+                                                {res.name}
+                                            </Typography>
+                                            <Typography variant="body-s" className="text-darkColor500/50 dark:text-white/50 truncate text-xs">
+                                                {res.description}
+                                            </Typography>
                                         </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
+                                        <svg className="w-4 h-4 text-gray-400 dark:text-white/30 flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
             </section>
         </>

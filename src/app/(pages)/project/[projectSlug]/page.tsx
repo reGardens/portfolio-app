@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/navigation';
 import { Typography } from '@/components/ui';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 interface Hashtags {
     name: string;
@@ -14,6 +15,7 @@ interface Hashtags {
 
 export default function ProjectDetail() {
     const router = useRouter();
+    const { t } = useLanguage();
     const searchParams = useSearchParams();
     const dataString = searchParams?.get('data');
     const data = dataString ? JSON.parse(dataString) : null;
@@ -23,7 +25,11 @@ export default function ProjectDetail() {
     }
 
     return (
-        <section className="px-4 lg:px-24 mt-40 mb-10 text-black dark:text-white w-full">
+        <section className="px-4 lg:px-20 mt-40 mb-10 text-black dark:text-white w-full">
+            <Button sx={{ marginBottom: '20px' }} variant="contained" startIcon={<ArrowBackIcon />} onClick={handleBack}>
+                {t.notFound.back}
+            </Button>
+
             {data.image == null ?
                 (
                     <div className={`w-full`}>
@@ -64,9 +70,6 @@ export default function ProjectDetail() {
 
             <Typography variant="body-m" fontWeight="extrabold" className="opacity-75 uppercase mt-6">{data && data.name}</Typography>
             <Typography variant="body-m" className="mt-1 tracking-wide text-justify">{data && data.description}</Typography>
-            <Button sx={{ marginTop: '15px' }} variant="contained" startIcon={<ArrowBackIcon />} onClick={handleBack}>
-                Back
-            </Button>
         </section>
     )
 }

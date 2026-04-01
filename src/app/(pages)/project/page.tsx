@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import DetailProjects from './detailProjects';
+import ListProjects from './ListProjects';
 import dataIcons from '../../../../public/static/dataSkills.json';
 import dataProjects from '../../../../public/static/dataProjects.json';
 
@@ -22,7 +22,7 @@ export default async function Project() {
             <main className="">
                 {
                     dataFrontEnd && dataBackEnd && dataOtherSkills &&
-                    <DetailProjects
+                    <ListProjects
                         dataIconFront={dataFrontEnd}
                         dataIconBack={dataBackEnd}
                         dataIconOther={dataOtherSkills}
