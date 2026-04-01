@@ -4,11 +4,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from 'react';
 import { Section, Card, OptimizedImage, Typography } from "@/components/ui";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
     const [isDark, setIsDark] = useState(false);
+    const { t } = useLanguage();
 
     useEffect(() => {
         // Check initial theme
@@ -58,17 +60,17 @@ export default function AboutSection() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-start lg:items-center gap-4 lg:gap-0">
-                    <Typography size="4xl" weight="extrabold" className="mb-2 sm:mb-4 lg:mb-0 col-span-1 text-darkColor500 dark:text-white sm:text-5xl">About me</Typography>
+                    <Typography size="4xl" weight="extrabold" className="mb-2 sm:mb-4 lg:mb-0 col-span-1 text-darkColor500 dark:text-white sm:text-5xl">{t.about.title}</Typography>
 
                     <div className="col-span-2 text-justify mt-0">
                         <Typography className="indent-9 text-darkColor500 dark:text-white">
-                            My name is Reza Bagus Pratama. I&apos;m 26 years old and I come from Indonesia, specifically Central Java. I work as a frontend web developer in the IT industry. I have been doing freelance and remote jobs for the past 2 years, as well as working on-site (WFO) projects. <br /><br />
+                            {t.about.paragraph1} <br /><br />
                         </Typography>
                         <Typography className="indent-9 text-darkColor500 dark:text-white">
-                            During this time, I have worked on various projects, including developing asset management system applications and POS (Point of Sales) systems, as well as other small-scale applications. <br /><br />
+                            {t.about.paragraph2} <br /><br />
                         </Typography>
                         <Typography className="indent-9 text-darkColor500 dark:text-white">
-                            I am excited about expanding my skills and expertise to encompass full-stack development, and I believe my previous experiences have provided me with a solid foundation to excel in this new role.
+                            {t.about.paragraph3}
                         </Typography>
                     </div>
                 </div>

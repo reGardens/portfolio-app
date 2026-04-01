@@ -8,6 +8,7 @@ import "flowbite";
 // Components
 import Footer from "@/components/layout/footer/page";
 import Navigation from "@/components/layout/navigation/page";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 {/* <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> */ }
 
@@ -48,13 +49,15 @@ export default function RootLayout({
         </head>
 
         <body className={`${inter.className} bg-white dark:bg-darkColor500`} suppressHydrationWarning>
-          <div className="max-w-screen-2xl mx-auto !overflow-x-hidden">
-            <Navigation />
+          <LanguageProvider>
+            <div className="max-w-screen-2xl mx-auto !overflow-x-hidden">
+              <Navigation />
 
-            {children}
+              {children}
 
-            <Footer />
-          </div>
+              <Footer />
+            </div>
+          </LanguageProvider>
 
           {/* <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> */}
         </body>

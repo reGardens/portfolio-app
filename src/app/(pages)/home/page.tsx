@@ -17,7 +17,7 @@ export default async function Home() {
     const dataBackEnd = dataIcons.find((item: Item) => item.name === 'backend');
     const dataOtherSkills = dataIcons.find((item: Item) => item.name === 'other');
 
-    const latestProject = dataProjects.slice(-3);
+    const latestProject = dataProjects.slice(-5);
 
     return (
         <>

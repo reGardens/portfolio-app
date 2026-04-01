@@ -1,22 +1,26 @@
+'use client'
+
 import Link from "next/link";
 import packageJson from "../../../../package.json";
 import { Typography } from "@/components/ui";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Footer() {
+    const { t } = useLanguage();
+
     return (
         <footer className="bg-traditionalColor500">
             <div className="mx-auto w-full px-4 lg:px-24 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <Link href="/" className="flex items-center">
-                            {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" /> */}
                             <Typography variant="h3" fontWeight="semibold" className="self-center dark:text-white">Portfolio</Typography>
                         </Link>
                         <Typography variant="body-s" fontWeight="bold" className="text-white dark:text-darkColor500 opacity-70 mt-2">Version {packageJson.version}</Typography>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
-                            <Typography variant="body-s" fontWeight="semibold" className="mb-6 text-gray-900 uppercase dark:text-white">Resources</Typography>
+                            <Typography variant="body-s" fontWeight="semibold" className="mb-6 text-gray-900 uppercase dark:text-white">{t.footer.resources}</Typography>
                             <ul className="text-white dark:text-darkColor500 font-medium">
                                 <li className="mb-4">
                                     <Typography variant="body-m" className="text-white dark:text-darkColor500">Next JS</Typography>
@@ -27,7 +31,7 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div>
-                            <Typography variant="body-s" fontWeight="semibold" className="mb-6 text-gray-900 uppercase dark:text-white">Follow me</Typography>
+                            <Typography variant="body-s" fontWeight="semibold" className="mb-6 text-gray-900 uppercase dark:text-white">{t.footer.followMe}</Typography>
                             <ul className="text-white dark:text-darkColor500 font-medium">
                                 <li className="mb-4">
                                     <a href="https://github.com/reGardens" className="hover:underline ">Github</a>
@@ -41,7 +45,7 @@ export default function Footer() {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <Typography variant="body-s" className="text-darkColor500 sm:text-center dark:text-white">© 2024^ All Rights Reserved.
+                    <Typography variant="body-s" className="text-darkColor500 sm:text-center dark:text-white">{t.footer.copyright}
                     </Typography>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <a href="https://web.facebook.com/rezza.tmz/" className="text-white hover:text-gray-500 dark:text-darkColor500 dark:hover:text-darkColor700 transition-colors">

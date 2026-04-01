@@ -3,8 +3,11 @@
 import { gsap } from "gsap";
 import { useEffect } from 'react';
 import { Button, Typography, OptimizedImage } from "@/components/ui";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function HeaderSection() {
+    const { t } = useLanguage();
+
     useEffect(() => {
         // header animation
         let title = gsap.timeline();
@@ -18,18 +21,18 @@ export default function HeaderSection() {
             <div className="grid lg:grid-cols-2 items-center gap-8 lg:gap-0">
                 <div className='grid gap-4 sm:gap-6 order-2 lg:order-1 h-full'>
                     <Typography size="4xl" weight="bold" className="hidden lg:block text1 -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out">
-                        Hi, I&apos;m Reza Bagus Pratama
+                        {t.header.greeting}
                     </Typography>
                     <Typography size="3xl" weight="bold" className="block lg:hidden text1 -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out">
-                        Hi, I&apos;m Reza Bagus Pratama
+                        {t.header.greeting}
                     </Typography>
 
                     <div className="mb-4 sm:mb-6 text2 -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out">
                         <Typography size="4xl" weight="extrabold" className="mb-2 sm:mb-3 lg:mb-4 lg:text-6xl">
-                            Front-End Web Developer
+                            {t.header.role}
                         </Typography>
                         <Typography size="sm" className="opacity-70 sm:text-base">
-                            As a web developer, I am also a competitive programmer and tech enthusiast.
+                            {t.header.description}
                         </Typography>
                     </div>
 
@@ -43,7 +46,7 @@ export default function HeaderSection() {
                         >
                             <Typography variant="body-m" className="text-white dark:text-darkColor500">
                                 <strong className="tracking-[4px] text-[10px] uppercase text-white dark:text-darkColor500">
-                                    Say what you wanna know &#x1F60A;
+                                    {t.header.emailLabel}
                                 </strong>{" "}
                                 <br /> <span className="text-white dark:text-darkColor500">rezzabagus.rb@gmail.com</span>
                             </Typography>
@@ -57,7 +60,7 @@ export default function HeaderSection() {
                             animate
                             className="uppercase"
                         >
-                            Resume
+                            {t.header.resume}
                         </Button>
                     </div>
                 </div>
