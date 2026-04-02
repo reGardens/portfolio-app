@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import ListProjects from './ListProjects';
-import dataIcons from '../../../../public/static/DataSkills.json';
-import dataProjects from '../../../../public/static/DataProjects.json';
+import dataIcons from '../../../../public/static/dataSkills.json';
+import dataProjects from '../../../../public/static/dataProjects.json';
 
 export const metadata: Metadata = {
     title: 'Detail Projects',
