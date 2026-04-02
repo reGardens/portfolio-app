@@ -6,7 +6,8 @@ import MediaComponentMobile from "@/components/(projects)/mediaComponentMobile/p
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from 'react';
-import { Section, Card, ProjectCard, ProjectCardDesktop, Button, Typography } from "@/components/ui";
+import Image from "next/image";
+import { Section, ProjectCardDesktop, Button, Typography } from "@/components/ui";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -72,8 +73,11 @@ export default function ProjectsSection({ dataProjects }: Props) {
 
     return (
         <Section id="project" className="pt-24 sm:pt-32 pb-10" padding="none">
-            <div className="px-4 sm:px-6 lg:px-24 mb-8 sm:mb-10 lg:mb-20">
-                <Typography size="4xl" weight="extrabold" className="mb-4 lg:mb-0 sm:text-5xl">{t.projects.title}</Typography>
+            <div className="px-4 sm:px-6 lg:px-24 mb-8 sm:mb-10 lg:mb-16">
+                <div className="flex items-center gap-4">
+                    <div className="w-1 h-10 sm:h-14 rounded-full bg-traditionalColor500" />
+                    <Typography size="4xl" weight="extrabold" className="sm:text-5xl lg:text-6xl">{t.projects.title}</Typography>
+                </div>
             </div>
 
             {/* Desktop Layout */}
@@ -96,23 +100,38 @@ export default function ProjectsSection({ dataProjects }: Props) {
             </ul>
 
             {/* Mobile Layout */}
-            <Card className="block lg:hidden w-auto mx-4 sm:mx-6 bg-white dark:bg-darkColor500 overflow-hidden p-m-s mb-10">
-                <div className="flow-root">
-                    <ul role="list" className="relative projects">
-                        {limitedProjects?.map((res: PorjectsData, index: number) => (
-                            <li key={index} className="py-3 sm:py-4 relative">
-                                <div className="cards opacity-0 -translate-y-10">
-                                    <ProjectCard
-                                        name={res.name}
-                                        description={res.description}
-                                        logo={res.logo}
-                                    />
+            <div className="block lg:hidden px-4 sm:px-6 mb-10">
+                <ul role="list" className="relative projects flex flex-col gap-4">
+                    {limitedProjects?.map((res: PorjectsData, index: number) => (
+                        <li key={index}>
+                            <div className="cards opacity-0 -translate-y-10 rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-gray-100 dark:border-white/10 overflow-hidden">
+                                <div className="p-4 flex items-center gap-4">
+                                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/10 flex items-center justify-center overflow-hidden">
+                                        <Image src={res.logo} alt={res.name} width={32} height={32} className="object-contain" />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <Typography variant="body-s" fontWeight="bold" className="text-darkColor500 dark:text-white truncate">
+                                            {res.name}
+                                        </Typography>
+                                        <Typography variant="body-s" className="text-darkColor500/50 dark:text-white/50 truncate text-xs mt-0.5">
+                                            {res.description}
+                                        </Typography>
+                                        {Array.isArray(res.hashtags) && (
+                                            <div className="flex gap-1.5 mt-2 flex-wrap">
+                                                {res.hashtags.map((tag: Hashtags) => (
+                                                    <span key={tag.name} className="text-[10px] px-2 py-0.5 rounded-full bg-traditionalColor500/10 text-traditionalColor500 font-medium">
+                                                        {tag.name}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </Card>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
 
             <div className="flex justify-center">
                 <Button href="/project" variant="primary" size="md">

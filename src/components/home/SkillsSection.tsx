@@ -2,7 +2,7 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Section, Card, OptimizedImage, Typography } from "@/components/ui";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -21,8 +21,17 @@ interface Props {
 
 export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOther }: Props) {
     const { t } = useLanguage();
+    const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
+        const checkTheme = () => {
+            setIsDark(document.documentElement.classList.contains('dark'));
+        };
+        checkTheme();
+
+        const observer = new MutationObserver(checkTheme);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
         // skills animation
         let skills = gsap.timeline({
             scrollTrigger: {
@@ -36,66 +45,98 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
             .to(".backend", { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 }, "-=0.2")
             .to(".other", { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 }, "-=0.2")
             .to(".detail", { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 }, "-=0.2");
+
+        return () => { observer.disconnect(); };
     }, []);
+
+    const skillBg = isDark ? "/static/images/bg-about-black.jpeg" : "/static/images/bg-about-white.jpeg";
 
     return (
         <Section id="skill" padding="lg" className="skills px-4 sm:px-6">
-            <div className="mb-8 sm:mb-10 lg:mb-20">
-                <Typography size="4xl" weight="extrabold" className="mb-4 lg:mb-0 sm:text-5xl">{t.skills.title}</Typography>
+            <div className="flex items-center gap-4 mb-8 sm:mb-10 lg:mb-16">
+                <div className="w-1 h-10 sm:h-14 rounded-full bg-traditionalColor500" />
+                <Typography size="4xl" weight="extrabold" className="sm:text-5xl lg:text-6xl">{t.skills.title}</Typography>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center gap-8 lg:gap-0">
-                <Card className="col-span-1 lg:col-span-2 grid grid-cols-1 lg:grid-cols-3 relative justify-center items-center py-4 lg:py-9 gap-4 lg:gap-0.5 w-full overflow-hidden !bg-transparent !shadow-none" padding="none" shadow={false}>
-                    <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
-                        <OptimizedImage src="/static/images/bg-about-black.jpeg" alt="" layout="fill" objectFit="cover" />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+                {/* Skill Cards */}
+                <div className="col-span-1 lg:col-span-2 flex flex-col gap-5">
+                    {/* FrontEnd */}
+                    <div className="frontend -translate-y-10 opacity-0 scale-95 rounded-2xl overflow-hidden relative">
+                        <div className="absolute inset-0 -z-[1]">
+                            <OptimizedImage src={skillBg} alt="" layout="fill" objectFit="cover" />
+                        </div>
+                        <div className="p-5 sm:p-6">
+                            <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
+                                FrontEnd
+                            </Typography>
+                            <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
+                                {dataIconFront?.data?.map((res: IconData, index: number) => (
+                                    <li key={index} className="flex flex-col items-center gap-1.5 group">
+                                        <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
+                                        </div>
+                                        <span className="text-[10px] text-white/60 text-center truncate w-full">{res.name}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
-                    <ul className="col-span-1 lg:col-span-2 order-2 lg:order-none grid grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3 sm:gap-5 p-3 sm:p-5 frontend -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out rounded-t-xl">
-                        {dataIconFront?.data?.map((res: IconData, index: number) => {
-                            return (
-                                <li className="inline-block mx-auto" key={index}>
-                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} className="w-10 h-10 sm:w-12 sm:h-12" />
-                                </li>
-                            )
-                        })}
-                    </ul>
+                    {/* BackEnd */}
+                    <div className="backend -translate-y-10 opacity-0 scale-95 rounded-2xl overflow-hidden relative">
+                        <div className="absolute inset-0 -z-[1]">
+                            <OptimizedImage src={skillBg} alt="" layout="fill" objectFit="cover" />
+                        </div>
+                        <div className="p-5 sm:p-6">
+                            <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
+                                BackEnd
+                            </Typography>
+                            <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
+                                {dataIconBack?.data?.map((res: IconData, index: number) => (
+                                    <li key={index} className="flex flex-col items-center gap-1.5 group">
+                                        <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
+                                        </div>
+                                        <span className="text-[10px] text-white/60 text-center truncate w-full">{res.name}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
 
-                    <Typography size="sm" weight="bold" className="uppercase col-span-1 order-1 lg:order-none text-white text-center lg:text-left lg:ml-[35px] px-3 lg:px-0 py-2 lg:py-0 frontend -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out sm:text-base" darkMode={false}>
-                        FrontEnd
-                    </Typography>
+                    {/* Other */}
+                    <div className="other -translate-y-10 opacity-0 scale-95 rounded-2xl overflow-hidden relative">
+                        <div className="absolute inset-0 -z-[1]">
+                            <OptimizedImage src={skillBg} alt="" layout="fill" objectFit="cover" />
+                        </div>
+                        <div className="p-5 sm:p-6">
+                            <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
+                                {t.skills.other}
+                            </Typography>
+                            <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
+                                {dataIconOther?.data?.map((res: IconData, index: number) => (
+                                    <li key={index} className="flex flex-col items-center gap-1.5 group">
+                                        <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
+                                        </div>
+                                        <span className="text-[10px] text-white/60 text-center truncate w-full">{res.name}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-                    <ul className="col-span-1 lg:col-span-2 order-4 lg:order-none grid grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3 sm:gap-5 p-3 sm:p-5 backend -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out">
-                        {dataIconBack?.data?.map((res: IconData, index: number) => {
-                            return (
-                                <li className="inline-block mx-auto" key={index}>
-                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} className="w-10 h-10 sm:w-12 sm:h-12" />
-                                </li>
-                            )
-                        })}
-                    </ul>
-
-                    <Typography size="sm" weight="bold" className="uppercase col-span-1 order-3 lg:order-none text-white text-center lg:text-left lg:ml-[35px] px-3 lg:px-0 py-2 lg:py-0 backend -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out sm:text-base" darkMode={false}>
-                        BackEnd
-                    </Typography>
-
-                    <ul className="col-span-1 lg:col-span-2 order-6 lg:order-none grid grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3 sm:gap-5 p-3 sm:p-5 other -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out rounded-b-xl">
-                        {dataIconOther?.data?.map((res: IconData, index: number) => {
-                            return (
-                                <li className="inline-block mx-auto" key={index}>
-                                    <OptimizedImage src={res.icon} alt={res.name} width={50} height={50} className="w-10 h-10 sm:w-12 sm:h-12" />
-                                </li>
-                            )
-                        })}
-                    </ul>
-
-                    <Typography size="sm" weight="bold" className="uppercase col-span-1 order-5 lg:order-none text-white text-center lg:text-left lg:ml-[35px] px-3 lg:px-0 py-2 lg:py-0 other -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out sm:text-base" darkMode={false}>
-                        {t.skills.other}
-                    </Typography>
-                </Card>
-
-                <Typography size="xl" weight="bold" className="col-span-1 mx-5 text-center detail -translate-y-10 opacity-0 scale-95 transition-all duration-300 ease-out sm:text-2xl mt-6 lg:mt-0">
-                    {t.skills.quote}
-                </Typography>
+                {/* Quote */}
+                <div className="col-span-1 flex items-center detail -translate-y-10 opacity-0 scale-95">
+                    <div className="bg-gray-50 dark:bg-white/5 rounded-2xl p-6 sm:p-8 border border-gray-100 dark:border-white/10">
+                        <div className="text-4xl text-traditionalColor500 mb-3">&ldquo;</div>
+                        <Typography size="xl" weight="bold" className="sm:text-2xl leading-relaxed">
+                            {t.skills.quote}
+                        </Typography>
+                    </div>
+                </div>
             </div>
         </Section>
     )
