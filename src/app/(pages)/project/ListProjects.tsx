@@ -73,17 +73,6 @@ export default function ListProjects({ dataProjects }: Props) {
             dataProjects.forEach((res: PorjectsData, index: number) => {
                 project.to('.cards', { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
             })
-
-            // let hoverElements = document.querySelectorAll(".animation-hover");
-            // hoverElements.forEach(el => {
-            // const animationHover = gsap.to(el, {
-            // Set the animation to be paused by default
-            // translateX: -65,
-            // paused: true,
-            // })
-            // el.addEventListener("mouseenter", (e) => animationHover.play());
-            // el.addEventListener("mouseleave", (e) => animationHover.reverse());
-            // })
         }
     }, [dataProjects]);
 
@@ -127,7 +116,7 @@ export default function ListProjects({ dataProjects }: Props) {
                                 </div>
 
                                 <div className="col-span-2 col-start-4 mt-10 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out -z-10 ml-3">
-                                    <Typography variant="body-l" fontWeight="extrabold" className="uppercase tracking-wider">{res.name}</Typography>
+                                    <Typography variant="body-l" fontWeight="extrabold" className="tracking-wider">{res.name}</Typography>
                                     <ul className="mb-3">
                                         {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
                                             return (

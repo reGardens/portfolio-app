@@ -94,7 +94,7 @@ export function ProjectCardDesktop({
                 <MediaMobile name={name} url={mobileView} />
             </div>
             <div className="col-span-2 col-start-4 mt-10 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out -z-10 ml-3">
-                <Typography variant="body-l" fontWeight="extrabold" className="uppercase tracking-wider">{name}</Typography>
+                <Typography variant="body-l" fontWeight="extrabold" className="tracking-wider">{name}</Typography>
                 <ul className="mb-3">
                     {Array.isArray(hashtags) && hashtags.map((tag) => (
                         <li key={tag.name} className="inline-block mr-1.5 italic">
