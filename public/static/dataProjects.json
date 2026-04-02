@@ -7,7 +7,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-pose.svg",
+    "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
@@ -19,7 +19,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-invera.png",
+    "logo": "/static/icons/projects/icon-invera.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
   },
@@ -31,7 +31,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-mentor.svg",
+    "logo": "/static/icons/projects/icon-mentor.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
@@ -43,7 +43,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-pose.svg",
+    "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
@@ -55,7 +55,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-pose.svg",
+    "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
@@ -67,7 +67,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-pose.svg",
+    "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
@@ -79,7 +79,7 @@
     "desktopView": "/static/projects/thumb/fjb2023-desktop.png",
     "tabletView": "/static/projects/thumb/fjb2023-tablet.png",
     "mobileView": "/static/projects/thumb/fjb2023-mobile.png",
-    "logo": "/static/icons/projects/icon-fjb2023.png",
+    "logo": "/static/icons/projects/icon-fjb2023.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "Codeigniter", "name": "Codeigniter" }]
   },
@@ -91,7 +91,7 @@
     "desktopView": "/static/projects/thumb/JIVACO-desktop.png",
     "tabletView": "/static/projects/thumb/JIVACO-tablet.png",
     "mobileView": "/static/projects/thumb/JIVACO-mobile.png",
-    "logo": "/static/icons/projects/icon-jiva.png",
+    "logo": "/static/icons/projects/icon-jiva.webp",
     "url": "https://jivaco.id/id/",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
   },
@@ -103,7 +103,7 @@
     "desktopView": "/static/projects/thumb/danamonOptimal-dekstop.png",
     "tabletView": "/static/projects/thumb/danamonOptimal-tablet.png",
     "mobileView": "/static/projects/video/DanamonOptimal-mobile-compressed.mp4",
-    "logo": "/static/icons/projects/icon-danamon.png",
+    "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://www.danamon.co.id/id/Personal/Danamon-Optimal",
     "hashtags": [{ "link": "Bootstrap", "name": "Bootstrap" }]
   },
@@ -115,7 +115,7 @@
     "desktopView": "/static/projects/thumb/semurSahur-dekstop.png",
     "tabletView": "/static/projects/thumb/semurSahur-tablet.png",
     "mobileView": "/static/projects/thumb/semurSahur-mobile.png",
-    "logo": "/static/icons/projects/icon-bango.png",
+    "logo": "/static/icons/projects/icon-bango.webp",
     "url": "https://www.bango.co.id/home.html",
     "hashtags": [{ "link": "Codeigniter", "name": "Codeigniter" }]
   },
@@ -127,7 +127,7 @@
     "desktopView": "/static/projects/thumb/MGMBosco-dekstop.png",
     "tabletView": "/static/projects/thumb/MGMBosco-tablet.png",
     "mobileView": "/static/projects/thumb/MGMBosco-mobile.png",
-    "logo": "/static/icons/projects/icon-mgmbosco.png",
+    "logo": "/static/icons/projects/icon-mgmbosco.webp",
     "url": "https://mgmbosco.com/id/sustainability",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
@@ -139,7 +139,7 @@
     "desktopView": "/static/projects/thumb/fjb-desktop.png",
     "tabletView": "/static/projects/video/fjb-2022-compressed.mp4",
     "mobileView": "/static/projects/thumb/fjb-mobile.png",
-    "logo": "/static/icons/projects/icon-fjb2022.png",
+    "logo": "/static/icons/projects/icon-fjb2022.webp",
     "url": "https://www.warisankuliner.com/fjb",
     "hashtags": [{ "link": "Codeigniter", "name": "Codeigniter" }]
   },
@@ -151,7 +151,7 @@
     "desktopView": "/static/projects/thumb/hinoFinance-dekstop.png",
     "tabletView": "/static/projects/thumb/hinoFinance-tablet.png",
     "mobileView": "/static/projects/thumb/hinoFinance-mobile.png",
-    "logo": "/static/icons/projects/icon-hino.png",
+    "logo": "/static/icons/projects/icon-hino.webp",
     "url": "#",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
   },
@@ -163,7 +163,7 @@
     "desktopView": "/static/projects/thumb/DanamonQuiz-dekstop.png",
     "tabletView": "/static/projects/video/DanamonQuiz-tablet-compressed.mp4",
     "mobileView": "/static/projects/thumb/DanamonQuiz-mobile.png",
-    "logo": "/static/icons/projects/icon-danamonquiz.png",
+    "logo": "/static/icons/projects/icon-danamonquiz.webp",
     "url": "www.optimalku.com",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
@@ -175,7 +175,7 @@
     "desktopView": "/static/projects/thumb/danamonIIMS-desktop.png",
     "tabletView": "/static/projects/thumb/danamonIIMS-tablet.png",
     "mobileView": "/static/projects/thumb/danamonIIMS-mobile.png",
-    "logo": "/static/icons/projects/icon-danamon.png",
+    "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://www.danamon.co.id/id/site/Danamon-IIMS-Surabaya",
     "hashtags": [{ "link": "Vanilla Javascript", "name": "Vanilla Javascript" }]
   },
@@ -187,7 +187,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-danamon.png",
+    "logo": "/static/icons/projects/icon-danamon.webp",
     "url": null,
     "hashtags": [{ "link": "Vanilla Javascript", "name": "Vanilla Javascript" }]
   },
@@ -199,7 +199,7 @@
     "desktopView": "/static/projects/thumb/danamonBO-dekstop.png",
     "tabletView": "/static/projects/thumb/danamonBO-tablet.png",
     "mobileView": "/static/projects/thumb/danamonBO-mobile.png",
-    "logo": "/static/icons/projects/icon-danamon.png",
+    "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://booking.optimalku.com",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
@@ -211,7 +211,7 @@
     "desktopView": "/static/projects/thumb/danamonHUT-dekstop.png",
     "tabletView": "/static/projects/video/danamonHUT-tablet.mp4",
     "mobileView": "/static/projects/thumb/danamonHUT-mobile.png",
-    "logo": "/static/icons/projects/icon-danamon.png",
+    "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://danamonhut.co.id/",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
   },
@@ -223,7 +223,7 @@
     "desktopView": "/static/projects/thumb/ristra-dekstop.png",
     "tabletView": "/static/projects/thumb/ristra-tablet.png",
     "mobileView": "/static/projects/thumb/ristra-mobile.png",
-    "logo": "/static/icons/projects/icon-ristra.png",
+    "logo": "/static/icons/projects/icon-ristra.webp",
     "url": "https://www.ristraclinic.co.id/",
     "hashtags": [{ "link": "Laravel (Blade)", "name": "Laravel (Blade)" }]
   },
@@ -235,7 +235,7 @@
     "desktopView": "/static/projects/thumb/danamonPRO-dekstop.png",
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-dbankpro.png",
+    "logo": "/static/icons/projects/icon-dbankpro.webp",
     "url": "https://www.danamon.co.id/id/E-Banking/Personal/D-Bank-PROs/",
     "hashtags": [{ "link": "Bootstrap", "name": "Bootstrap" }]
   },
@@ -247,7 +247,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-walls.png",
+    "logo": "/static/icons/projects/icon-walls.webp",
     "url": "https://timfeastpop.com/",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
   },
@@ -259,7 +259,7 @@
     "desktopView": "/static/projects/thumb/danamonHadiahBeruntun-desktop.png",
     "tabletView": "/static/projects/thumb/danamonHadiahBeruntun-tablet.png",
     "mobileView": "/static/projects/thumb/danamonHadiahBeruntun-mobile.png",
-    "logo": "/static/icons/projects/icon-danamon.png",
+    "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://www.danamon.co.id/id/danamon-hadiah-beruntun",
     "hashtags": [{ "link": "Bootstrap", "name": "Bootstrap" }]
   },
@@ -271,7 +271,7 @@
     "desktopView": null,
     "tabletView": null,
     "mobileView": null,
-    "logo": "/static/icons/projects/icon-combipharpro.png",
+    "logo": "/static/icons/projects/icon-combipharpro.webp",
     "url": "https://combipharpro.com/id/pro/login",
     "hashtags": [{ "link": "Laravel (Blade)", "name": "Laravel (Blade)" }]
   }
