@@ -26,7 +26,7 @@ export default function Button({
     disabled = false,
     animate = false,
 }: ButtonProps) {
-    const baseStyles = "transition-all font-bold rounded-2xl overflow-hidden inline-flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]";
+    const baseStyles = "transition-all font-semibold rounded-[14px] overflow-hidden inline-flex items-center justify-center active:scale-[0.97] active:opacity-80";
 
     const variantStyles = {
         primary: "bg-traditionalColor500 hover:bg-traditionalColor600 text-white",
