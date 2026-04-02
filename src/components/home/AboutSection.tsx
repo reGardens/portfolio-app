@@ -49,7 +49,7 @@ export default function AboutSection() {
 
     return (
         <Section id="about" padding="lg" className="overflow-hidden about px-4 sm:px-6">
-            <Card padding="lg" className="relative overflow-hidden opacity-0 -translate-y-10 scale-95 transition-all duration-300 ease-out py-12 lg:py-16">
+            <Card padding="lg" className="relative overflow-hidden opacity-0 -translate-y-10 scale-95 transition-all duration-300 ease-out py-12 lg:py-20 rounded-3xl">
                 <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
                     <OptimizedImage
                         src={isDark ? "/static/images/bg-about-black.jpeg" : "/static/images/bg-about-white.jpeg"}
@@ -59,19 +59,41 @@ export default function AboutSection() {
                     />
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-start lg:items-center gap-4 lg:gap-0">
-                    <Typography size="4xl" weight="extrabold" className="mb-2 sm:mb-4 lg:mb-0 col-span-1 text-darkColor500 dark:text-white sm:text-5xl">{t.about.title}</Typography>
+                <div className="flex flex-col gap-8 lg:gap-12 px-2 sm:px-6 lg:px-12">
+                    {/* Title with accent line */}
+                    <div className="flex items-center gap-4">
+                        <div className="w-1 h-10 sm:h-14 rounded-full bg-traditionalColor500" />
+                        <Typography size="4xl" weight="extrabold" className="text-darkColor500 dark:text-white sm:text-5xl lg:text-6xl">{t.about.title}</Typography>
+                    </div>
 
-                    <div className="col-span-2 text-justify mt-0">
-                        <Typography className="indent-9 text-darkColor500 dark:text-white">
-                            {t.about.paragraph1} <br /><br />
-                        </Typography>
-                        <Typography className="indent-9 text-darkColor500 dark:text-white">
-                            {t.about.paragraph2} <br /><br />
-                        </Typography>
-                        <Typography className="indent-9 text-darkColor500 dark:text-white">
-                            {t.about.paragraph3}
-                        </Typography>
+                    {/* Content cards */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+                        <div className="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-white/10">
+                            <div className="w-8 h-8 rounded-xl bg-traditionalColor500/20 flex items-center justify-center mb-3">
+                                <span className="text-traditionalColor500 text-sm">01</span>
+                            </div>
+                            <Typography className="text-darkColor500 dark:text-white leading-relaxed">
+                                {t.about.paragraph1}
+                            </Typography>
+                        </div>
+
+                        <div className="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-white/10">
+                            <div className="w-8 h-8 rounded-xl bg-traditionalColor500/20 flex items-center justify-center mb-3">
+                                <span className="text-traditionalColor500 text-sm">02</span>
+                            </div>
+                            <Typography className="text-darkColor500 dark:text-white leading-relaxed">
+                                {t.about.paragraph2}
+                            </Typography>
+                        </div>
+
+                        <div className="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-white/10">
+                            <div className="w-8 h-8 rounded-xl bg-traditionalColor500/20 flex items-center justify-center mb-3">
+                                <span className="text-traditionalColor500 text-sm">03</span>
+                            </div>
+                            <Typography className="text-darkColor500 dark:text-white leading-relaxed">
+                                {t.about.paragraph3}
+                            </Typography>
+                        </div>
                     </div>
                 </div>
             </Card>
