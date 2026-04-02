@@ -40,8 +40,8 @@ export default function BottomSheet({ children, open, onClose, className = "" }:
             { y: sheetHeight },
             {
                 y: 0,
-                duration: 0.5,
-                ease: "power3.out",
+                duration: 0.45,
+                ease: "power4.out",
             }
         );
     }, [sheetHeight]);
@@ -86,9 +86,9 @@ export default function BottomSheet({ children, open, onClose, className = "" }:
 
         draggableRef.current = Draggable.create(sheet, {
             type: "y",
-            bounds: { minY: -20, maxY: sheetHeight + 100 },
+            bounds: { minY: 0, maxY: sheetHeight + 100 },
             inertia: true,
-            edgeResistance: 0.5,
+            edgeResistance: 1,
             onDrag: function () {
                 const progress = 1 - (this.y / sheetHeight);
                 if (overlayRef.current) {
@@ -103,8 +103,8 @@ export default function BottomSheet({ children, open, onClose, className = "" }:
                     // Snap back with spring
                     gsap.to(this.target, {
                         y: 0,
-                        duration: 0.5,
-                        ease: "elastic.out(1, 0.75)",
+                        duration: 0.35,
+                        ease: "power4.out",
                     });
                     if (overlayRef.current) {
                         gsap.to(overlayRef.current, { opacity: 1, duration: 0.3 });
@@ -133,7 +133,6 @@ export default function BottomSheet({ children, open, onClose, className = "" }:
                 ref={sheetRef}
                 style={{ display: "none" }}
                 className={`fixed bottom-0 left-0 w-full z-[99] rounded-t-[20px] px-8 pt-4 pb-10 bg-gradient-to-b from-traditionalColor500 to-traditionalColor600 shadow-[0_-4px_40px_rgba(0,0,0,0.25)] ${className}`}
-                // Set height
                 role="dialog"
             >
                 {/* Drag Handle - iOS style */}
