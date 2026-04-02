@@ -4,9 +4,9 @@
     "slug": "festival-jajanan-bango-2023",
     "description": "The Bango snack festival returns, presenting an array of Indonesian culinary delights for visitors to enjoy and explore during this year's event.",
     "image": "/static/projects/thumb/fjb2023-desktop.png",
-    "desktopView": null,
-    "tabletView": null,
-    "mobileView": null,
+    "desktopView": "/static/projects/thumb/fjb2023-desktop.png",
+    "tabletView": "/static/projects/thumb/fjb2023-tablet.png",
+    "mobileView": "/static/projects/thumb/fjb2023-mobile.png",
     "logo": "/static/icons/projects/icon-fjb2023.png",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "Codeigniter", "name": "Codeigniter" }]
