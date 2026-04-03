@@ -67,10 +67,10 @@ export default function HeaderSection() {
 
                 <div className='relative order-1 lg:order-2 flex justify-center lg:block'>
                     <div className="w-full lg:absolute -top-[24rem] -right-[8rem] hidden lg:block">
-                        <OptimizedImage src="/static/images/user-image.png" alt="User" width={672} height={672} priority />
+                        <OptimizedImage src="/static/images/user-image.png" alt="User" width={672} height={672} priority style={{ width: '100%', height: 'auto' }} />
                     </div>
                     <div className="w-3/4 max-w-sm sm:w-1/2 sm:max-w-md block lg:hidden">
-                        <OptimizedImage src="/static/images/user-image.png" alt="User" width={672} height={672} priority />
+                        <OptimizedImage src="/static/images/user-image.png" alt="User" width={672} height={672} priority style={{ width: '100%', height: 'auto' }} />
                     </div>
                 </div>
             </div>

@@ -103,7 +103,7 @@ export default function ListProjects({ dataProjects }: Props) {
 
     return (
         <>
-            <section id="project" className="pl-4 lg:pl-24 pt-44 md:pt-32 pb-10">
+            <section id="project" className="px-4 lg:px-24 pt-44 md:pt-32 pb-10">
                 {/* Desktop Layout */}
                 <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
                     {dataProjects.map((res: PorjectsData, index: number) => {
@@ -134,7 +134,7 @@ export default function ListProjects({ dataProjects }: Props) {
                 </ul>
 
                 {/* Mobile Layout */}
-                <div className="block lg:hidden w-full pr-4 mb-10">
+                <div className="block lg:hidden w-full mb-10">
                     <ul role="list" className="relative projects flex flex-col gap-3">
                         {dataProjects.map((res: PorjectsData, index: number) => {
                             return (
