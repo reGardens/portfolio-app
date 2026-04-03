@@ -50,7 +50,7 @@ export default function Navigation() {
                 subtitle={t.alert.maintenanceSubtitle}
             />
 
-            <nav id="nav" className={`fixed w-full z-20 top-[4.5rem] md:top-[3.2rem] start-0 transition-colors bg-white dark:bg-darkColor500`}>
+            <nav id="nav" className={`fixed w-full z-20 top-[4.4rem] md:top-[3.2rem] start-0 transition-colors bg-white dark:bg-darkColor500`}>
                 <div className="flex items-center justify-between mx-auto px-4 lg:px-24 py-4">
                     <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <Typography variant="h3" fontWeight="semibold" className="self-center text-traditionalColor500">Portfolio</Typography>

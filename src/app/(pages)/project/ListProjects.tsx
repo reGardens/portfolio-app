@@ -108,7 +108,7 @@ export default function ListProjects({ dataProjects }: Props) {
             <section id="project" className="px-4 lg:px-24 pt-44 md:pt-32 pb-10">
                 <button
                     onClick={() => { setLoading(true); router.push('/home'); }}
-                    className="flex items-center gap-2 mb-6 text-darkColor500 dark:text-white hover:text-traditionalColor500 dark:hover:text-traditionalColor500 transition-colors"
+                    className="flex md:hidden items-center gap-2 mb-6 text-darkColor500 dark:text-white hover:text-traditionalColor500 dark:hover:text-traditionalColor500 transition-colors"
                 >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
