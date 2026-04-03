@@ -7,7 +7,7 @@ export default function MediaComponentTablet({ url, name }: any) {
     if (url.endsWith(".png") || url.endsWith(".webp") || url.endsWith(".jpg") || url.endsWith(".jpeg")) {
         return (
             <div className="absolute -bottom-10 -right-10 w-[380px] min-h-[32rem] h-[32rem] overflow-hidden">
-                <Image src={url} alt={name} fill className="object-contain object-right-bottom" />
+                <Image src={url} alt={name} fill sizes="380px" className="object-contain object-right-bottom" />
             </div>
         );
     }

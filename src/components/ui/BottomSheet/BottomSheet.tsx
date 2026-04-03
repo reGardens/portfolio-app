@@ -16,7 +16,7 @@ interface BottomSheetProps {
 export default function BottomSheet({ children, open, onClose, className = "" }: BottomSheetProps) {
     const overlayRef = useRef<HTMLDivElement>(null);
     const sheetRef = useRef<HTMLDivElement>(null);
-    const draggableRef = useRef<Draggable[]>();
+    const draggableRef = useRef<Draggable[]>(undefined);
     const onCloseRef = useRef(onClose);
     onCloseRef.current = onClose;
 

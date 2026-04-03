@@ -7,7 +7,7 @@ export default function MediaComponentMobile({ url, name }: any) {
     if (url.endsWith(".png") || url.endsWith(".webp") || url.endsWith(".jpg") || url.endsWith(".jpeg")) {
         return (
             <div className="absolute -bottom-20 right-52 w-[180px] h-[22rem] overflow-hidden">
-                <Image src={url} alt={name} fill className="object-contain object-bottom" />
+                <Image src={url} alt={name} fill sizes="180px" className="object-contain object-bottom" />
             </div>
         );
     }

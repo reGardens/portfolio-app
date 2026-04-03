@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "@/styles/main.css";
-import "flowbite";
 
 // Components
 import Footer from "@/components/layout/footer/page";

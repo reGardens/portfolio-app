@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // change default page
+    turbopack: {
+        root: '.',
+    },
+
     async redirects() {
         return [
             {
@@ -11,21 +14,13 @@ const nextConfig = {
         ];
     },
 
-    // using promise as fs into getStaticProps
-    webpack: (config) => {
-        config.resolve.fallback = { fs: false };
-        return config;
-    },
-
-    // Disable static optimization for dynamic routes
     experimental: {
-        optimizePackageImports: ['@mui/material', '@mui/icons-material'],
+        optimizePackageImports: ['@mui/material', '@mui/icons-material', 'gsap'],
     },
 
-    // reactStrictMode: true,
-    // compiler: {
-    //     removeConsole: true,
-    // },
+    images: {
+        formats: ['image/webp', 'image/avif'],
+    },
 };
 
 export default nextConfig;

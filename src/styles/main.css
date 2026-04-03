@@ -31,7 +31,7 @@ body {
   scroll-behavior: smooth;
 }
 
-./* s gradient generic */
+/* gradient generic */
 .bg-animation {
   --size: 250px;
   --speed: 150s;
