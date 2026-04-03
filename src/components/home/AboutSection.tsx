@@ -6,13 +6,12 @@ import { useEffect, useState } from 'react';
 import { Section, Card, OptimizedImage, Typography } from "@/components/ui";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function AboutSection() {
     const [isDark, setIsDark] = useState(false);
     const { t } = useLanguage();
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         // Check initial theme
         const checkTheme = () => {
             const isDarkMode = document.documentElement.classList.contains('dark');

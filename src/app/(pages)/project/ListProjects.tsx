@@ -11,8 +11,6 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLoadingStore } from '@/store/useLoadingStore';
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface Props {
     dataIconFront: any;
     dataIconBack: any;
@@ -44,6 +42,7 @@ export default function ListProjects({ dataProjects }: Props) {
     const setLoading = useLoadingStore((s) => s.setLoading);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         if (typeof window !== "undefined" && window.innerWidth > 1024) {
             // desktop view
             dataProjects.forEach((res: PorjectsData, index: number) => {
@@ -107,6 +106,16 @@ export default function ListProjects({ dataProjects }: Props) {
     return (
         <>
             <section id="project" className="px-4 lg:px-24 pt-44 md:pt-32 pb-10">
+                <button
+                    onClick={() => { setLoading(true); router.push('/home'); }}
+                    className="flex items-center gap-2 mb-6 text-darkColor500 dark:text-white hover:text-traditionalColor500 dark:hover:text-traditionalColor500 transition-colors"
+                >
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    <span className="font-semibold text-sm">Back</span>
+                </button>
+
                 {/* Desktop Layout */}
                 <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
                     {dataProjects.map((res: PorjectsData, index: number) => {

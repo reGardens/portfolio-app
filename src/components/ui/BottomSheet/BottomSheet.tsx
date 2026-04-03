@@ -2,9 +2,7 @@
 
 import { ReactNode, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
-import Draggable from "gsap/dist/Draggable";
-
-gsap.registerPlugin(Draggable);
+import { Draggable } from "gsap/dist/Draggable";
 
 interface BottomSheetProps {
     children: ReactNode;
@@ -81,6 +79,7 @@ export default function BottomSheet({ children, open, onClose, className = "" }:
 
     // Draggable
     useEffect(() => {
+        gsap.registerPlugin(Draggable);
         const sheet = sheetRef.current;
         if (!sheet) return;
 

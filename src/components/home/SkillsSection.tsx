@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react';
 import { Section, Card, OptimizedImage, Typography } from "@/components/ui";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface IconData {
     icon: string;
     name: string;
@@ -24,6 +22,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         const checkTheme = () => {
             setIsDark(document.documentElement.classList.contains('dark'));
         };

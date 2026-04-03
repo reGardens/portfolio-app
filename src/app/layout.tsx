@@ -8,6 +8,7 @@ import "@/styles/main.css";
 import Footer from "@/components/layout/footer/page";
 import Navigation from "@/components/layout/navigation/page";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import Script from "next/script";
 import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
 import LoadingScreen from "@/components/ui/LoadingScreen/LoadingScreen";
 import RouteChangeListener from "@/components/ui/LoadingScreen/RouteChangeListener";
@@ -34,20 +35,16 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function() {
-                  const theme = localStorage.getItem('color-theme');
-                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                })();
-              `,
-            }}
-          />
+          <Script id="theme-init" strategy="beforeInteractive">
+            {`(function() {
+              const theme = localStorage.getItem('color-theme');
+              if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            })();`}
+          </Script>
         </head>
 
         <body className={`${inter.className} bg-white dark:bg-darkColor500`} suppressHydrationWarning>

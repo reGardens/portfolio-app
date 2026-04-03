@@ -1,9 +1,7 @@
 "use client"
 
-import { Button } from '@mui/material';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/navigation';
 import { Typography } from '@/components/ui';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -29,9 +27,15 @@ export default function DetailProject() {
 
     return (
         <section className="px-4 lg:px-20 mt-40 mb-10 text-black dark:text-white w-full">
-            <Button sx={{ marginBottom: '20px' }} variant="contained" startIcon={<ArrowBackIcon />} onClick={handleBack}>
-                {t.notFound.back}
-            </Button>
+            <button
+                onClick={handleBack}
+                className="flex items-center gap-2 mb-6 text-darkColor500 dark:text-white hover:text-traditionalColor500 dark:hover:text-traditionalColor500 transition-colors"
+            >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                <span className="font-semibold text-sm">{t.notFound.back}</span>
+            </button>
 
             {data.image == null ?
                 (

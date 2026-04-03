@@ -37,6 +37,7 @@ export default function ProjectsSection({ dataProjects }: Props) {
     const limitedProjects = dataProjects?.slice(0, 5);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         // projects animation
         if (typeof window !== "undefined" && window.innerWidth > 1024) {
             // desktop view
