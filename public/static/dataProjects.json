@@ -2,11 +2,11 @@
   {
     "name": "POSe Online Order",
     "slug": "pose-online-order",
-    "description": "A webview-based online ordering feature for POSe, enabling customers to browse menus, place orders, and complete payments directly from any browser via QR code. The system includes order method selection, main menu, payment processing, and order history pages. Accessible through POSe Apps on mobile and POSe QR Set on EDC terminals.",
-    "image": null,
-    "desktopView": null,
-    "tabletView": null,
-    "mobileView": null,
+    "description": "A webview-based online ordering system for POSe. The desktop view serves as the POSe Dashboard where merchants generate QR codes for online orders. The tablet displays the Full Order interface for seat selection, one of two available ordering modes alongside Quick Order. The mobile view shows the customer-facing menu for browsing and selecting items after scanning the QR code.",
+    "image": "/static/projects/thumb/POSeOnlineOrder-desktop.png",
+    "desktopView": "/static/projects/thumb/POSeOnlineOrder-desktop.png",
+    "tabletView": "/static/projects/thumb/POSeOnlineOrder-tablet.png",
+    "mobileView": "/static/projects/thumb/POSeOnlineOrder-mobile.png",
     "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -38,11 +38,11 @@
   {
     "name": "POSe Subscription",
     "slug": "pose-subscription",
-    "description": "A subscription page for POSe, a digital POS and payment solution by PCS Indonesia. Users can choose plans tailored to their business scale — from a mobile-first package for micro businesses with smartphone compatibility and dashboard monitoring, to an enterprise-grade plan integrated with EDC devices, maintenance services, and 24/7 helpdesk support.",
-    "image": null,
-    "desktopView": null,
-    "tabletView": null,
-    "mobileView": null,
+    "description": "A subscription page for POSe featuring two package options on the desktop view: Subscription and QR Set. Selecting the Subscription package (top) leads to the tablet view showing detailed plan options for micro to large-scale businesses with dashboard monitoring and maintenance services. Selecting the QR Set package (bottom) leads to the mobile view displaying EDC device plans with 24/7 helpdesk support.",
+    "image": "/static/projects/thumb/POSeSubscription-desktop.png",
+    "desktopView": "/static/projects/thumb/POSeSubscription-desktop.png",
+    "tabletView": "/static/projects/thumb/POSeSubscription-tablet.png",
+    "mobileView": "/static/projects/thumb/POSeSubscription-mobile.png",
     "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
