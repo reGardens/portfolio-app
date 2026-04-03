@@ -9,6 +9,8 @@ import Footer from "@/components/layout/footer/page";
 import Navigation from "@/components/layout/navigation/page";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
+import LoadingScreen from "@/components/ui/LoadingScreen/LoadingScreen";
+import RouteChangeListener from "@/components/ui/LoadingScreen/RouteChangeListener";
 
 {/* <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> */ }
 
@@ -50,6 +52,8 @@ export default function RootLayout({
 
         <body className={`${inter.className} bg-white dark:bg-darkColor500`} suppressHydrationWarning>
           <LanguageProvider>
+            <LoadingScreen />
+            <RouteChangeListener />
             <div className="max-w-screen-2xl mx-auto !overflow-x-hidden">
               <Navigation />
 

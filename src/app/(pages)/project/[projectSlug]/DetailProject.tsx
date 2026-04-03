@@ -7,6 +7,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/navigation';
 import { Typography } from '@/components/ui';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useLoadingStore } from '@/store/useLoadingStore';
 
 interface Hashtags {
     name: string;
@@ -16,11 +17,13 @@ interface Hashtags {
 export default function DetailProject() {
     const router = useRouter();
     const { t } = useLanguage();
+    const setLoading = useLoadingStore((s) => s.setLoading);
     const searchParams = useSearchParams();
     const dataString = searchParams?.get('data');
     const data = dataString ? JSON.parse(dataString) : null;
 
     const handleBack = () => {
+        setLoading(true);
         router.push('/project');
     }
 

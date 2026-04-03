@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLoadingStore } from '@/store/useLoadingStore';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,6 +41,7 @@ interface Hashtags {
 
 export default function ListProjects({ dataProjects }: Props) {
     const router = useRouter();
+    const setLoading = useLoadingStore((s) => s.setLoading);
 
     useEffect(() => {
         if (typeof window !== "undefined" && window.innerWidth > 1024) {
@@ -97,6 +99,7 @@ export default function ListProjects({ dataProjects }: Props) {
         });
 
         setTimeout(() => {
+            setLoading(true);
             router.push(`/project/${slug}?data=${encodeURIComponent(JSON.stringify(data))}`);
         }, 350);
     };
