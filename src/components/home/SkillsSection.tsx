@@ -130,7 +130,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                 {/* Quote */}
                 <div className="col-span-1 flex items-center detail -translate-y-10 opacity-0 scale-95">
                     <div className="bg-gray-50 dark:bg-white/5 rounded-2xl p-6 sm:p-8 border border-gray-100 dark:border-white/10">
-                        <div className="text-4xl text-traditionalColor500 mb-3">&ldquo;</div>
+                        <div className="text-4xl text-traditionalColor500">&ldquo;</div>
                         <Typography size="xl" weight="bold" className="sm:text-2xl leading-relaxed">
                             {t.skills.quote}
                         </Typography>

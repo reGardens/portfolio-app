@@ -27,7 +27,7 @@ const id = {
     about: {
         title: "Tentang saya",
         paragraph1: "Nama saya Reza Bagus Pratama. Saya berusia 29 tahun dan berasal dari Indonesia, tepatnya Jawa Tengah. Saya bekerja sebagai pengembang web frontend di industri IT. Saya telah melakukan pekerjaan freelance dan remote selama 2 tahun terakhir, serta mengerjakan proyek on-site (WFO).",
-        paragraph2: "Selama ini, saya telah mengerjakan berbagai proyek, termasuk mengembangkan aplikasi sistem manajemen aset dan sistem POS (Point of Sales), serta aplikasi skala kecil lainnya.",
+        paragraph2: "Selama ini, saya telah mengerjakan berbagai proyek, termasuk mengembangkan aplikasi sistem manajemen aset dan sistem POS, serta aplikasi skala kecil lainnya.",
         paragraph3: "Saya sangat antusias untuk memperluas keterampilan dan keahlian saya ke pengembangan full-stack, dan saya percaya pengalaman sebelumnya telah memberikan saya fondasi yang kuat untuk unggul dalam peran baru ini.",
     },
 
@@ -37,7 +37,7 @@ const id = {
         frontend: "FrontEnd",
         backend: "BackEnd",
         other: "Lainnya",
-        quote: '"Saya juga memiliki sedikit pemahaman tentang backend, selain frontend."',
+        quote: 'Saya juga memiliki sedikit pemahaman tentang backend, selain frontend.',
     },
 
     // Projects
