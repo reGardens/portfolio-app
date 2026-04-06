@@ -53,8 +53,8 @@ export default function AboutSection() {
                     <OptimizedImage
                         src={isDark ? "/static/images/bg-about-black.jpeg" : "/static/images/bg-about-white.jpeg"}
                         alt=""
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="object-cover"
                     />
                 </div>
 

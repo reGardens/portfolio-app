@@ -63,7 +63,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                     {/* FrontEnd */}
                     <div className="frontend -translate-y-10 opacity-0 scale-95 rounded-2xl overflow-hidden relative">
                         <div className="absolute inset-0 -z-[1]">
-                            <OptimizedImage src={skillBg} alt="" layout="fill" objectFit="cover" />
+                            <OptimizedImage src={skillBg} alt="" fill className="object-cover" />
                         </div>
                         <div className="p-5 sm:p-6">
                             <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
@@ -85,7 +85,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                     {/* BackEnd */}
                     <div className="backend -translate-y-10 opacity-0 scale-95 rounded-2xl overflow-hidden relative">
                         <div className="absolute inset-0 -z-[1]">
-                            <OptimizedImage src={skillBg} alt="" layout="fill" objectFit="cover" />
+                            <OptimizedImage src={skillBg} alt="" fill className="object-cover" />
                         </div>
                         <div className="p-5 sm:p-6">
                             <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
@@ -107,7 +107,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                     {/* Other */}
                     <div className="other -translate-y-10 opacity-0 scale-95 rounded-2xl overflow-hidden relative">
                         <div className="absolute inset-0 -z-[1]">
-                            <OptimizedImage src={skillBg} alt="" layout="fill" objectFit="cover" />
+                            <OptimizedImage src={skillBg} alt="" fill className="object-cover" />
                         </div>
                         <div className="p-5 sm:p-6">
                             <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
