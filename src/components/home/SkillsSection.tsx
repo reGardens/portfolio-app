@@ -66,16 +66,16 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                             <OptimizedImage src={skillBg} alt="" fill className="object-cover" />
                         </div>
                         <div className="p-5 sm:p-6">
-                            <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
+                            <Typography size="xs" weight="bold" className="uppercase text-darkColor500/50 dark:text-white/50 tracking-[3px] mb-4">
                                 FrontEnd
                             </Typography>
                             <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
                                 {dataIconFront?.data?.map((res: IconData, index: number) => (
                                     <li key={index} className="flex flex-col items-center gap-1.5 group">
-                                        <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                                        <div className="w-12 h-12 rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-black/10 dark:group-hover:bg-white/20 transition-colors">
                                             <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
                                         </div>
-                                        <span className="text-[10px] text-white/60 text-center truncate w-full">{res.name}</span>
+                                        <span className="text-[10px] text-darkColor500/60 dark:text-white/60 text-center truncate w-full">{res.name}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -88,16 +88,16 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                             <OptimizedImage src={skillBg} alt="" fill className="object-cover" />
                         </div>
                         <div className="p-5 sm:p-6">
-                            <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
+                            <Typography size="xs" weight="bold" className="uppercase text-darkColor500/50 dark:text-white/50 tracking-[3px] mb-4">
                                 BackEnd
                             </Typography>
                             <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
                                 {dataIconBack?.data?.map((res: IconData, index: number) => (
                                     <li key={index} className="flex flex-col items-center gap-1.5 group">
-                                        <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                                        <div className="w-12 h-12 rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-black/10 dark:group-hover:bg-white/20 transition-colors">
                                             <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
                                         </div>
-                                        <span className="text-[10px] text-white/60 text-center truncate w-full">{res.name}</span>
+                                        <span className="text-[10px] text-darkColor500/60 dark:text-white/60 text-center truncate w-full">{res.name}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -110,16 +110,16 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                             <OptimizedImage src={skillBg} alt="" fill className="object-cover" />
                         </div>
                         <div className="p-5 sm:p-6">
-                            <Typography size="xs" weight="bold" className="uppercase text-white/50 tracking-[3px] mb-4" darkMode={false}>
+                            <Typography size="xs" weight="bold" className="uppercase text-darkColor500/50 dark:text-white/50 tracking-[3px] mb-4">
                                 {t.skills.other}
                             </Typography>
                             <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
                                 {dataIconOther?.data?.map((res: IconData, index: number) => (
                                     <li key={index} className="flex flex-col items-center gap-1.5 group">
-                                        <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                                        <div className="w-12 h-12 rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-black/10 dark:group-hover:bg-white/20 transition-colors">
                                             <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
                                         </div>
-                                        <span className="text-[10px] text-white/60 text-center truncate w-full">{res.name}</span>
+                                        <span className="text-[10px] text-darkColor500/60 dark:text-white/60 text-center truncate w-full">{res.name}</span>
                                     </li>
                                 ))}
                             </ul>
