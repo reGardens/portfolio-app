@@ -37,7 +37,7 @@ const en = {
         frontend: "FrontEnd",
         backend: "BackEnd",
         other: "Other",
-        quote: 'I also have a little understanding of the backend, in addition to the frontend.',
+        quote: 'Beyond the frontend, I also have experience with backend development, prompt engineering, and QA testing.',
     },
 
     // Projects

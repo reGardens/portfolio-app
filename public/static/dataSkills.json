@@ -3,86 +3,42 @@
     "id": 1,
     "name": "frontend",
     "data": [
-      {
-        "name": "html",
-        "icon": "/static/icons/html.png"
-      },
-      {
-        "name": "css",
-        "icon": "/static/icons/css.png"
-      },
-      {
-        "name": "javascript",
-        "icon": "/static/icons/javascript.png"
-      },
-      {
-        "name": "typescript",
-        "icon": "/static/icons/typescript.png"
-      },
-      {
-        "name": "bootstrap",
-        "icon": "/static/icons/bootstrap.png"
-      },
-      {
-        "name": "tailwindcss",
-        "icon": "/static/icons/tailwindcss.png"
-      },
-      {
-        "name": "mui",
-        "icon": "/static/icons/mui.png"
-      },
-      {
-        "name": "sass",
-        "icon": "/static/icons/sass.png"
-      },
-      {
-        "name": "jquery",
-        "icon": "/static/icons/jquery.png"
-      },
-      {
-        "name": "reactjs",
-        "icon": "/static/icons/reactjs.png"
-      },
-      {
-        "name": "vuejs",
-        "icon": "/static/icons/vuejs.png"
-      },
-      {
-        "name": "nextjs",
-        "icon": "/static/icons/nextjs.png"
-      }
+      { "name": "HTML", "icon": "/static/icons/html.png" },
+      { "name": "CSS", "icon": "/static/icons/css.png" },
+      { "name": "JavaScript", "icon": "/static/icons/javascript.png" },
+      { "name": "TypeScript", "icon": "/static/icons/typescript.png" },
+      { "name": "Bootstrap", "icon": "/static/icons/bootstrap.png" },
+      { "name": "Tailwind CSS", "icon": "/static/icons/tailwindcss.png" },
+      { "name": "MUI", "icon": "/static/icons/mui.png" },
+      { "name": "Sass", "icon": "/static/icons/sass.png" },
+      { "name": "jQuery", "icon": "/static/icons/jquery.png" },
+      { "name": "React", "icon": "/static/icons/reactjs.png" },
+      { "name": "Vue.js", "icon": "/static/icons/vuejs.png" },
+      { "name": "Next.js", "icon": "/static/icons/nextjs.png" }
     ]
   },
   {
     "id": 2,
     "name": "backend",
     "data": [
-      {
-        "name": "php",
-        "icon": "/static/icons/php.png"
-      },
-      {
-        "name": "codeigniter",
-        "icon": "/static/icons/codeigniter.png"
-      },
-      {
-        "name": "laravel",
-        "icon": "/static/icons/laravel.png"
-      }
+      { "name": "PHP", "icon": "/static/icons/php.png" },
+      { "name": "CodeIgniter", "icon": "/static/icons/codeigniter.png" },
+      { "name": "Laravel", "icon": "/static/icons/laravel.png" }
     ]
   },
   {
     "id": 3,
     "name": "other",
     "data": [
-      {
-        "name": "mysql",
-        "icon": "/static/icons/mysql.png"
-      },
-      {
-        "name": "github",
-        "icon": "/static/icons/github.png"
-      }
+      { "name": "MySQL", "icon": "/static/icons/mysql.png" },
+      { "name": "GitHub", "icon": "/static/icons/github.png" },
+      { "name": "Firebase", "icon": "/static/icons/firebase.png" },
+      { "name": "Espay", "icon": "/static/icons/espay.png" },
+      { "name": "ChatGPT", "icon": "/static/icons/chatgpt.png" },
+      { "name": "Gemini", "icon": "/static/icons/gemini.png" },
+      { "name": "Claude Code", "icon": "/static/icons/cloudecode.png" },
+      { "name": "Kiro", "icon": "/static/icons/kiro.png" },
+      { "name": "TestSprite MCP", "icon": "/static/icons/testsprite.png" }
     ]
   }
 ]

@@ -37,7 +37,7 @@ const id = {
         frontend: "FrontEnd",
         backend: "BackEnd",
         other: "Lainnya",
-        quote: 'Saya juga memiliki sedikit pemahaman tentang backend, selain frontend.',
+        quote: 'Selain frontend, saya juga memiliki pengalaman di backend, prompt engineering, dan QA testing.',
     },
 
     // Projects
