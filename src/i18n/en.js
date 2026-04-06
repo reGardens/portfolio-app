@@ -26,7 +26,7 @@ const en = {
     // About
     about: {
         title: "About me",
-        paragraph1: "My name is Reza Bagus Pratama. I'm 29 years old and I come from Indonesia, specifically Central Java. I work as a frontend web developer in the IT industry. I have been doing freelance and remote jobs for the past 2 years, as well as working on-site (WFO) projects.",
+        paragraph1: "My name is Reza Bagus Pratama. I'm 29 years old and I come from Indonesia, specifically Central Java. I work as a frontend web developer in the IT industry. I have been doing freelance and remote jobs for the past 4 years, as well as working on-site (WFO) projects.",
         paragraph2: "During this time, I have worked on various projects, including developing asset management system applications and POS systems, as well as other small-scale applications.",
         paragraph3: "I am excited about expanding my skills and expertise to encompass full-stack development, and I believe my previous experiences have provided me with a solid foundation to excel in this new role.",
     },

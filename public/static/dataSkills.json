@@ -22,6 +22,7 @@
     "name": "backend",
     "data": [
       { "name": "PHP", "icon": "/static/icons/php.png" },
+      { "name": "yii", "icon": "/static/icons/yii.png" },
       { "name": "CodeIgniter", "icon": "/static/icons/codeigniter.png" },
       { "name": "Laravel", "icon": "/static/icons/laravel.png" }
     ]
