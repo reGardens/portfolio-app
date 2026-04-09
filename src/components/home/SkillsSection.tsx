@@ -132,7 +132,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
     const skillBg = isDark ? "/static/images/bg-about-black.jpeg" : "/static/images/bg-about-white.jpeg";
 
     return (
-        <Section id="skill" padding="none" className="skills">
+        <Section id="skill" padding="none" className="skills pt-16 lg:pt-0">
             <div className="skills-pin min-h-screen flex items-center justify-center px-4 sm:px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
                     <div className="col-span-1 lg:col-span-2 flex flex-col gap-5">

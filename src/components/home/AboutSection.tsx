@@ -102,7 +102,7 @@ export default function AboutSection() {
     }, []);
 
     return (
-        <Section id="about" padding="none" className="overflow-hidden about">
+        <Section id="about" padding="none" className="overflow-hidden about pt-16 lg:pt-0">
             <div className="about-pin min-h-screen flex items-center px-4 sm:px-6">
                 <Card padding="lg" className="about-card relative overflow-hidden py-12 lg:py-20 rounded-3xl opacity-0 w-full">
                 <div id='bg-about-white' className="w-full h-full absolute top-0 left-0 -z-[1]">
