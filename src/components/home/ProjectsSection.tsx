@@ -7,8 +7,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from 'react';
 import Image from "next/image";
-import { Section, ProjectCardDesktop, Button, Typography } from "@/components/ui";
+import { Section, Button, Typography } from "@/components/ui";
 import { useLanguage } from "@/i18n/LanguageContext";
+import ProjectPinCard from "./ProjectPinCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,23 +83,20 @@ export default function ProjectsSection({ dataProjects }: Props) {
             </div>
 
             {/* Desktop Layout */}
-            <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative px-4 sm:px-6 lg:px-24">
+            <div className="hidden lg:block text-darkColor500 dark:text-white">
                 {limitedProjects?.map((res: PorjectsData, index: number) => (
-                    <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects" data-index={index}>
-                        <ProjectCardDesktop
-                            name={res.name}
-                            description={res.description}
-                            hashtags={Array.isArray(res.hashtags) ? res.hashtags : undefined}
-                            desktopView={res.desktopView}
-                            tabletView={res.tabletView}
-                            mobileView={res.mobileView}
-                            MediaDesktop={MediaComponentDesktop}
-                            MediaTablet={MediaComponentTablet}
-                            MediaMobile={MediaComponentMobile}
-                        />
-                    </li>
+                    <ProjectPinCard
+                        key={index}
+                        name={res.name}
+                        description={res.description}
+                        hashtags={Array.isArray(res.hashtags) ? res.hashtags : undefined}
+                        desktopView={res.desktopView}
+                        tabletView={res.tabletView}
+                        mobileView={res.mobileView}
+                        index={index}
+                    />
                 ))}
-            </ul>
+            </div>
 
             {/* Mobile Layout */}
             <div className="block lg:hidden px-4 sm:px-6 mb-10">
