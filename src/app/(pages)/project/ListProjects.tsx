@@ -59,6 +59,23 @@ export default function ListProjects({ dataProjects }: Props) {
                     });
                     project.to(box.querySelector(".media"), { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
                         .to(box.querySelector(".description"), { x: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 }, "-=0.2");
+
+                    // Text scale animations
+                    project.fromTo(`.proj-name-list-${index}`,
+                        { scale: 1.8, opacity: 0 },
+                        { scale: 1, opacity: 1, duration: 0.6, ease: "power3.out" },
+                        "-=0.3"
+                    );
+                    project.fromTo(`.proj-tags-list-${index}`,
+                        { scale: 1.4, opacity: 0 },
+                        { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" },
+                        "-=0.4"
+                    );
+                    project.fromTo(`.proj-desc-list-${index}`,
+                        { scale: 1.3, opacity: 0 },
+                        { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" },
+                        "-=0.3"
+                    );
                 }
             })
         } else {
@@ -128,8 +145,10 @@ export default function ListProjects({ dataProjects }: Props) {
                                 </div>
 
                                 <div className="col-span-2 col-start-4 mt-10 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out -z-10 ml-3">
-                                    <Typography variant="body-l" fontWeight="extrabold" className="tracking-wider">{res.name}</Typography>
-                                    <ul className="mb-3">
+                                    <div className={`proj-name-list-${index}`} style={{ opacity: 0 }}>
+                                        <Typography variant="body-l" fontWeight="extrabold" className="tracking-wider">{res.name}</Typography>
+                                    </div>
+                                    <ul className={`proj-tags-list-${index} mb-3`} style={{ opacity: 0 }}>
                                         {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
                                             return (
                                                 <li key={ress.name} className="inline-block mr-1.5 italic">
@@ -138,7 +157,9 @@ export default function ListProjects({ dataProjects }: Props) {
                                             )
                                         })}
                                     </ul>
-                                    <Typography variant="body-m" fontWeight="bold" className="text-darkColor200 tracking-wider text-justify">{res.description}</Typography>
+                                    <div className={`proj-desc-list-${index}`} style={{ opacity: 0 }}>
+                                        <Typography variant="body-m" fontWeight="bold" className="text-darkColor200 tracking-wider text-justify">{res.description}</Typography>
+                                    </div>
                                 </div>
                             </li>
                         )

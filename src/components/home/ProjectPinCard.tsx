@@ -35,6 +35,23 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
 
             // Desktop scales up
             if (desktopView) {
+                // Name slides in with desktop
+                tl.fromTo(`.proj-name-${index}`,
+                    { x: 30, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+                    0.2
+                );
+                tl.fromTo(`.proj-tags-${index}`,
+                    { x: 20, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 0.4, ease: "power3.out" },
+                    0.4
+                );
+                tl.fromTo(`.proj-desc-${index}`,
+                    { y: 20, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+                    0.5
+                );
+
                 tl.fromTo(`.desktop-img-${index}`,
                     { scale: 1, opacity: 1 },
                     { scale: 1.15, opacity: 0.6, duration: 1, ease: "power2.inOut" }
@@ -124,11 +141,11 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
 
                 {/* Description */}
                 <div className="col-span-2 flex flex-col justify-center">
-                    <Typography variant="body-l" fontWeight="extrabold" className="tracking-wider text-2xl">
+                    <Typography variant="body-l" fontWeight="extrabold" className={`proj-name-${index} tracking-wider text-2xl`} style={{ opacity: 0 }}>
                         {name}
                     </Typography>
                     {Array.isArray(hashtags) && hashtags.length > 0 && (
-                        <div className="flex gap-2 mt-3 mb-4 flex-wrap">
+                        <div className={`proj-tags-${index} flex gap-2 mt-3 mb-4 flex-wrap`} style={{ opacity: 0 }}>
                             {hashtags.map((tag) => (
                                 <span key={tag.name} className="text-xs px-3 py-1 rounded-full bg-traditionalColor500/10 text-traditionalColor500 font-semibold">
                                     {tag.name}
@@ -136,7 +153,7 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
                             ))}
                         </div>
                     )}
-                    <Typography variant="body-m" className="text-darkColor500/70 dark:text-white/70 tracking-wide text-justify leading-relaxed">
+                    <Typography variant="body-m" className={`proj-desc-${index} text-darkColor500/70 dark:text-white/70 tracking-wide text-justify leading-relaxed`} style={{ opacity: 0 }}>
                         {description}
                     </Typography>
                 </div>
