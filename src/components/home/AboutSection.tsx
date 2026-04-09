@@ -30,44 +30,70 @@ export default function AboutSection() {
             attributeFilter: ['class']
         });
 
-        // Pinned about animation - cards reveal one by one while pinned
+        // About animation
         const cards = gsap.utils.toArray<HTMLElement>(".about-content-card");
+        const isDesktop = window.innerWidth >= 1024;
 
-        const pinTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.about-pin',
-                start: "top top",
-                end: `+=${cards.length * 400}`,
-                pin: true,
-                scrub: 0.5,
-                anticipatePin: 1,
-            }
-        });
+        if (isDesktop) {
+            // Desktop: pinned scroll animation
+            const pinTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.about-pin',
+                    start: "top top",
+                    end: `+=${cards.length * 400}`,
+                    pin: true,
+                    scrub: 0.5,
+                    anticipatePin: 1,
+                }
+            });
 
-        // Fade in the card container first
-        pinTl.fromTo(".about-card",
-            { y: 40, opacity: 0, scale: 0.97 },
-            { y: 0, opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }
-        );
-
-        // Title slide in
-        pinTl.fromTo(".about-title",
-            { x: -30, opacity: 0 },
-            { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" },
-            "-=0.1"
-        );
-
-        // Each card fades in one by one
-        cards.forEach((card, i) => {
-            pinTl.fromTo(card,
-                { y: 50, opacity: 0, scale: 0.95 },
-                { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" },
-                i === 0 ? "-=0.1" : "-=0.1"
+            pinTl.fromTo(".about-card",
+                { y: 40, opacity: 0, scale: 0.97 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }
             );
-        });
 
-        // Small pause at the end before unpinning
-        pinTl.to({}, { duration: 0.3 });
+            pinTl.fromTo(".about-title",
+                { x: -30, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" },
+                "-=0.1"
+            );
+
+            cards.forEach((card) => {
+                pinTl.fromTo(card,
+                    { y: 50, opacity: 0, scale: 0.95 },
+                    { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" },
+                    "-=0.1"
+                );
+            });
+
+            pinTl.to({}, { duration: 0.3 });
+        } else {
+            // Mobile: simple stagger animation, no pin
+            const mobileTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.about-pin',
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                }
+            });
+
+            mobileTl.fromTo(".about-card",
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
+            );
+
+            mobileTl.fromTo(".about-title",
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" },
+                "-=0.2"
+            );
+
+            mobileTl.fromTo(".about-content-card",
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.4, ease: "power2.out", stagger: 0.15 },
+                "-=0.2"
+            );
+        }
 
         return () => {
             themeObserver.disconnect();
