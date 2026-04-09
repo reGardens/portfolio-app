@@ -42,7 +42,7 @@ export default function Button({
     };
 
     const widthStyle = fullWidth ? "w-full" : "";
-    const animateStyle = animate ? "animate-[flag-drop_1.5s_ease-in-out_infinite]" : "";
+    const animateStyle = animate ? "morph-bubble" : "";
     const disabledStyle = disabled ? "opacity-50 cursor-not-allowed" : "";
 
     const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyle} ${animateStyle} ${disabledStyle} ${className}`.trim();

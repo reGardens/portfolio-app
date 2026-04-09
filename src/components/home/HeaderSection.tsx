@@ -14,6 +14,16 @@ export default function HeaderSection() {
         title.to(".text3", { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
             .to(".text2", { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 }, "-=0.2")
             .to(".text1", { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 }, "-=0.2");
+
+        // Morph bubble animation for Resume button
+        const morphEl = document.querySelector('.morph-bubble');
+        if (morphEl) {
+            gsap.timeline({ repeat: -1, yoyo: true })
+                .to(morphEl, { borderRadius: "14px 20px 14px 20px", scaleX: 1.02, scaleY: 0.98, duration: 1.5, ease: "sine.inOut" })
+                .to(morphEl, { borderRadius: "20px 14px 20px 14px", scaleX: 0.98, scaleY: 1.02, duration: 1.3, ease: "sine.inOut" })
+                .to(morphEl, { borderRadius: "16px 18px 16px 18px", scaleX: 1.01, scaleY: 0.99, duration: 1.4, ease: "sine.inOut" })
+                .to(morphEl, { borderRadius: "14px", scaleX: 1, scaleY: 1, duration: 1.2, ease: "sine.inOut" });
+        }
     }, []);
 
     return (
