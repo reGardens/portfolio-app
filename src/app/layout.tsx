@@ -10,6 +10,7 @@ import Navigation from "@/components/layout/navigation/page";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Script from "next/script";
 import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
+import SmoothScroll from "@/components/ui/SmoothScroll/SmoothScroll";
 import LoadingScreen from "@/components/ui/LoadingScreen/LoadingScreen";
 import RouteChangeListener from "@/components/ui/LoadingScreen/RouteChangeListener";
 
@@ -52,6 +53,7 @@ export default function RootLayout({
 
         <body className={`${inter.className} bg-white dark:bg-darkColor500`} suppressHydrationWarning>
           <LanguageProvider>
+            <SmoothScroll />
             <LoadingScreen />
             <RouteChangeListener />
             <div className="max-w-screen-2xl mx-auto !overflow-x-hidden">
