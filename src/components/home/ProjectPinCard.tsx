@@ -141,9 +141,11 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
 
                 {/* Description */}
                 <div className="col-span-2 flex flex-col justify-center">
-                    <Typography variant="body-l" fontWeight="extrabold" className={`proj-name-${index} tracking-wider text-2xl`} style={{ opacity: 0 }}>
-                        {name}
-                    </Typography>
+                    <div className={`proj-name-${index}`} style={{ opacity: 0 }}>
+                        <Typography variant="body-l" fontWeight="extrabold" className="tracking-wider text-2xl">
+                            {name}
+                        </Typography>
+                    </div>
                     {Array.isArray(hashtags) && hashtags.length > 0 && (
                         <div className={`proj-tags-${index} flex gap-2 mt-3 mb-4 flex-wrap`} style={{ opacity: 0 }}>
                             {hashtags.map((tag) => (
@@ -153,9 +155,11 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
                             ))}
                         </div>
                     )}
-                    <Typography variant="body-m" className={`proj-desc-${index} text-darkColor500/70 dark:text-white/70 tracking-wide text-justify leading-relaxed`} style={{ opacity: 0 }}>
-                        {description}
-                    </Typography>
+                    <div className={`proj-desc-${index}`} style={{ opacity: 0 }}>
+                        <Typography variant="body-m" className="text-darkColor500/70 dark:text-white/70 tracking-wide text-justify leading-relaxed">
+                            {description}
+                        </Typography>
+                    </div>
                 </div>
             </div>
         </div>
