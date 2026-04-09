@@ -75,7 +75,7 @@ export default function ProjectsSection({ dataProjects }: Props) {
 
     return (
         <Section id="project" className="pt-24 sm:pt-32 pb-10" padding="none">
-            <div className="px-4 sm:px-6 lg:px-24 mb-8 sm:mb-10 lg:mb-16">
+            <div className="px-4 sm:px-6 lg:px-24 mb-0 sm:mb-10 lg:mb-0">
                 <div className="flex items-center gap-4">
                     <div className="w-1 h-10 sm:h-14 rounded-full bg-traditionalColor500" />
                     <Typography size="4xl" weight="extrabold" className="sm:text-5xl lg:text-6xl">{t.projects.title}</Typography>

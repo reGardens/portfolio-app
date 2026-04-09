@@ -7,6 +7,7 @@ export default function ScrollToTop() {
     const [show, setShow] = useState(false);
     const btnRef = useRef<HTMLButtonElement>(null);
     const prevShow = useRef(false);
+    const bubbleTl = useRef<gsap.core.Timeline | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,11 +22,25 @@ export default function ScrollToTop() {
         if (!el) return;
 
         if (show && !prevShow.current) {
+            // Bounce in
             gsap.fromTo(el,
                 { y: 30, scale: 0.5, opacity: 0 },
                 { y: 0, scale: 1, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.6)" }
             );
+
+            // Start infinite bubble morph
+            bubbleTl.current = gsap.timeline({ repeat: -1, yoyo: true });
+            bubbleTl.current
+                .to(el, { y: -6, borderRadius: "50% 40% 60% 45%", scaleX: 1.05, scaleY: 0.95, duration: 1.2, ease: "sine.inOut" })
+                .to(el, { y: 2, borderRadius: "45% 55% 40% 60%", scaleX: 0.95, scaleY: 1.05, duration: 1, ease: "sine.inOut" })
+                .to(el, { y: -4, borderRadius: "55% 45% 50% 45%", scaleX: 1.03, scaleY: 0.97, duration: 1.1, ease: "sine.inOut" })
+                .to(el, { y: 0, borderRadius: "50%", scaleX: 1, scaleY: 1, duration: 1, ease: "sine.inOut" });
+
         } else if (!show && prevShow.current) {
+            // Stop bubble animation
+            bubbleTl.current?.kill();
+            bubbleTl.current = null;
+
             gsap.to(el, {
                 y: 20, scale: 0.5, opacity: 0, duration: 0.3, ease: "power2.in",
             });
