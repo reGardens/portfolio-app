@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import ListProjects from './ListProjects';
 import dataIcons from '../../../../public/static/dataSkills.json';
 import dataProjects from '../../../../public/static/dataProjects.json';
+import type { ProjectData } from '@/types/project';
 
 export const metadata: Metadata = {
     title: 'Detail Projects',
-    description: 'Detail Project Page',
+    description: 'Browse the complete list of projects built by Reza Bagus Pratama, showcasing web development work across React, Next.js, and full stack technologies.',
 }
 
 interface Item {
@@ -26,7 +27,7 @@ export default async function Project() {
                         dataIconFront={dataFrontEnd}
                         dataIconBack={dataBackEnd}
                         dataIconOther={dataOtherSkills}
-                        dataProjects={dataProjects}
+                        dataProjects={dataProjects as unknown as ProjectData[]}
                     />
                 }
             </main>

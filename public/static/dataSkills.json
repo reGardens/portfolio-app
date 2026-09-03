@@ -14,7 +14,10 @@
       { "name": "jQuery", "icon": "/static/icons/jquery.png" },
       { "name": "React", "icon": "/static/icons/reactjs.png" },
       { "name": "Vue.js", "icon": "/static/icons/vuejs.png" },
-      { "name": "Next.js", "icon": "/static/icons/nextjs.png" }
+      { "name": "Next.js", "icon": "/static/icons/nextjs.png" },
+      { "name": "GSAP", "icon": "/static/icons/gsap.svg" },
+      { "name": "shadcn/ui", "icon": "/static/icons/shadcn.svg" },
+      { "name": "Svelte", "icon": "/static/icons/svelte.svg" }
     ]
   },
   {
@@ -24,7 +27,8 @@
       { "name": "PHP", "icon": "/static/icons/php.png" },
       { "name": "yii", "icon": "/static/icons/yii.png" },
       { "name": "CodeIgniter", "icon": "/static/icons/codeigniter.png" },
-      { "name": "Laravel", "icon": "/static/icons/laravel.png" }
+      { "name": "Laravel", "icon": "/static/icons/laravel.png" },
+      { "name": "Go", "icon": "/static/icons/golang.svg" }
     ]
   },
   {
@@ -39,7 +43,20 @@
       { "name": "Gemini", "icon": "/static/icons/gemini.png" },
       { "name": "Claude Code", "icon": "/static/icons/cloudecode.png" },
       { "name": "Kiro", "icon": "/static/icons/kiro.png" },
-      { "name": "TestSprite MCP", "icon": "/static/icons/testsprite.png" }
+      { "name": "TestSprite MCP", "icon": "/static/icons/testsprite.png" },
+      { "name": "Digiflazz", "icon": "/static/icons/digiflazz.png" },
+      { "name": "Cloudflare", "icon": "/static/icons/cloudflare.svg" },
+      { "name": "Playwright", "icon": "/static/icons/playwright.svg" },
+      { "name": "Docker", "icon": "/static/icons/docker.svg" },
+      { "name": "ngrok", "icon": "/static/icons/ngrok.png" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "mobile",
+    "data": [
+      { "name": "Android Studio", "icon": "/static/icons/androidstudio.svg" },
+      { "name": "Kotlin", "icon": "/static/icons/kotlin.svg" }
     ]
   }
 ]

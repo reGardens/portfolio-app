@@ -43,6 +43,8 @@ const en = {
     // Projects
     projects: {
         title: "Latest Projects",
+        showMore: "Show More",
+        back: "Back",
     },
 
     // Footer

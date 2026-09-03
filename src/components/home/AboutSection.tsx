@@ -2,33 +2,23 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Section, Card, OptimizedImage, Typography } from "@/components/ui";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useThemeStore } from "@/store/useThemeStore";
 
 export default function AboutSection() {
-    const [isDark, setIsDark] = useState(false);
+    const isDark = useThemeStore((s) => s.isDark);
     const { t } = useLanguage();
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        // Check initial theme
-        const checkTheme = () => {
-            const isDarkMode = document.documentElement.classList.contains('dark');
-            setIsDark(isDarkMode);
-        };
 
-        checkTheme();
-
-        // Listen for theme changes
-        const themeObserver = new MutationObserver(() => {
-            checkTheme();
-        });
-
-        themeObserver.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['class']
-        });
+        const prefersReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduced) {
+            gsap.set([".about-card", ".about-title", ".about-content-card"], { clearProps: "all", opacity: 1, x: 0, y: 0, scale: 1, rotation: 0 });
+            return;
+        }
 
         // About animation
         const cards = gsap.utils.toArray<HTMLElement>(".about-content-card");
@@ -96,7 +86,6 @@ export default function AboutSection() {
         }
 
         return () => {
-            themeObserver.disconnect();
             ScrollTrigger.getAll().forEach(t => t.kill());
         };
     }, []);

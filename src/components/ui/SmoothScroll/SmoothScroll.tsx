@@ -8,12 +8,16 @@ export default function SmoothScroll() {
 
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 1.2,
+            duration: 2.0,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            touchMultiplier: 2,
+            wheelMultiplier: 0.8,
+            touchMultiplier: 1.5,
         });
 
         lenisRef.current = lenis;
+
+        // Expose globally so route changes can reset scroll position.
+        (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
 
         function raf(time: number) {
             lenis.raf(time);
@@ -23,6 +27,7 @@ export default function SmoothScroll() {
         requestAnimationFrame(raf);
 
         return () => {
+            (window as unknown as { __lenis?: Lenis }).__lenis = undefined;
             lenis.destroy();
         };
     }, []);

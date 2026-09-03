@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import en from './en';
 import id from './id';
+import { useThemeSync } from '@/store/useThemeSync';
 
 type Language = 'en' | 'id';
 
@@ -23,12 +24,20 @@ const LanguageContext = createContext<LanguageContextType>({
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [lang, setLangState] = useState<Language>('en');
 
+    // Centralized dark-mode detection (single MutationObserver).
+    useThemeSync();
+
     useEffect(() => {
         const saved = localStorage.getItem('language') as Language;
         if (saved && (saved === 'en' || saved === 'id')) {
             setLangState(saved);
         }
     }, []);
+
+    // Keep <html lang> in sync with the selected language (on mount and on change).
+    useEffect(() => {
+        document.documentElement.lang = lang;
+    }, [lang]);
 
     const setLang = (newLang: Language) => {
         setLangState(newLang);

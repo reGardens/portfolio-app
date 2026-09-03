@@ -43,6 +43,8 @@ const id = {
     // Projects
     projects: {
         title: "Proyek Terbaru",
+        showMore: "Lihat Selengkapnya",
+        back: "Kembali",
     },
 
     // Footer

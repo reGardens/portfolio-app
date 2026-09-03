@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Quick Deploy",
+  "description": "Git add all changes, commit with a message, and push to master to trigger Vercel deployment. Click the play button to deploy.",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "git add -A && git commit -m \"deploy: update portfolio\" && git push origin master",
+    "timeout": 60
+  }
+}

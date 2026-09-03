@@ -3,7 +3,12 @@
 import Image from "next/image";
 import React from "react";
 
-export default function MediaComponentDesktop({ url, name }: any) {
+interface MediaProps {
+    url: string | null;
+    name: string;
+}
+
+export default function MediaComponentDesktop({ url, name }: MediaProps) {
     if (url == null) {
         return (
             <div className="w-full h-[35rem] relative rounded-xl overflow-hidden">
@@ -21,7 +26,7 @@ export default function MediaComponentDesktop({ url, name }: any) {
     }
 
     return (
-        <video autoPlay loop muted className="md:basis-[120px] w-full h-full rounded-xl">
+        <video autoPlay loop muted playsInline preload="none" className="md:basis-[120px] w-full h-full rounded-xl">
             <source src={url} type="video/mp4" />
         </video>
     );

@@ -9,7 +9,7 @@ const nextConfig = {
             {
                 source: '/',
                 destination: '/home',
-                permanent: true,
+                permanent: false,
             },
         ];
     },
@@ -20,6 +20,9 @@ const nextConfig = {
 
     images: {
         formats: ['image/webp', 'image/avif'],
+        dangerouslyAllowSVG: true,
+        contentDispositionType: 'attachment',
+        contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     },
 };
 

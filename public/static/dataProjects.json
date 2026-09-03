@@ -1,5 +1,21 @@
 [
   {
+    "name": "POSe PPOB",
+    "slug": "pose-ppob",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "image": null,
+    "desktopView": null,
+    "tabletView": null,
+    "mobileView": null,
+    "logo": "/static/icons/projects/icon-pose.webp",
+    "url": null,
+    "hashtags": [
+      { "link": "Kotlin", "name": "Kotlin" },
+      { "link": "Golang", "name": "Golang" },
+      { "link": "Vanilla Javascript", "name": "Vanilla Javascript" }
+    ]
+  },
+  {
     "name": "POSe Online Order",
     "slug": "pose-online-order",
     "description": "A webview-based online ordering system for POSe. The desktop view serves as the POSe Dashboard where merchants generate QR codes for online orders. The tablet displays the Full Order interface for seat selection, one of two available ordering modes alongside Quick Order. The mobile view shows the customer-facing menu for browsing and selecting items after scanning the QR code.",
@@ -50,7 +66,7 @@
   {
     "name": "POSe Landing Page",
     "slug": "pose-landing-page",
-    "description": "The distribution of over 10,000 EDC devices by the company involves numerous location points that directly impact profitability. With such a large volume of assets, a tool is needed to control the distribution process from warehouse entry to merchant installation. Invera is an internal application used to monitor all company assets. Version 2.3.1, released on December 31, 2025, is the latest release. From EDC machines to other office assets, all inventory data is fully available. Invera provides real-time information on service points, status, and asset conditions.",
+    "description": "A marketing landing page that showcases POSe, a smart digital POS solution built to help businesses grow more efficiently. The page highlights key product features and benefits with clear calls to action, guiding visitors to explore plans and get started. Its clean, responsive layout is designed to convert interest into sign-ups.",
     "image": "/static/projects/thumb/POSeLandingPage-desktop.png",
     "desktopView": "/static/projects/thumb/POSeLandingPage-desktop.png",
     "tabletView": "/static/projects/thumb/POSeLandingPage-tablet.png",
@@ -164,7 +180,7 @@
     "tabletView": "/static/projects/video/DanamonQuiz-tablet-compressed.mp4",
     "mobileView": "/static/projects/thumb/DanamonQuiz-mobile.png",
     "logo": "/static/icons/projects/icon-danamonquiz.webp",
-    "url": "www.optimalku.com",
+    "url": "https://www.optimalku.com",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
   },
   {
@@ -266,7 +282,7 @@
   {
     "name": "Combiphar Pro",
     "slug": "combiphar-pro",
-    "description": "Update \"maintain changes\" to \"features\".",
+    "description": "Combiphar Pro is a web-based portal built with Laravel Blade, featuring secure login and role-based access for its users. The platform delivers a streamlined, dedicated experience for managing Combiphar's professional services online.",
     "image": null,
     "desktopView": null,
     "tabletView": null,

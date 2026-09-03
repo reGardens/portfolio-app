@@ -13,6 +13,16 @@ export default function RouteChangeListener() {
     }, [pathname, setLoading]);
 
     useEffect(() => {
+        // Reset scroll to top on route change (works with Lenis smooth scroll).
+        const lenis = (window as unknown as { __lenis?: { scrollTo: (target: number, opts?: { immediate?: boolean }) => void } }).__lenis;
+        if (lenis) {
+            lenis.scrollTo(0, { immediate: true });
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, [pathname]);
+
+    useEffect(() => {
         const handleClick = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
             const anchor = target.closest('a');

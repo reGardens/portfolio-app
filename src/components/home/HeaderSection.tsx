@@ -9,6 +9,12 @@ export default function HeaderSection() {
     const { t } = useLanguage();
 
     useEffect(() => {
+        const prefersReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduced) {
+            gsap.set([".text1", ".text2", ".text3"], { clearProps: "all", opacity: 1, x: 0, y: 0, scale: 1, rotation: 0 });
+            return;
+        }
+
         // header animation
         let title = gsap.timeline();
         title.to(".text3", { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })

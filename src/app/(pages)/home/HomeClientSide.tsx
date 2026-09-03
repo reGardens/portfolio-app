@@ -9,10 +9,11 @@ interface Props {
     dataIconFront: any;
     dataIconBack: any;
     dataIconOther: any;
+    dataIconMobile: any;
     dataProjects: any;
 }
 
-export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOther, dataProjects }: Props) {
+export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOther, dataIconMobile, dataProjects }: Props) {
     return (
         <>
             <HeaderSection />
@@ -21,6 +22,7 @@ export default function HomeClientSide({ dataIconFront, dataIconBack, dataIconOt
                 dataIconFront={dataIconFront}
                 dataIconBack={dataIconBack}
                 dataIconOther={dataIconOther}
+                dataIconMobile={dataIconMobile}
             />
             <ProjectsSection dataProjects={dataProjects} />
         </>

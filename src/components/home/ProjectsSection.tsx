@@ -10,27 +10,12 @@ import Image from "next/image";
 import { Section, Button, Typography } from "@/components/ui";
 import { useLanguage } from "@/i18n/LanguageContext";
 import ProjectPinCard from "./ProjectPinCard";
+import type { ProjectData, Hashtag } from "@/types/project";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface PorjectsData {
-    name: string;
-    description: string;
-    projectBackground: string;
-    desktopView: string;
-    tabletView: string;
-    mobileView: string;
-    hashtags: string | Array<{ name: string; link: string }>;
-    logo: string;
-}
-
-interface Hashtags {
-    name: string;
-    link: string;
-}
-
 interface Props {
-    dataProjects: any;
+    dataProjects: ProjectData[];
 }
 
 export default function ProjectsSection({ dataProjects }: Props) {
@@ -39,10 +24,17 @@ export default function ProjectsSection({ dataProjects }: Props) {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
+
+        const prefersReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduced) {
+            gsap.set([".media", ".description", ".cards"], { clearProps: "all", opacity: 1, x: 0, y: 0, scale: 1, rotation: 0 });
+            return;
+        }
+
         // projects animation
         if (typeof window !== "undefined" && window.innerWidth > 1024) {
             // desktop view
-            limitedProjects.forEach((res: PorjectsData, index: number) => {
+            limitedProjects.forEach((res: ProjectData, index: number) => {
                 const box = document.querySelector(`.projects:nth-child(${index + 1})`);
                 if (box) {
                     const project = gsap.timeline({
@@ -67,7 +59,7 @@ export default function ProjectsSection({ dataProjects }: Props) {
                     toggleActions: "play none none none",
                 }
             });
-            limitedProjects.forEach((res: PorjectsData, index: number) => {
+            limitedProjects.forEach((res: ProjectData, index: number) => {
                 project.to('.cards', { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
             })
         }
@@ -84,9 +76,9 @@ export default function ProjectsSection({ dataProjects }: Props) {
 
             {/* Desktop Layout */}
             <div className="hidden lg:block text-darkColor500 dark:text-white">
-                {limitedProjects?.map((res: PorjectsData, index: number) => (
+                {limitedProjects?.map((res: ProjectData, index: number) => (
                     <ProjectPinCard
-                        key={index}
+                        key={res.slug}
                         name={res.name}
                         description={res.description}
                         hashtags={Array.isArray(res.hashtags) ? res.hashtags : undefined}
@@ -101,8 +93,8 @@ export default function ProjectsSection({ dataProjects }: Props) {
             {/* Mobile Layout */}
             <div className="block lg:hidden px-4 sm:px-6 mb-10">
                 <ul role="list" className="relative projects flex flex-col gap-4">
-                    {limitedProjects?.map((res: PorjectsData, index: number) => (
-                        <li key={index}>
+                    {limitedProjects?.map((res: ProjectData, index: number) => (
+                        <li key={res.slug}>
                             <div className="cards opacity-0 -translate-y-10 rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-gray-100 dark:border-white/10 overflow-hidden">
                                 <div className="p-4 flex items-center gap-4">
                                     <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/10 flex items-center justify-center overflow-hidden">
@@ -117,7 +109,7 @@ export default function ProjectsSection({ dataProjects }: Props) {
                                         </Typography>
                                         {Array.isArray(res.hashtags) && (
                                             <div className="flex gap-1.5 mt-2 flex-wrap">
-                                                {res.hashtags.map((tag: Hashtags) => (
+                                                {res.hashtags.map((tag: Hashtag) => (
                                                     <span key={tag.name} className="text-[10px] px-2 py-0.5 rounded-full bg-traditionalColor500/10 text-traditionalColor500 font-medium">
                                                         {tag.name}
                                                     </span>
@@ -134,7 +126,7 @@ export default function ProjectsSection({ dataProjects }: Props) {
 
             <div className="flex justify-center">
                 <Button href="/project" variant="primary" size="md">
-                    Show More
+                    {t.projects.showMore}
                 </Button>
             </div>
         </Section>

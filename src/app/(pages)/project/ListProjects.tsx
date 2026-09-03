@@ -10,50 +10,45 @@ import Image from "next/image";
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLoadingStore } from '@/store/useLoadingStore';
+import { useLanguage } from "@/i18n/LanguageContext";
+import type { ProjectData, Hashtag } from "@/types/project";
 
 interface Props {
     dataIconFront: any;
     dataIconBack: any;
     dataIconOther: any;
-    dataProjects: any;
-}
-interface IconData {
-    icon: string;
-    name: string;
-}
-interface PorjectsData {
-    name: string;
-    slug: string;
-    description: string;
-    projectBackground: string;
-    desktopView: string;
-    tabletView: string;
-    mobileView: string;
-    hashtags: string;
-    logo: string;
-}
-interface Hashtags {
-    name: string;
-    link: string;
+    dataProjects: ProjectData[];
 }
 
 export default function ListProjects({ dataProjects }: Props) {
     const router = useRouter();
     const setLoading = useLoadingStore((s) => s.setLoading);
+    const { t } = useLanguage();
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
+
+        const prefersReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduced) {
+            const perIndexSelectors: string[] = [];
+            dataProjects.forEach((res: ProjectData, index: number) => {
+                perIndexSelectors.push(`.proj-name-list-${index}`, `.proj-tags-list-${index}`, `.proj-desc-list-${index}`);
+            });
+            gsap.set([".media", ".description", ".cards", ...perIndexSelectors], { clearProps: "all", opacity: 1, x: 0, y: 0, scale: 1, rotation: 0 });
+            return;
+        }
+
         if (typeof window !== "undefined" && window.innerWidth > 1024) {
             // desktop view
-            dataProjects.forEach((res: PorjectsData, index: number) => {
+            dataProjects.forEach((res: ProjectData, index: number) => {
                 // console.log('box);
                 const box = document.querySelector(`.projects:nth-child(${index + 1})`);
                 if (box) {
                     const project = gsap.timeline({
                         scrollTrigger: {
                             trigger: box,
-                            start: "top center",
-                            end: "bottom center",
+                            start: "top 85%",
+                            end: "bottom 20%",
                             toggleActions: "play none none none",
                         }
                     });
@@ -88,13 +83,13 @@ export default function ListProjects({ dataProjects }: Props) {
                     toggleActions: "play none none none",
                 }
             });
-            dataProjects.forEach((res: PorjectsData, index: number) => {
+            dataProjects.forEach((res: ProjectData, index: number) => {
                 project.to('.cards', { y: 0, scale: 1, duration: 0.3, ease: "power2.out", opacity: 1 })
             })
         }
     }, [dataProjects]);
 
-    const handleDetail = (index: number, slug: string, data: PorjectsData) => {
+    const handleDetail = (index: number, slug: string, data: ProjectData) => {
         const card = document.querySelectorAll(".animation-hover")[index] as HTMLElement;
         if (!card) return;
 
@@ -130,26 +125,26 @@ export default function ListProjects({ dataProjects }: Props) {
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
-                    <span className="font-semibold text-sm">Back</span>
+                    <span className="font-semibold text-sm">{t.projects.back}</span>
                 </button>
 
                 {/* Desktop Layout */}
                 <ul className="hidden lg:block text-darkColor500 dark:text-white p-d-s relative">
-                    {dataProjects.map((res: PorjectsData, index: number) => {
+                    {dataProjects.map((res: ProjectData, index: number) => {
                         return (
-                            <li key={index} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
+                            <li key={res.slug} className="grid grid-cols-5 content-center gap-11 mt-32 mb-48 projects">
                                 <div className="w-full h-full col-start-1 col-span-3 relative media opacity-0 -translate-y-10 scale-95 transition-all duration-300 ease-out">
                                     <MediaComponentDesktop url={res.desktopView} name={res.name} />
                                     <MediaComponentTablet name={res.name} url={res.tabletView} />
                                     <MediaComponentMobile name={res.name} url={res.mobileView} />
                                 </div>
 
-                                <div className="col-span-2 col-start-4 mt-10 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out -z-10 ml-3">
+                                <div className="col-span-2 col-start-4 description opacity-0 translate-x-10 scale-95 transition-all duration-300 ease-out ml-3 flex flex-col justify-center">
                                     <div className={`proj-name-list-${index}`} style={{ opacity: 0 }}>
                                         <Typography variant="body-l" fontWeight="extrabold" className="tracking-wider">{res.name}</Typography>
                                     </div>
                                     <ul className={`proj-tags-list-${index} mb-3`} style={{ opacity: 0 }}>
-                                        {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtags) => {
+                                        {Array.isArray(res.hashtags) && res.hashtags.map((ress: Hashtag) => {
                                             return (
                                                 <li key={ress.name} className="inline-block mr-1.5 italic">
                                                     <Typography variant="body-s" fontWeight="extrabold" className="leading-none text-darkColor500 dark:text-white opacity-50 tracking-wider">{ress.name}</Typography>
@@ -169,10 +164,10 @@ export default function ListProjects({ dataProjects }: Props) {
                 {/* Mobile Layout */}
                 <div className="block lg:hidden w-full mb-10">
                     <ul role="list" className="relative projects flex flex-col gap-3">
-                        {dataProjects.map((res: PorjectsData, index: number) => {
+                        {dataProjects.map((res: ProjectData, index: number) => {
                             return (
                                 <li
-                                    key={index}
+                                    key={res.slug}
                                     className="rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xl shadow-sm border border-white/20 dark:border-white/10 px-4 py-3.5 active:bg-black/5 dark:active:bg-white/5 transition-colors animation-hover cursor-pointer"
                                     onClick={() => handleDetail(index, res.slug, res)}
                                 >

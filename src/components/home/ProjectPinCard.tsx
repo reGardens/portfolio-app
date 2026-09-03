@@ -21,21 +21,39 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top top",
-                    end: "+=2000",
-                    pin: true,
-                    scrub: 0.5,
-                    anticipatePin: 1,
-                }
-            });
 
-            // Desktop scales up
-            if (desktopView) {
-                // Name slides in with desktop
+        const prefersReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduced) {
+            gsap.set(
+                [
+                    `.proj-name-${index}`,
+                    `.proj-tags-${index}`,
+                    `.proj-desc-${index}`,
+                    `.desktop-img-${index}`,
+                    `.tablet-img-${index}`,
+                    `.mobile-img-${index}`,
+                ],
+                { clearProps: "all", opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, filter: "blur(0px)" }
+            );
+            return;
+        }
+
+        const hasMedia = !!(desktopView || tabletView || mobileView);
+
+        const ctx = gsap.context(() => {
+            if (hasMedia) {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "+=2000",
+                        pin: true,
+                        scrub: 0.5,
+                        anticipatePin: 1,
+                    }
+                });
+
+                // Text always animates in, regardless of media presence
                 tl.fromTo(`.proj-name-${index}`,
                     { x: 30, opacity: 0 },
                     { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
@@ -52,37 +70,64 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
                     0.5
                 );
 
-                tl.fromTo(`.desktop-img-${index}`,
-                    { scale: 1, opacity: 1 },
-                    { scale: 1.15, opacity: 0.6, duration: 1, ease: "power2.inOut" }
+                // Desktop scales up
+                if (desktopView) {
+                    tl.fromTo(`.desktop-img-${index}`,
+                        { scale: 1, opacity: 1, filter: "blur(0px)" },
+                        { scale: 1.15, opacity: 0.15, filter: "blur(4px)", duration: 1, ease: "power2.inOut" }
+                    );
+                }
+
+                // Tablet appears in center
+                if (tabletView) {
+                    tl.fromTo(`.tablet-img-${index}`,
+                        { scale: 0.5, opacity: 0, filter: "blur(0px)" },
+                        { scale: 1, opacity: 1, filter: "blur(0px)", duration: 1, ease: "power3.out" },
+                        desktopView ? "-=0.5" : "0"
+                    );
+
+                    // Tablet scales up
+                    tl.to(`.tablet-img-${index}`,
+                        { scale: 1.15, opacity: 0.15, filter: "blur(4px)", duration: 1, ease: "power2.inOut" }
+                    );
+                }
+
+                // Mobile appears in center
+                if (mobileView) {
+                    tl.fromTo(`.mobile-img-${index}`,
+                        { scale: 0.5, opacity: 0, filter: "blur(0px)" },
+                        { scale: 1, opacity: 1, filter: "blur(0px)", duration: 1, ease: "power3.out" },
+                        "-=0.5"
+                    );
+                }
+
+                // Hold at end
+                tl.to({}, { duration: 0.5 });
+            } else {
+                // No media at all: no pin/scrub, just a simple text reveal
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                        toggleActions: "play none none none",
+                    }
+                });
+
+                tl.fromTo(`.proj-name-${index}`,
+                    { x: 30, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+                );
+                tl.fromTo(`.proj-tags-${index}`,
+                    { x: 20, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+                    "-=0.3"
+                );
+                tl.fromTo(`.proj-desc-${index}`,
+                    { y: 20, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+                    "-=0.3"
                 );
             }
-
-            // Tablet appears in center
-            if (tabletView) {
-                tl.fromTo(`.tablet-img-${index}`,
-                    { scale: 0.5, opacity: 0 },
-                    { scale: 1, opacity: 1, duration: 1, ease: "power3.out" },
-                    desktopView ? "-=0.5" : "0"
-                );
-
-                // Tablet scales up
-                tl.to(`.tablet-img-${index}`,
-                    { scale: 1.15, opacity: 0.6, duration: 1, ease: "power2.inOut" }
-                );
-            }
-
-            // Mobile appears in center
-            if (mobileView) {
-                tl.fromTo(`.mobile-img-${index}`,
-                    { scale: 0.5, opacity: 0 },
-                    { scale: 1, opacity: 1, duration: 1, ease: "power3.out" },
-                    "-=0.5"
-                );
-            }
-
-            // Hold at end
-            tl.to({}, { duration: 0.5 });
 
         }, containerRef);
 
@@ -99,13 +144,20 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
             <div className="w-full grid grid-cols-5 gap-8 px-4 lg:px-24">
                 {/* Media stack */}
                 <div className="col-span-3 relative h-[35rem] flex items-center justify-center">
+                    {/* Fallback when no media at all */}
+                    {!desktopView && !tabletView && !mobileView && (
+                        <div className="absolute inset-0 rounded-xl overflow-hidden">
+                            <Image src="/static/default/default-image.png" alt={`${name}`} fill sizes="60vw" className="object-contain opacity-70" />
+                        </div>
+                    )}
+
                     {/* Desktop */}
                     {desktopView && (
                         <div className={`desktop-img-${index} absolute inset-0 rounded-xl overflow-hidden`}>
                             {isImage(desktopView) ? (
                                 <Image src={desktopView} alt={`${name} desktop`} fill sizes="60vw" className="object-contain" />
                             ) : (
-                                <video autoPlay loop muted className="w-full h-full object-contain rounded-xl">
+                                <video autoPlay loop muted playsInline preload="none" className="w-full h-full object-contain rounded-xl">
                                     <source src={desktopView} type="video/mp4" />
                                 </video>
                             )}
@@ -118,7 +170,7 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
                             {isImage(tabletView) ? (
                                 <Image src={tabletView} alt={`${name} tablet`} fill sizes="35vw" className="object-contain" />
                             ) : (
-                                <video autoPlay loop muted className="w-full h-full object-contain rounded-xl">
+                                <video autoPlay loop muted playsInline preload="none" className="w-full h-full object-contain rounded-xl">
                                     <source src={tabletView} type="video/mp4" />
                                 </video>
                             )}
@@ -131,7 +183,7 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
                             {isImage(mobileView) ? (
                                 <Image src={mobileView} alt={`${name} mobile`} fill sizes="15vw" className="object-contain" />
                             ) : (
-                                <video autoPlay loop muted className="w-full h-full object-contain rounded-xl">
+                                <video autoPlay loop muted playsInline preload="none" className="w-full h-full object-contain rounded-xl">
                                     <source src={mobileView} type="video/mp4" />
                                 </video>
                             )}

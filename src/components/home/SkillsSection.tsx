@@ -2,44 +2,48 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Section, Card, OptimizedImage, Typography } from "@/components/ui";
 import { useLanguage } from "@/i18n/LanguageContext";
-
-interface IconData {
-    icon: string;
-    name: string;
-}
+import { useThemeStore } from "@/store/useThemeStore";
+import type { SkillGroup, SkillIcon } from "@/types/project";
 
 interface Props {
-    dataIconFront: any;
-    dataIconBack: any;
-    dataIconOther: any;
+    dataIconFront: SkillGroup;
+    dataIconBack: SkillGroup;
+    dataIconOther: SkillGroup;
+    dataIconMobile: SkillGroup;
 }
 
-export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOther }: Props) {
+// Monochrome icons (solid single-color, e.g. black) that are invisible in dark mode.
+// Loaded via next/image so currentColor doesn't apply; invert them via CSS in dark mode.
+// Easily extendable: add more filename keywords here as needed.
+const MONO_ICONS = ['shadcn'];
+const isMonoIcon = (icon: string) => MONO_ICONS.some((k) => icon.toLowerCase().includes(k));
+
+export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOther, dataIconMobile }: Props) {
     const { t } = useLanguage();
-    const [isDark, setIsDark] = useState(false);
+    const isDark = useThemeStore((s) => s.isDark);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        const checkTheme = () => {
-            setIsDark(document.documentElement.classList.contains('dark'));
-        };
-        checkTheme();
 
-        const observer = new MutationObserver(checkTheme);
-        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        const prefersReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduced) {
+            gsap.set([".skills-title", ".skill-quote", ".skill-section", ".skill-icon"], { clearProps: "all", opacity: 1, x: 0, y: 0, scale: 1, rotation: 0 });
+            return;
+        }
 
         // Skills animation
         const isDesktop = window.innerWidth >= 1024;
 
         if (isDesktop) {
-            // Desktop: pinned scroll — icons scatter in from random positions
+            // Desktop: lock scroll when the section reaches the top of the viewport,
+            // then run a TIME-BASED scatter-in animation (no scrub). Unlock when done.
             const skillIcons = gsap.utils.toArray<HTMLElement>(".skill-icon");
             const sections = gsap.utils.toArray<HTMLElement>(".skill-section");
 
-            // Set initial random positions for all icons
+            // Set initial random positions for all icons (scatter effect preserved)
             skillIcons.forEach((icon) => {
                 gsap.set(icon, {
                     x: gsap.utils.random(-200, 200),
@@ -50,15 +54,21 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                 });
             });
 
+            // Reference to the Lenis smooth-scroll instance (exposed on window).
+            const lenis = (window as unknown as { __lenis?: { stop: () => void; start: () => void } }).__lenis;
+
+            // Helper to fully release the scroll lock (native + Lenis).
+            const releaseLock = () => {
+                document.body.style.overflow = "";
+                lenis?.start();
+            };
+
+            // Time-based timeline (NO scrub): plays on its own once triggered.
             const skillTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.skills-pin',
-                    start: "top top",
-                    end: `+=${sections.length * 600 + 400}`,
-                    pin: true,
-                    scrub: 0.6,
-                    anticipatePin: 1,
-                }
+                paused: true,
+                onComplete: () => {
+                    releaseLock();
+                },
             });
 
             // Title fade in
@@ -68,7 +78,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
             );
 
             // Each section: label fades in, then icons scatter into place
-            sections.forEach((section, i) => {
+            sections.forEach((section) => {
                 const sectionIcons = section.querySelectorAll(".skill-icon");
                 const label = section.querySelector(".skill-label");
 
@@ -106,7 +116,19 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                 { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
             );
 
-            skillTl.to({}, { duration: 0.3 });
+            // Lock scroll as soon as the section reaches the top of the viewport,
+            // then play the time-based animation. Lock is released on timeline complete.
+            ScrollTrigger.create({
+                trigger: ".skills-pin",
+                start: "top top",
+                once: true,
+                onEnter: () => {
+                    // Lock both Lenis (smooth scroll) and native scrolling for reliability.
+                    lenis?.stop();
+                    document.body.style.overflow = "hidden";
+                    skillTl.play(0);
+                },
+            });
         } else {
             // Mobile: simple stagger
             const mobileTl = gsap.timeline({
@@ -124,8 +146,11 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
         }
 
         return () => {
-            observer.disconnect();
             ScrollTrigger.getAll().forEach(t => t.kill());
+            // Ensure scroll is never left locked on unmount / HMR.
+            document.body.style.overflow = "";
+            const lenis = (window as unknown as { __lenis?: { start: () => void } }).__lenis;
+            lenis?.start();
         };
     }, []);
 
@@ -133,7 +158,7 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
 
     return (
         <Section id="skill" padding="none" className="skills pt-16 lg:pt-0">
-            <div className="skills-pin min-h-screen flex items-center justify-center px-4 sm:px-6">
+            <div className="skills-pin min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 pt-40 lg:pt-48 pb-24 lg:pb-28">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
                     <div className="col-span-1 lg:col-span-2 flex flex-col gap-5">
                     {/* FrontEnd */}
@@ -146,10 +171,10 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                                 FrontEnd
                             </Typography>
                             <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
-                                {dataIconFront?.data?.map((res: IconData, index: number) => (
+                                {dataIconFront?.data?.map((res: SkillIcon, index: number) => (
                                     <li key={index} className="skill-icon flex flex-col items-center gap-1.5 group">
                                         <div className="w-12 h-12 rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-black/10 dark:group-hover:bg-white/20 transition-colors">
-                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
+                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} className={isMonoIcon(res.icon) ? "dark:invert" : undefined} />
                                         </div>
                                         <span className="text-[10px] text-darkColor500/60 dark:text-white/60 text-center truncate w-full">{res.name}</span>
                                     </li>
@@ -168,10 +193,32 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                                 BackEnd
                             </Typography>
                             <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
-                                {dataIconBack?.data?.map((res: IconData, index: number) => (
+                                {dataIconBack?.data?.map((res: SkillIcon, index: number) => (
                                     <li key={index} className="skill-icon flex flex-col items-center gap-1.5 group">
                                         <div className="w-12 h-12 rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-black/10 dark:group-hover:bg-white/20 transition-colors">
-                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
+                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} className={isMonoIcon(res.icon) ? "dark:invert" : undefined} />
+                                        </div>
+                                        <span className="text-[10px] text-darkColor500/60 dark:text-white/60 text-center truncate w-full">{res.name}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Mobile */}
+                    <div className="skill-section rounded-2xl overflow-hidden relative">
+                        <div className="absolute inset-0 -z-[1]">
+                            <OptimizedImage src={skillBg} alt="" fill className="object-cover" />
+                        </div>
+                        <div className="p-5 sm:p-6">
+                            <Typography size="xs" weight="bold" className="skill-label uppercase text-darkColor500/50 dark:text-white/50 tracking-[3px] mb-4">
+                                Mobile
+                            </Typography>
+                            <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
+                                {dataIconMobile?.data?.map((res: SkillIcon, index: number) => (
+                                    <li key={index} className="skill-icon flex flex-col items-center gap-1.5 group">
+                                        <div className="w-12 h-12 rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-black/10 dark:group-hover:bg-white/20 transition-colors">
+                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} className={isMonoIcon(res.icon) ? "dark:invert" : undefined} />
                                         </div>
                                         <span className="text-[10px] text-darkColor500/60 dark:text-white/60 text-center truncate w-full">{res.name}</span>
                                     </li>
@@ -190,10 +237,10 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                                 {t.skills.other}
                             </Typography>
                             <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
-                                {dataIconOther?.data?.map((res: IconData, index: number) => (
+                                {dataIconOther?.data?.map((res: SkillIcon, index: number) => (
                                     <li key={index} className="skill-icon flex flex-col items-center gap-1.5 group">
                                         <div className="w-12 h-12 rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-black/10 dark:group-hover:bg-white/20 transition-colors">
-                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} />
+                                            <OptimizedImage src={res.icon} alt={res.name} width={32} height={32} className={isMonoIcon(res.icon) ? "dark:invert" : undefined} />
                                         </div>
                                         <span className="text-[10px] text-darkColor500/60 dark:text-white/60 text-center truncate w-full">{res.name}</span>
                                     </li>
