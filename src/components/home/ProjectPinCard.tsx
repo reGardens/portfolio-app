@@ -5,10 +5,11 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { Typography } from '@/components/ui';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 interface Props {
     name: string;
-    description: string;
+    description: { en: string; id: string };
     hashtags?: Array<{ name: string; link: string }>;
     desktopView: string | null;
     tabletView: string | null;
@@ -18,6 +19,7 @@ interface Props {
 
 export default function ProjectPinCard({ name, description, hashtags, desktopView, tabletView, mobileView, index }: Props) {
     const containerRef = useRef<HTMLDivElement>(null);
+    const { lang } = useLanguage();
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -209,7 +211,7 @@ export default function ProjectPinCard({ name, description, hashtags, desktopVie
                     )}
                     <div className={`proj-desc-${index}`} style={{ opacity: 0 }}>
                         <Typography variant="body-m" className="text-darkColor500/70 dark:text-white/70 tracking-wide text-justify leading-relaxed">
-                            {description}
+                            {description[lang]}
                         </Typography>
                     </div>
                 </div>

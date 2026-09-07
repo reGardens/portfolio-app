@@ -2,11 +2,14 @@
   {
     "name": "POSe PPOB",
     "slug": "pose-ppob",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": null,
-    "desktopView": null,
-    "tabletView": null,
-    "mobileView": null,
+    "description": {
+      "en": "A digital-payments platform for everyday transactions like mobile top-ups, electricity tokens, data packages, e-wallets, BPJS, and game vouchers. It connects a customer-facing app, an admin dashboard, and backend services into one seamless payment experience, with support for multiple payment methods and automatic vendor routing to keep transactions reliable. I build and maintain the platform end to end — from the customer-facing transaction app to the admin dashboard and the backend services that power it. My work spans developing new features, improving payment and transaction flows, resolving production issues, and analyzing transaction data to support accurate reporting. I collaborate through a structured review-and-release workflow to ship changes safely.",
+      "id": "Platform pembayaran digital untuk transaksi sehari-hari seperti pulsa, token listrik, paket data, e-wallet, BPJS, dan voucher game. Menyatukan aplikasi untuk pelanggan, dashboard admin, dan layanan backend menjadi satu pengalaman pembayaran yang mulus, dengan dukungan berbagai metode pembayaran dan pengalihan vendor otomatis agar transaksi tetap andal. Saya membangun dan memelihara platform ini secara menyeluruh — mulai dari aplikasi transaksi untuk pelanggan, dashboard admin, hingga layanan backend yang menjalankannya. Pekerjaan saya mencakup pengembangan fitur baru, penyempurnaan alur pembayaran dan transaksi, penyelesaian masalah di production, serta analisis data transaksi untuk mendukung akurasi pelaporan. Saya bekerja dengan alur review dan rilis yang terstruktur agar setiap perubahan aman saat diterapkan."
+    },
+    "image": "/static/projects/thumb/ppob-desktop.webp",
+    "desktopView": "/static/projects/thumb/ppob-desktop.webp",
+    "tabletView": "/static/projects/thumb/ppob-tablet.webp",
+    "mobileView": "/static/projects/thumb/ppob-mobile.webp",
     "logo": "/static/icons/projects/icon-pose.webp",
     "url": null,
     "hashtags": [
@@ -18,11 +21,14 @@
   {
     "name": "POSe Online Order",
     "slug": "pose-online-order",
-    "description": "A webview-based online ordering system for POSe. The desktop view serves as the POSe Dashboard where merchants generate QR codes for online orders. The tablet displays the Full Order interface for seat selection, one of two available ordering modes alongside Quick Order. The mobile view shows the customer-facing menu for browsing and selecting items after scanning the QR code.",
-    "image": "/static/projects/thumb/POSeOnlineOrder-desktop.png",
-    "desktopView": "/static/projects/thumb/POSeOnlineOrder-desktop.png",
-    "tabletView": "/static/projects/thumb/POSeOnlineOrder-tablet.png",
-    "mobileView": "/static/projects/thumb/POSeOnlineOrder-mobile.png",
+    "description": {
+      "en": "A webview-based online ordering system for POSe. The desktop view serves as the POSe Dashboard where merchants generate QR codes for online orders. The tablet displays the Full Order interface for seat selection, one of two available ordering modes alongside Quick Order. The mobile view shows the customer-facing menu for browsing and selecting items after scanning the QR code.",
+      "id": "Sistem pemesanan online berbasis webview untuk POSe. Tampilan desktop berfungsi sebagai POSe Dashboard tempat merchant membuat kode QR untuk pesanan online. Tampilan tablet menampilkan antarmuka Full Order untuk pemilihan tempat duduk, salah satu dari dua mode pemesanan bersama Quick Order. Tampilan mobile menampilkan menu untuk pelanggan guna menelusuri dan memilih item setelah memindai kode QR."
+    },
+    "image": "/static/projects/thumb/POSeOnlineOrder-desktop.webp",
+    "desktopView": "/static/projects/thumb/POSeOnlineOrder-desktop.webp",
+    "tabletView": "/static/projects/thumb/POSeOnlineOrder-tablet.webp",
+    "mobileView": "/static/projects/thumb/POSeOnlineOrder-mobile.webp",
     "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -30,11 +36,14 @@
   {
     "name": "Invera",
     "slug": "invera",
-    "description": "Invera is an internal asset management application for monitoring over 10,000 EDC devices across multiple locations. It tracks the full distribution lifecycle from warehouse to merchant installation, replacing error-prone manual records. The platform provides real-time data on service points, asset status, and conditions for all company inventory.",
-    "image": "/static/projects/thumb/invera-desktop.png",
-    "desktopView": "/static/projects/thumb/invera-desktop.png",
-    "tabletView": "/static/projects/thumb/invera-tablet.png",
-    "mobileView": "/static/projects/thumb/invera-mobile.png",
+    "description": {
+      "en": "Invera is an internal asset management application for monitoring over 10,000 EDC devices across multiple locations. It tracks the full distribution lifecycle from warehouse to merchant installation, replacing error-prone manual records. The platform provides real-time data on service points, asset status, and conditions for all company inventory.",
+      "id": "Invera adalah aplikasi manajemen aset internal untuk memantau lebih dari 10.000 perangkat EDC di berbagai lokasi. Aplikasi ini melacak seluruh siklus distribusi mulai dari gudang hingga instalasi di merchant, menggantikan pencatatan manual yang rawan kesalahan. Platform ini menyediakan data real-time mengenai titik layanan, status aset, dan kondisi seluruh inventaris perusahaan."
+    },
+    "image": "/static/projects/thumb/invera-desktop.webp",
+    "desktopView": "/static/projects/thumb/invera-desktop.webp",
+    "tabletView": "/static/projects/thumb/invera-tablet.webp",
+    "mobileView": "/static/projects/thumb/invera-mobile.webp",
     "logo": "/static/icons/projects/icon-invera.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
@@ -42,11 +51,14 @@
   {
     "name": "Mentor",
     "slug": "mentor",
-    "description": "MENTOR stands for MERi Monitoring. This web-based application is equipped with various features such as monitoring MERi performance, ticket verification, and EDC stock management. All features are designed to improve MERi efficiency and productivity when conducting merchant visits.",
-    "image": "/static/projects/thumb/Mentor-desktop.png",
-    "desktopView": "/static/projects/thumb/Mentor-desktop.png",
-    "tabletView": "/static/projects/thumb/Mentor-tablet.png",
-    "mobileView": "/static/projects/thumb/Mentor-mobile.png",
+    "description": {
+      "en": "MENTOR stands for MERi Monitoring. This web-based application is equipped with various features such as monitoring MERi performance, ticket verification, and EDC stock management. All features are designed to improve MERi efficiency and productivity when conducting merchant visits.",
+      "id": "MENTOR adalah singkatan dari MERi Monitoring. Aplikasi berbasis web ini dilengkapi berbagai fitur seperti pemantauan kinerja MERi, verifikasi tiket, dan manajemen stok EDC. Semua fitur dirancang untuk meningkatkan efisiensi dan produktivitas MERi saat melakukan kunjungan ke merchant."
+    },
+    "image": "/static/projects/thumb/Mentor-desktop.webp",
+    "desktopView": "/static/projects/thumb/Mentor-desktop.webp",
+    "tabletView": "/static/projects/thumb/Mentor-tablet.webp",
+    "mobileView": "/static/projects/thumb/Mentor-mobile.webp",
     "logo": "/static/icons/projects/icon-mentor.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -54,11 +66,14 @@
   {
     "name": "POSe Subscription",
     "slug": "pose-subscription",
-    "description": "A subscription page for POSe featuring two package options on the desktop view: Subscription and QR Set. Selecting the Subscription package (top) leads to the tablet view showing detailed plan options for micro to large-scale businesses with dashboard monitoring and maintenance services. Selecting the QR Set package (bottom) leads to the mobile view displaying EDC device plans with 24/7 helpdesk support.",
-    "image": "/static/projects/thumb/POSeSubscription-desktop.png",
-    "desktopView": "/static/projects/thumb/POSeSubscription-desktop.png",
-    "tabletView": "/static/projects/thumb/POSeSubscription-tablet.png",
-    "mobileView": "/static/projects/thumb/POSeSubscription-mobile.png",
+    "description": {
+      "en": "A subscription page for POSe featuring two package options on the desktop view: Subscription and QR Set. Selecting the Subscription package (top) leads to the tablet view showing detailed plan options for micro to large-scale businesses with dashboard monitoring and maintenance services. Selecting the QR Set package (bottom) leads to the mobile view displaying EDC device plans with 24/7 helpdesk support.",
+      "id": "Halaman langganan untuk POSe yang menampilkan dua opsi paket pada tampilan desktop: Subscription dan QR Set. Memilih paket Subscription (atas) mengarah ke tampilan tablet yang memperlihatkan pilihan paket detail untuk bisnis skala mikro hingga besar, lengkap dengan monitoring dashboard dan layanan maintenance. Memilih paket QR Set (bawah) mengarah ke tampilan mobile yang menampilkan paket perangkat EDC dengan dukungan helpdesk 24/7."
+    },
+    "image": "/static/projects/thumb/POSeSubscription-desktop.webp",
+    "desktopView": "/static/projects/thumb/POSeSubscription-desktop.webp",
+    "tabletView": "/static/projects/thumb/POSeSubscription-tablet.webp",
+    "mobileView": "/static/projects/thumb/POSeSubscription-mobile.webp",
     "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -66,11 +81,14 @@
   {
     "name": "POSe Landing Page",
     "slug": "pose-landing-page",
-    "description": "A marketing landing page that showcases POSe, a smart digital POS solution built to help businesses grow more efficiently. The page highlights key product features and benefits with clear calls to action, guiding visitors to explore plans and get started. Its clean, responsive layout is designed to convert interest into sign-ups.",
-    "image": "/static/projects/thumb/POSeLandingPage-desktop.png",
-    "desktopView": "/static/projects/thumb/POSeLandingPage-desktop.png",
-    "tabletView": "/static/projects/thumb/POSeLandingPage-tablet.png",
-    "mobileView": "/static/projects/thumb/POSeLandingPage-mobile.png",
+    "description": {
+      "en": "A marketing landing page that showcases POSe, a smart digital POS solution built to help businesses grow more efficiently. The page highlights key product features and benefits with clear calls to action, guiding visitors to explore plans and get started. Its clean, responsive layout is designed to convert interest into sign-ups.",
+      "id": "Landing page marketing yang menampilkan POSe, solusi POS digital cerdas yang dibuat untuk membantu bisnis berkembang lebih efisien. Halaman ini menonjolkan fitur dan manfaat utama produk dengan call to action yang jelas, mengarahkan pengunjung untuk menelusuri paket dan mulai menggunakannya. Tata letaknya bersih dan responsif, dirancang untuk mengonversi ketertarikan menjadi pendaftaran."
+    },
+    "image": "/static/projects/thumb/POSeLandingPage-desktop.webp",
+    "desktopView": "/static/projects/thumb/POSeLandingPage-desktop.webp",
+    "tabletView": "/static/projects/thumb/POSeLandingPage-tablet.webp",
+    "mobileView": "/static/projects/thumb/POSeLandingPage-mobile.webp",
     "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -78,11 +96,14 @@
   {
     "name": "POSe Portal",
     "slug": "pose-portal",
-    "description": "A monitoring dashboard for POSe, a smart digital POS system designed to help businesses grow efficiently. Features include daily transaction management, financial reporting, and real-time sales monitoring — all in one streamlined platform.",
-    "image": "/static/projects/thumb/POSePortal-desktop.png",
-    "desktopView": "/static/projects/thumb/POSePortal-desktop.png",
-    "tabletView": "/static/projects/thumb/POSePortal-tablet.png",
-    "mobileView": "/static/projects/thumb/POSePortal-mobile.png",
+    "description": {
+      "en": "A monitoring dashboard for POSe, a smart digital POS system designed to help businesses grow efficiently. Features include daily transaction management, financial reporting, and real-time sales monitoring — all in one streamlined platform.",
+      "id": "Dashboard monitoring untuk POSe, sistem POS digital cerdas yang dirancang untuk membantu bisnis berkembang secara efisien. Fiturnya mencakup manajemen transaksi harian, pelaporan keuangan, dan pemantauan penjualan real-time — semuanya dalam satu platform yang ringkas."
+    },
+    "image": "/static/projects/thumb/POSePortal-desktop.webp",
+    "desktopView": "/static/projects/thumb/POSePortal-desktop.webp",
+    "tabletView": "/static/projects/thumb/POSePortal-tablet.webp",
+    "mobileView": "/static/projects/thumb/POSePortal-mobile.webp",
     "logo": "/static/icons/projects/icon-pose.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -90,11 +111,14 @@
   {
     "name": "Festival Jajanan Bango 2023",
     "slug": "festival-jajanan-bango-2023",
-    "description": "The Bango snack festival returns, presenting an array of Indonesian culinary delights for visitors to enjoy and explore during this year's event.",
-    "image": "/static/projects/thumb/fjb2023-desktop.png",
-    "desktopView": "/static/projects/thumb/fjb2023-desktop.png",
-    "tabletView": "/static/projects/thumb/fjb2023-tablet.png",
-    "mobileView": "/static/projects/thumb/fjb2023-mobile.png",
+    "description": {
+      "en": "The Bango snack festival returns, presenting an array of Indonesian culinary delights for visitors to enjoy and explore during this year's event.",
+      "id": "Festival jajanan Bango kembali hadir, menyajikan beragam kuliner khas Indonesia untuk dinikmati dan dijelajahi pengunjung selama acara tahun ini."
+    },
+    "image": "/static/projects/thumb/fjb2023-desktop.webp",
+    "desktopView": "/static/projects/thumb/fjb2023-desktop.webp",
+    "tabletView": "/static/projects/thumb/fjb2023-tablet.webp",
+    "mobileView": "/static/projects/thumb/fjb2023-mobile.webp",
     "logo": "/static/icons/projects/icon-fjb2023.webp",
     "url": "https://www.bango.co.id/fjb/register.html",
     "hashtags": [{ "link": "Codeigniter", "name": "Codeigniter" }]
@@ -102,11 +126,14 @@
   {
     "name": "Jiva GreenHope",
     "slug": "jiva-greenHope",
-    "description": "As a Full Stack Developer at JIVACO, our company specializes in producing top-notch products for everyday use, including premium rice, cooking oil, and sugar. We've designed a user-friendly UI with a clean and simple interface, offering an interactive experience for users. Our primary color theme is green, symbolizing nature and our commitment to eco-friendly products, aligning with JIVACO's brand identity.",
-    "image": "/static/projects/thumb/JIVACO-desktop.png",
-    "desktopView": "/static/projects/thumb/JIVACO-desktop.png",
-    "tabletView": "/static/projects/thumb/JIVACO-tablet.png",
-    "mobileView": "/static/projects/thumb/JIVACO-mobile.png",
+    "description": {
+      "en": "As a Full Stack Developer at JIVACO, our company specializes in producing top-notch products for everyday use, including premium rice, cooking oil, and sugar. We've designed a user-friendly UI with a clean and simple interface, offering an interactive experience for users. Our primary color theme is green, symbolizing nature and our commitment to eco-friendly products, aligning with JIVACO's brand identity.",
+      "id": "Sebagai Full Stack Developer di JIVACO, perusahaan kami berfokus pada produksi produk berkualitas untuk kebutuhan sehari-hari, termasuk beras premium, minyak goreng, dan gula. Kami merancang UI yang mudah digunakan dengan antarmuka yang bersih dan sederhana, menghadirkan pengalaman interaktif bagi pengguna. Tema warna utama kami adalah hijau, melambangkan alam dan komitmen kami terhadap produk ramah lingkungan, selaras dengan identitas merek JIVACO."
+    },
+    "image": "/static/projects/thumb/JIVACO-desktop.webp",
+    "desktopView": "/static/projects/thumb/JIVACO-desktop.webp",
+    "tabletView": "/static/projects/thumb/JIVACO-tablet.webp",
+    "mobileView": "/static/projects/thumb/JIVACO-mobile.webp",
     "logo": "/static/icons/projects/icon-jiva.webp",
     "url": "https://jivaco.id/id/",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
@@ -114,10 +141,13 @@
   {
     "name": "Danamon Optimal",
     "slug": "danamon-optimal",
-    "description": "The DanamonOptimalku website serves as a company profile and is developed solely as a static Single Page Application (SPA).",
-    "image": "/static/projects/thumb/danamon-optimal.png",
-    "desktopView": "/static/projects/thumb/danamonOptimal-dekstop.png",
-    "tabletView": "/static/projects/thumb/danamonOptimal-tablet.png",
+    "description": {
+      "en": "The DanamonOptimalku website serves as a company profile and is developed solely as a static Single Page Application (SPA).",
+      "id": "Website DanamonOptimalku berfungsi sebagai company profile dan dikembangkan sepenuhnya sebagai Single Page Application (SPA) statis."
+    },
+    "image": "/static/projects/thumb/danamon-optimal.webp",
+    "desktopView": "/static/projects/thumb/danamonOptimal-dekstop.webp",
+    "tabletView": "/static/projects/thumb/danamonOptimal-tablet.webp",
     "mobileView": "/static/projects/video/DanamonOptimal-mobile-compressed.mp4",
     "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://www.danamon.co.id/id/Personal/Danamon-Optimal",
@@ -126,11 +156,14 @@
   {
     "name": "30 Resep Semur Semangatkan Sahur",
     "slug": "30-resep-semur-semangatkan-sahur",
-    "description": "It's a recommendation website featuring special dishes for the month of Ramadan. Users can explore full reviews embedded from Instagram stories for each dish.",
-    "image": "/static/projects/thumb/30resepsemursemangatsahurr.png",
-    "desktopView": "/static/projects/thumb/semurSahur-dekstop.png",
-    "tabletView": "/static/projects/thumb/semurSahur-tablet.png",
-    "mobileView": "/static/projects/thumb/semurSahur-mobile.png",
+    "description": {
+      "en": "It's a recommendation website featuring special dishes for the month of Ramadan. Users can explore full reviews embedded from Instagram stories for each dish.",
+      "id": "Sebuah website rekomendasi yang menampilkan hidangan istimewa untuk bulan Ramadan. Pengguna dapat menelusuri ulasan lengkap yang disematkan dari Instagram stories untuk setiap hidangan."
+    },
+    "image": "/static/projects/thumb/30resepsemursemangatsahurr.webp",
+    "desktopView": "/static/projects/thumb/semurSahur-dekstop.webp",
+    "tabletView": "/static/projects/thumb/semurSahur-tablet.webp",
+    "mobileView": "/static/projects/thumb/semurSahur-mobile.webp",
     "logo": "/static/icons/projects/icon-bango.webp",
     "url": "https://www.bango.co.id/home.html",
     "hashtags": [{ "link": "Codeigniter", "name": "Codeigniter" }]
@@ -138,11 +171,14 @@
   {
     "name": "MGM Bosco Logistics",
     "slug": "mgm-bosco-logistics",
-    "description": "Develop a responsive company profile interface using the Vue.js framework. On the MGM Bosco Sustainability page, incorporate bright blue colors in specific sections to give it a fresher appearance.",
-    "image": "/static/projects/thumb/mgm-keberlanjutan-rev.png",
-    "desktopView": "/static/projects/thumb/MGMBosco-dekstop.png",
-    "tabletView": "/static/projects/thumb/MGMBosco-tablet.png",
-    "mobileView": "/static/projects/thumb/MGMBosco-mobile.png",
+    "description": {
+      "en": "Develop a responsive company profile interface using the Vue.js framework. On the MGM Bosco Sustainability page, incorporate bright blue colors in specific sections to give it a fresher appearance.",
+      "id": "Mengembangkan antarmuka company profile yang responsif menggunakan framework Vue.js. Pada halaman MGM Bosco Sustainability, menambahkan warna biru cerah di bagian tertentu untuk memberikan tampilan yang lebih segar."
+    },
+    "image": "/static/projects/thumb/mgm-keberlanjutan-rev.webp",
+    "desktopView": "/static/projects/thumb/MGMBosco-dekstop.webp",
+    "tabletView": "/static/projects/thumb/MGMBosco-tablet.webp",
+    "mobileView": "/static/projects/thumb/MGMBosco-mobile.webp",
     "logo": "/static/icons/projects/icon-mgmbosco.webp",
     "url": "https://mgmbosco.com/id/sustainability",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -150,11 +186,14 @@
   {
     "name": "Festival Jajanan Bango 2022",
     "slug": "festival-jajanan-bango-2022",
-    "description": "Maintaining the culinary festival website involves utilizing CodeIgniter. The site showcases a variety of Indonesian culinary delights, enabling visitors to explore the offerings available at the festival this year.",
-    "image": "/static/projects/thumb/fjb-desktop-default.png",
-    "desktopView": "/static/projects/thumb/fjb-desktop.png",
+    "description": {
+      "en": "Maintaining the culinary festival website involves utilizing CodeIgniter. The site showcases a variety of Indonesian culinary delights, enabling visitors to explore the offerings available at the festival this year.",
+      "id": "Pemeliharaan website festival kuliner ini menggunakan CodeIgniter. Situs ini menampilkan beragam kuliner khas Indonesia, memungkinkan pengunjung menjelajahi berbagai sajian yang tersedia pada festival tahun ini."
+    },
+    "image": "/static/projects/thumb/fjb-desktop-default.webp",
+    "desktopView": "/static/projects/thumb/fjb-desktop.webp",
     "tabletView": "/static/projects/video/fjb-2022-compressed.mp4",
-    "mobileView": "/static/projects/thumb/fjb-mobile.png",
+    "mobileView": "/static/projects/thumb/fjb-mobile.webp",
     "logo": "/static/icons/projects/icon-fjb2022.webp",
     "url": "https://www.warisankuliner.com/fjb",
     "hashtags": [{ "link": "Codeigniter", "name": "Codeigniter" }]
@@ -162,11 +201,14 @@
   {
     "name": "Hino Finance",
     "slug": "hino-finance",
-    "description": "Hino's financial website serves as a platform for company profiling, e-commerce functionalities, and notably, financial product offerings marketed by the company.",
-    "image": "/static/projects/thumb/hino.png",
-    "desktopView": "/static/projects/thumb/hinoFinance-dekstop.png",
-    "tabletView": "/static/projects/thumb/hinoFinance-tablet.png",
-    "mobileView": "/static/projects/thumb/hinoFinance-mobile.png",
+    "description": {
+      "en": "Hino's financial website serves as a platform for company profiling, e-commerce functionalities, and notably, financial product offerings marketed by the company.",
+      "id": "Website finansial Hino berfungsi sebagai platform untuk company profile, fungsionalitas e-commerce, dan terutama penawaran produk finansial yang dipasarkan oleh perusahaan."
+    },
+    "image": "/static/projects/thumb/hino.webp",
+    "desktopView": "/static/projects/thumb/hinoFinance-dekstop.webp",
+    "tabletView": "/static/projects/thumb/hinoFinance-tablet.webp",
+    "mobileView": "/static/projects/thumb/hinoFinance-mobile.webp",
     "logo": "/static/icons/projects/icon-hino.webp",
     "url": "#",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
@@ -174,11 +216,14 @@
   {
     "name": "Danamon Microsite Quiz",
     "slug": "danamon-microsite-quiz",
-    "description": "Danamon has developed a multiple-choice quiz website for users. Upon completing the quiz, users will be prompted to enter various personal details. The final result, displayed on a mobile device, will reveal a character corresponding to the user's choices throughout the quiz. Each character will vary based on the user's responses.",
-    "image": "/static/projects/thumb/danamon-microsite.png",
-    "desktopView": "/static/projects/thumb/DanamonQuiz-dekstop.png",
+    "description": {
+      "en": "Danamon has developed a multiple-choice quiz website for users. Upon completing the quiz, users will be prompted to enter various personal details. The final result, displayed on a mobile device, will reveal a character corresponding to the user's choices throughout the quiz. Each character will vary based on the user's responses.",
+      "id": "Danamon mengembangkan website kuis pilihan ganda untuk pengguna. Setelah menyelesaikan kuis, pengguna diminta mengisi berbagai data pribadi. Hasil akhir yang ditampilkan di perangkat mobile akan memunculkan karakter yang sesuai dengan pilihan pengguna selama kuis. Setiap karakter berbeda-beda berdasarkan jawaban pengguna."
+    },
+    "image": "/static/projects/thumb/danamon-microsite.webp",
+    "desktopView": "/static/projects/thumb/DanamonQuiz-dekstop.webp",
     "tabletView": "/static/projects/video/DanamonQuiz-tablet-compressed.mp4",
-    "mobileView": "/static/projects/thumb/DanamonQuiz-mobile.png",
+    "mobileView": "/static/projects/thumb/DanamonQuiz-mobile.webp",
     "logo": "/static/icons/projects/icon-danamonquiz.webp",
     "url": "https://www.optimalku.com",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -186,11 +231,14 @@
   {
     "name": "Indonesia International Motor Show",
     "slug": "indonesia-international-motor-show",
-    "description": "Danamon has entrusted me with the task of creating a microsite for the Indonesia International Motor Show.",
-    "image": "/static/projects/thumb/danamon-IIMS.png",
-    "desktopView": "/static/projects/thumb/danamonIIMS-desktop.png",
-    "tabletView": "/static/projects/thumb/danamonIIMS-tablet.png",
-    "mobileView": "/static/projects/thumb/danamonIIMS-mobile.png",
+    "description": {
+      "en": "Danamon has entrusted me with the task of creating a microsite for the Indonesia International Motor Show.",
+      "id": "Danamon mempercayakan saya untuk membuat microsite untuk Indonesia International Motor Show."
+    },
+    "image": "/static/projects/thumb/danamon-IIMS.webp",
+    "desktopView": "/static/projects/thumb/danamonIIMS-desktop.webp",
+    "tabletView": "/static/projects/thumb/danamonIIMS-tablet.webp",
+    "mobileView": "/static/projects/thumb/danamonIIMS-mobile.webp",
     "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://www.danamon.co.id/id/site/Danamon-IIMS-Surabaya",
     "hashtags": [{ "link": "Vanilla Javascript", "name": "Vanilla Javascript" }]
@@ -198,7 +246,10 @@
   {
     "name": "Danamon Spekta",
     "slug": "danamon-spekta",
-    "description": "The mockup I created for Danamon Spekta closely resembles other projects, emphasizing simplicity and highlighting the offered products. Additionally, Danamon Spekta is designed as a Single Page Application.",
+    "description": {
+      "en": "The mockup I created for Danamon Spekta closely resembles other projects, emphasizing simplicity and highlighting the offered products. Additionally, Danamon Spekta is designed as a Single Page Application.",
+      "id": "Mockup yang saya buat untuk Danamon Spekta mirip dengan proyek lain, menekankan kesederhanaan dan menonjolkan produk yang ditawarkan. Selain itu, Danamon Spekta dirancang sebagai Single Page Application."
+    },
     "image": null,
     "desktopView": null,
     "tabletView": null,
@@ -210,11 +261,14 @@
   {
     "name": "Danamon Booking Optimalku",
     "slug": "danamon-booking-optimalku",
-    "description": "It's a company website consultation aimed at streamlining the process for users to request a queue number, ask questions, or seek consultation without the need to physically visit. The user's inquiries or consultations will be sent via email to the registered email address.",
-    "image": "/static/projects/thumb/danamon-booking-optimalku.png",
-    "desktopView": "/static/projects/thumb/danamonBO-dekstop.png",
-    "tabletView": "/static/projects/thumb/danamonBO-tablet.png",
-    "mobileView": "/static/projects/thumb/danamonBO-mobile.png",
+    "description": {
+      "en": "It's a company website consultation aimed at streamlining the process for users to request a queue number, ask questions, or seek consultation without the need to physically visit. The user's inquiries or consultations will be sent via email to the registered email address.",
+      "id": "Sebuah website konsultasi perusahaan yang bertujuan menyederhanakan proses bagi pengguna untuk meminta nomor antrean, mengajukan pertanyaan, atau berkonsultasi tanpa perlu datang langsung. Pertanyaan atau konsultasi pengguna akan dikirim melalui email ke alamat email yang terdaftar."
+    },
+    "image": "/static/projects/thumb/danamon-booking-optimalku.webp",
+    "desktopView": "/static/projects/thumb/danamonBO-dekstop.webp",
+    "tabletView": "/static/projects/thumb/danamonBO-tablet.webp",
+    "mobileView": "/static/projects/thumb/danamonBO-mobile.webp",
     "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://booking.optimalku.com",
     "hashtags": [{ "link": "VueJS", "name": "VueJS" }]
@@ -222,11 +276,14 @@
   {
     "name": "Danamon's Anniversary",
     "slug": "danamon's-anniversary",
-    "description": "For its 67th birthday, Danamon invites customers to celebrate together through a special Danamon birthday website on July 16, 2023. Alongside the celebration, Danamon offers various special deals, including video examples showcasing the JavaScript concept on tablet displays.",
-    "image": "/static/projects/thumb/danamon-hut.png",
-    "desktopView": "/static/projects/thumb/danamonHUT-dekstop.png",
+    "description": {
+      "en": "For its 67th birthday, Danamon invites customers to celebrate together through a special Danamon birthday website on July 16, 2023. Alongside the celebration, Danamon offers various special deals, including video examples showcasing the JavaScript concept on tablet displays.",
+      "id": "Dalam rangka ulang tahun ke-67, Danamon mengajak nasabah merayakan bersama melalui website ulang tahun Danamon spesial pada 16 Juli 2023. Selain perayaan, Danamon menawarkan berbagai penawaran spesial, termasuk contoh video yang menampilkan konsep JavaScript pada tampilan tablet."
+    },
+    "image": "/static/projects/thumb/danamon-hut.webp",
+    "desktopView": "/static/projects/thumb/danamonHUT-dekstop.webp",
     "tabletView": "/static/projects/video/danamonHUT-tablet.mp4",
-    "mobileView": "/static/projects/thumb/danamonHUT-mobile.png",
+    "mobileView": "/static/projects/thumb/danamonHUT-mobile.webp",
     "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://danamonhut.co.id/",
     "hashtags": [{ "link": "ReactJS", "name": "ReactJS" }]
@@ -234,11 +291,14 @@
   {
     "name": "Ristra Revamp",
     "slug": "ristra-revamp",
-    "description": "In this project, my task is to perform a \"Technology Migration\" by revamping the website from an old machine to a new one. I will focus on installing and ensuring that the appearance closely resembles the previous version.",
-    "image": "/static/projects/thumb/ristra-clinic.png",
-    "desktopView": "/static/projects/thumb/ristra-dekstop.png",
-    "tabletView": "/static/projects/thumb/ristra-tablet.png",
-    "mobileView": "/static/projects/thumb/ristra-mobile.png",
+    "description": {
+      "en": "In this project, my task is to perform a \"Technology Migration\" by revamping the website from an old machine to a new one. I will focus on installing and ensuring that the appearance closely resembles the previous version.",
+      "id": "Dalam proyek ini, tugas saya adalah melakukan \"Migrasi Teknologi\" dengan merombak website dari mesin lama ke mesin baru. Saya berfokus pada instalasi dan memastikan tampilannya sangat mirip dengan versi sebelumnya."
+    },
+    "image": "/static/projects/thumb/ristra-clinic.webp",
+    "desktopView": "/static/projects/thumb/ristra-dekstop.webp",
+    "tabletView": "/static/projects/thumb/ristra-tablet.webp",
+    "mobileView": "/static/projects/thumb/ristra-mobile.webp",
     "logo": "/static/icons/projects/icon-ristra.webp",
     "url": "https://www.ristraclinic.co.id/",
     "hashtags": [{ "link": "Laravel (Blade)", "name": "Laravel (Blade)" }]
@@ -246,9 +306,12 @@
   {
     "name": "D-Bank PRO",
     "slug": "d-bank-pro",
-    "description": "We're adapting our strategy to meet the specific preferences of our valued client, Danamon. They want the website to offer visitors a fresh user experience different from what they've seen before. Our goal is to create a memorable and engaging interaction that leaves a lasting impression on users as they explore the platform.",
-    "image": "/static/projects/thumb/dbank-pro.png",
-    "desktopView": "/static/projects/thumb/danamonPRO-dekstop.png",
+    "description": {
+      "en": "We're adapting our strategy to meet the specific preferences of our valued client, Danamon. They want the website to offer visitors a fresh user experience different from what they've seen before. Our goal is to create a memorable and engaging interaction that leaves a lasting impression on users as they explore the platform.",
+      "id": "Kami menyesuaikan strategi untuk memenuhi preferensi khusus klien kami, Danamon. Mereka menginginkan website yang menawarkan pengalaman pengguna yang segar dan berbeda dari yang pernah ada sebelumnya. Tujuan kami adalah menciptakan interaksi yang berkesan dan menarik sehingga meninggalkan kesan mendalam bagi pengguna saat menjelajahi platform."
+    },
+    "image": "/static/projects/thumb/dbank-pro.webp",
+    "desktopView": "/static/projects/thumb/danamonPRO-dekstop.webp",
     "tabletView": null,
     "mobileView": null,
     "logo": "/static/icons/projects/icon-dbankpro.webp",
@@ -258,7 +321,10 @@
   {
     "name": "Walls Feast Pop",
     "slug": "walls-feast-pop",
-    "description": "Design a captivating mobile interface to enhance user experience and streamline registration or support for one of two characters. Keep the project agile and prioritize simplicity for efficient development and deployment.",
+    "description": {
+      "en": "Design a captivating mobile interface to enhance user experience and streamline registration or support for one of two characters. Keep the project agile and prioritize simplicity for efficient development and deployment.",
+      "id": "Merancang antarmuka mobile yang menarik untuk meningkatkan pengalaman pengguna serta menyederhanakan pendaftaran atau dukungan untuk salah satu dari dua karakter. Menjaga proyek tetap agile dan mengutamakan kesederhanaan demi pengembangan dan deployment yang efisien."
+    },
     "image": null,
     "desktopView": null,
     "tabletView": null,
@@ -270,11 +336,14 @@
   {
     "name": "Danamon Hadiah Beruntun",
     "slug": "danamon-hadiah-beruntun",
-    "description": "Employing a minimalist design with Danamon's signature orange color, we'll enhance the interface with an additional gif.",
-    "image": "/static/projects/thumb/danamon-spekta.png",
-    "desktopView": "/static/projects/thumb/danamonHadiahBeruntun-desktop.png",
-    "tabletView": "/static/projects/thumb/danamonHadiahBeruntun-tablet.png",
-    "mobileView": "/static/projects/thumb/danamonHadiahBeruntun-mobile.png",
+    "description": {
+      "en": "Employing a minimalist design with Danamon's signature orange color, we'll enhance the interface with an additional gif.",
+      "id": "Menggunakan desain minimalis dengan warna oranye khas Danamon, kami memperkaya antarmuka dengan tambahan gif."
+    },
+    "image": "/static/projects/thumb/danamonHadiahBeruntun-desktop.webp",
+    "desktopView": "/static/projects/thumb/danamonHadiahBeruntun-desktop.webp",
+    "tabletView": "/static/projects/thumb/danamonHadiahBeruntun-tablet.webp",
+    "mobileView": "/static/projects/thumb/danamonHadiahBeruntun-mobile.webp",
     "logo": "/static/icons/projects/icon-danamon.webp",
     "url": "https://www.danamon.co.id/id/danamon-hadiah-beruntun",
     "hashtags": [{ "link": "Bootstrap", "name": "Bootstrap" }]
@@ -282,7 +351,10 @@
   {
     "name": "Combiphar Pro",
     "slug": "combiphar-pro",
-    "description": "Combiphar Pro is a web-based portal built with Laravel Blade, featuring secure login and role-based access for its users. The platform delivers a streamlined, dedicated experience for managing Combiphar's professional services online.",
+    "description": {
+      "en": "Combiphar Pro is a web-based portal built with Laravel Blade, featuring secure login and role-based access for its users. The platform delivers a streamlined, dedicated experience for managing Combiphar's professional services online.",
+      "id": "Combiphar Pro adalah portal berbasis web yang dibangun dengan Laravel Blade, dilengkapi login yang aman dan akses berbasis peran untuk penggunanya. Platform ini menghadirkan pengalaman yang ringkas dan khusus untuk mengelola layanan profesional Combiphar secara online."
+    },
     "image": null,
     "desktopView": null,
     "tabletView": null,

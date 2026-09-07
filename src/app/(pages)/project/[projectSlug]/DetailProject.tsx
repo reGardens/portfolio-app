@@ -14,7 +14,7 @@ interface Hashtags {
 
 export default function DetailProject() {
     const router = useRouter();
-    const { t } = useLanguage();
+    const { t, lang } = useLanguage();
     const setLoading = useLoadingStore((s) => s.setLoading);
     const searchParams = useSearchParams();
     const dataString = searchParams?.get('data');
@@ -76,7 +76,9 @@ export default function DetailProject() {
                     )
                 })}
             </ul>
-            <Typography variant="body-m" className="mt-1 tracking-wide text-justify">{data && data.description}</Typography>
+            <Typography variant="body-m" className="mt-1 tracking-wide text-justify">
+                {data && (typeof data.description === 'string' ? data.description : data.description?.[lang])}
+            </Typography>
         </section>
     )
 }

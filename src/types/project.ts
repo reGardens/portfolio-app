@@ -6,7 +6,7 @@ export interface Hashtag {
 export interface ProjectData {
     name: string;
     slug: string;
-    description: string;
+    description: { en: string; id: string };
     image: string | null;
     desktopView: string | null;
     tabletView: string | null;

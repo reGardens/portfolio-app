@@ -23,7 +23,7 @@ interface Props {
 export default function ListProjects({ dataProjects }: Props) {
     const router = useRouter();
     const setLoading = useLoadingStore((s) => s.setLoading);
-    const { t } = useLanguage();
+    const { t, lang } = useLanguage();
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -153,7 +153,7 @@ export default function ListProjects({ dataProjects }: Props) {
                                         })}
                                     </ul>
                                     <div className={`proj-desc-list-${index}`} style={{ opacity: 0 }}>
-                                        <Typography variant="body-m" fontWeight="bold" className="text-darkColor200 tracking-wider text-justify">{res.description}</Typography>
+                                        <Typography variant="body-m" fontWeight="bold" className="text-darkColor200 tracking-wider text-justify">{res.description[lang]}</Typography>
                                     </div>
                                 </div>
                             </li>
@@ -180,7 +180,7 @@ export default function ListProjects({ dataProjects }: Props) {
                                                 {res.name}
                                             </Typography>
                                             <Typography variant="body-s" className="text-darkColor500/50 dark:text-white/50 truncate text-xs">
-                                                {res.description}
+                                                {res.description[lang]}
                                             </Typography>
                                         </div>
                                         <svg className="w-4 h-4 text-gray-400 dark:text-white/30 flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

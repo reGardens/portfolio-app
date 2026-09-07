@@ -77,43 +77,37 @@ export default function SkillsSection({ dataIconFront, dataIconBack, dataIconOth
                 { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
             );
 
-            // Each section: label fades in, then icons scatter into place
-            sections.forEach((section) => {
-                const sectionIcons = section.querySelectorAll(".skill-icon");
-                const label = section.querySelector(".skill-label");
+            // All groups appear together: fade every section + label at the same time,
+            // then scatter all icons in at once (with a light stagger for polish).
+            skillTl.fromTo(".skill-section",
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" },
+                "-=0.1"
+            );
 
-                // Section container fades in
-                skillTl.fromTo(section,
-                    { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }
-                );
+            skillTl.fromTo(".skill-label",
+                { x: -20, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" },
+                "<"
+            );
 
-                // Label
-                if (label) {
-                    skillTl.fromTo(label,
-                        { x: -20, opacity: 0 },
-                        { x: 0, opacity: 1, duration: 0.2, ease: "power2.out" },
-                        "-=0.1"
-                    );
-                }
-
-                // Icons scatter in with stagger
-                skillTl.to(sectionIcons, {
-                    x: 0,
-                    y: 0,
-                    rotation: 0,
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.4,
-                    ease: "back.out(1.4)",
-                    stagger: 0.05,
-                }, "-=0.1");
-            });
+            // Icons scatter into place — all sections simultaneously
+            skillTl.to(".skill-icon", {
+                x: 0,
+                y: 0,
+                rotation: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 0.4,
+                ease: "back.out(1.4)",
+                stagger: 0.02,
+            }, "<");
 
             // Quote
             skillTl.fromTo(".skill-quote",
                 { y: 20, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
+                { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" },
+                "-=0.2"
             );
 
             // Lock scroll as soon as the section reaches the top of the viewport,

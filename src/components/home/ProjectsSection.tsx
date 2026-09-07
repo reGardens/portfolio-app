@@ -19,7 +19,7 @@ interface Props {
 }
 
 export default function ProjectsSection({ dataProjects }: Props) {
-    const { t } = useLanguage();
+    const { t, lang } = useLanguage();
     const limitedProjects = dataProjects?.slice(0, 5);
 
     useEffect(() => {
@@ -105,7 +105,7 @@ export default function ProjectsSection({ dataProjects }: Props) {
                                             {res.name}
                                         </Typography>
                                         <Typography variant="body-s" className="text-darkColor500/50 dark:text-white/50 truncate text-xs mt-0.5">
-                                            {res.description}
+                                            {res.description[lang]}
                                         </Typography>
                                         {Array.isArray(res.hashtags) && (
                                             <div className="flex gap-1.5 mt-2 flex-wrap">

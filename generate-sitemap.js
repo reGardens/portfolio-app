@@ -6,7 +6,7 @@ const env = process.argv[2] || 'development';
 // Configuration based on environment
 const config = {
   development: {
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://localhost:3001',
     outputPath: './public/sitemap.xml'
   },
   production: {
